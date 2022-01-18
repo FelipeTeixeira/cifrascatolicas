@@ -73,7 +73,7 @@ export const getStaticPaths: GetStaticPaths<{
 
   return {
     paths,
-    fallback: 'blocking'
+    fallback: false
   }
 }
 

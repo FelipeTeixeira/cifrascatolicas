@@ -50,7 +50,7 @@ export const getStaticPaths: GetStaticPaths<{ artist: string }> = async () => {
 
   return {
     paths,
-    fallback: 'blocking'
+    fallback: false
   }
 }
 
