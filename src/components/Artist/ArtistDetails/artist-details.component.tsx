@@ -24,10 +24,10 @@ const renderMusicList = ({ artist }: DetailsProps): React.ReactNode => {
       <>
         <ListItem key={music.slug}>
           <NextLink
-            as={deburr(`/artistas/${artist.slug}/${music.slug}`)}
-            href={deburr(`/artistas/${artist.slug}/[slug]`)}
+            as={deburr(`/${artist.slug}/${music.slug}`)}
+            href={deburr(`/${artist.slug}/[slug]`)}
             passHref
-            key={deburr(`/artistas/${artist.slug}/${music.slug}`)}
+            key={deburr(`/${artist.slug}/${music.slug}`)}
           >
             <Text as="a">
               <ListIcon as={RiMusicLine} color="orange.500" />

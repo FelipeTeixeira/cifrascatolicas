@@ -27,10 +27,10 @@ export const SearchResultCard = ({
 }: SearchResultCardProps) => {
   return (
     <NextLink
-      as={`/artistas/${deburr(slug)}`}
-      href={`/artistas/[slug]`}
+      as={`/${deburr(slug)}`}
+      href={`/[slug]`}
       passHref
-      key={`/artistas/${deburr(slug)}`}
+      key={`/${deburr(slug)}`}
     >
       <Link style={{ textDecoration: 'none' }}>
         <Flex

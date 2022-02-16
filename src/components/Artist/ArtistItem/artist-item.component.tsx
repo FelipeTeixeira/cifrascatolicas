@@ -15,10 +15,10 @@ import { deburr } from 'lodash'
 export const ArtistItem = ({ slug, nome, info, imagem }: Artist) => {
   return (
     <NextLink
-      as={`/artistas/${deburr(slug)}`}
-      href={`/artistas/[slug]`}
+      as={`/${deburr(slug)}`}
+      href={`/[slug]`}
       passHref
-      key={`/artistas/${deburr(slug)}`}
+      key={`/${deburr(slug)}`}
     >
       <Link style={{ textDecoration: 'none' }}>
         <Flex
