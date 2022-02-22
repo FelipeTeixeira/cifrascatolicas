@@ -1,16 +1,17 @@
 import {
+  Avatar,
   Box,
   Divider,
+  Flex,
   Heading,
-  Icon,
   ListIcon,
   ListItem,
   OrderedList,
-  Text
+  Text,
 } from '@chakra-ui/react'
 import { Artist } from '@types/Artist'
 import NextLink from 'next/link'
-import { BsMusicNoteList } from 'react-icons/bs'
+// import { BsMusicNoteList } from 'react-icons/bs'
 import { RiMusicLine } from 'react-icons/ri'
 import { deburr } from 'lodash'
 
@@ -44,8 +45,25 @@ export const ArtistDetails = ({ artist }: DetailsProps) => {
   return (
     <Box w="full">
       <Heading>
-        <Icon m={2} w={10} h={10} as={BsMusicNoteList} color="orange.500" />
-        {artist.nome}
+        <Flex
+          alignItems="center"
+          justifyContent="flex-start"
+        >
+          <Avatar
+            size={'lg'}
+            name={artist.nome}
+            src={`https://cifrascatolicas.com.br/imagens/${artist.slug}.png`}
+            bg="orange.400"
+            color="white"
+            mr = {2}
+          />
+          <Text
+            as="h1"
+            fontWeight="bold"
+          >
+            {artist.nome}
+          </Text>
+        </Flex>
       </Heading>
       <Divider m={4} />
       <Text>Músicas:</Text>

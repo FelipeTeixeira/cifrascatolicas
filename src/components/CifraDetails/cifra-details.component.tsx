@@ -141,8 +141,11 @@ const SocialProfileWithImage = ({ artist }: CifraDetailsProps) => {
           <Flex justify={'center'}>
             <Avatar
               size={'xl'}
-              src={artist.imagem}
+              name={artist.nome}
+              src={`https://cifrascatolicas.com.br/imagens/${artist.slug}.png`}
               alt={'Author'}
+              bg="orange.400"
+              color="white"
               css={{
                 border: '2px solid white'
               }}

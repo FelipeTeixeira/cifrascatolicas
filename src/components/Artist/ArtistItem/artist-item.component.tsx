@@ -38,8 +38,9 @@ export const ArtistItem = ({ slug, nome, info, imagem }: Artist) => {
               <Avatar
                 size={'lg'}
                 name={nome}
-                src={imagem}
+                src={`https://cifrascatolicas.com.br/imagens/${slug}.png`}
                 borderColor="papayawhip"
+                color="white"
                 borderWidth={2}
                 bg="orange.400"
               ></Avatar>
