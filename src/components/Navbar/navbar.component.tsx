@@ -97,7 +97,7 @@ const Navbar = () => {
       >
         <chakra.div h="8rem" mx="auto" maxW="6xl">
           <Flex w="full" h="full" px="6" align="center" justify="space-between">
-            <Flex align="center">
+            <Box>
               <Link href="/">
                 <HStack>
                   <Box boxSize={'100px'}>
@@ -105,12 +105,12 @@ const Navbar = () => {
                   </Box>
                 </HStack>
               </Link>
-              <Box display={{ base: 'none', md: 'flex' }}>
-                <Search />
-              </Box>
-            </Flex>
+            </Box>
+            <Box display={{ base: 'none', md: 'flex' }}>
+              <Search />
+            </Box>
 
-            <Flex justify="flex-end" w="full" maxW="824px" align="center">
+            <Box>
               <IconButton
                 size="md"
                 fontSize="lg"
@@ -119,7 +119,7 @@ const Navbar = () => {
                 ml={{ base: '0', md: '3' }}
                 onClick={toggleMode}
                 icon={<SwitchIcon />}
-              />
+                />
               {/* {LoginButton} */}
               <IconButton
                 display={{ base: 'flex', md: 'none' }}
@@ -128,8 +128,8 @@ const Navbar = () => {
                 variant="outline"
                 icon={<AiOutlineMenu />}
                 onClick={mobileNav.onOpen}
-              />
-            </Flex>
+                />
+              </Box>
           </Flex>
           {MobileNavContent}
         </chakra.div>
