@@ -10,11 +10,11 @@ export interface MainProps {
 const Main = ({ testId }: MainProps) => {
   return (
     <>
-      <Highlights />
+      {/* <Highlights /> */}
       <Spacer />
       <ArtistList />
       <Spacer />
-      <Newsletter />
+      {/* <Newsletter /> */}
     </>
   )
 }

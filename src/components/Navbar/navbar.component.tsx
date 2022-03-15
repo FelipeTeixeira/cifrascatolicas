@@ -95,12 +95,14 @@ const Navbar = () => {
         overflowY="hidden"
         bg={color}
       >
-        <chakra.div h="4.5rem" mx="auto" maxW="6xl">
+        <chakra.div h="8rem" mx="auto" maxW="6xl">
           <Flex w="full" h="full" px="6" align="center" justify="space-between">
             <Flex align="center">
               <Link href="/">
                 <HStack>
-                  <Logo />
+                  <Box boxSize={'100px'}>
+                    <Logo />
+                  </Box>
                 </HStack>
               </Link>
               <Box display={{ base: 'none', md: 'flex' }}>
