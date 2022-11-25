@@ -15,7 +15,8 @@ export interface Artist {
 export interface Music {
   slug: string
   nome: string
-  cifra: string
+  cifra?: string
   info?: string
   video?: string
+  artista?: ArtistListItem
 }

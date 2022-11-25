@@ -45,12 +45,12 @@ const LinkItems: Array<LinkItemProps> = [
   { name: 'Settings', icon: FiSettings }
 ]
 
-export const CifraDetails = ({ artist, selectedSlug }: CifraDetailsProps) => {
-  const music = artist.musicas?.find((music) => music.slug === selectedSlug)
+export const CifraDetails = ({ music }: CifraDetailsProps) => {
+  let artist = music.artista;
   return (
     <Flex w="full" direction={['column', 'row']}>
       <Sidebar artist={artist} />
-      <MainContent artist={artist} selectedSlug={selectedSlug} music={music} />
+      <MainContent artist={artist} selectedSlug={music.slug} music={music} />
     </Flex>
   )
 }

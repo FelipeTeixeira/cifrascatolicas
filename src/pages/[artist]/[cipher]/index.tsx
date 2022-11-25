@@ -1,6 +1,6 @@
 import { CifraDetails } from '@components/CifraDetails'
 import { Layout } from '@components/Layout'
-import { Artist, ArtistListItem } from '@types/Artist'
+import {Artist, ArtistListItem, Music} from '@types/Artist'
 import axios from 'axios'
 import { deburr } from 'lodash'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -17,13 +17,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const artistSlug = context?.params?.artist
   const selectedCipherSlug = context?.params?.cipher
   const ENDPOINT = deburr(
-    `https://api.musicasparamissa.com.br/cifrascatolicas/artistas/${artistSlug}`
+    `https://api.musicasparamissa.com.br/cifrascatolicas/artistas/${artistSlug}/${selectedCipherSlug}`
   )
+  let music
   let artist
 
   try {
-    const artistResponse = await axios.get<Artist>(ENDPOINT)
-    artist = artistResponse.data
+    const musicResponse = await axios.get<Music>(ENDPOINT)
+    music = musicResponse.data
+    artist = music.artista
   } catch (e) {
     wait(500)
 
@@ -37,6 +39,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       artist,
       artistSlug,
+      music,
       selectedCipherSlug
     }
     // revalidate: REVALIDATE_TIME
@@ -78,12 +81,11 @@ export const getStaticPaths: GetStaticPaths<{
 }
 
 function CifraPage({
-  artist,
-  selectedCipherSlug
+  music
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      <CifraDetails artist={artist} selectedSlug={selectedCipherSlug} />
+      <CifraDetails music={music} />
     </Layout>
   )
 }

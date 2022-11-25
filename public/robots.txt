@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /[artist]
 
 # Host
 Host: https://cifrascatolicas.com.br/
