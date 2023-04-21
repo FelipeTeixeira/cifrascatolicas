@@ -18,7 +18,7 @@ export default function Home() {
 
             <Header />
 
-            <main>
+            <main className={styles.main}>
                 <section>
                     <h1 className={styles.title}>
                         Todas as músicas católicas reunidas para você tocar!

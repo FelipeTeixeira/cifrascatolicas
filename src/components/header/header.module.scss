@@ -1,7 +1,7 @@
 .header {
     background: rgba(5, 5, 5, 0.4);
     padding: var(--space-2) var(--space-3);
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     z-index: 2;
@@ -9,4 +9,40 @@
 
 .logo {
     width: 104px;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fafafa;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 3;
+
+    a {
+        font-size: 12px;
+        color: #a1a1aa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        flex: 1;
+
+        // TODO - is active
+        &:hover {
+            color: #B69548;
+        }
+    }
+}
+
+.searchButton {
+    background-color: #b69548;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: -16px;
 }
