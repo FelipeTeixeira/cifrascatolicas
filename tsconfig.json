@@ -25,6 +25,12 @@
             ],
             "@public/*": [
                 "./public/*"
+            ],
+            "@components/*": [
+                "./src/components/*"
+            ],
+            "@sections/*": [
+                "./src/components/sections/*"
             ]
         }
     },
