@@ -1,0 +1,35 @@
+:root {
+    --font-bebas: 'Bebas Neue', cursive;
+    --font-nunito: 'Nunito Sans', sans-serif;
+    --space-1: 16px;
+    --space-2: 32px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #18181B;
+    font-family: var(--font-nunito);
+    background-color: #fff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

@@ -1,0 +1,10 @@
+.header {
+    background: rgba(5, 5, 5, 0.4);
+    padding: var(--space-1) var(--space-2);
+    position: fixed;
+    z-index: 2;
+}
+
+.logo {
+    width: 104px;
+}
