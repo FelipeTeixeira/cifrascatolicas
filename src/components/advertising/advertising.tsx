@@ -3,9 +3,11 @@ import styles from './advertising.module.scss'
 import { Tag } from '../tag/tag'
 import Anuncio from '@public/teste/anuncio.png'
 
-export function Advertising() {
+export function Advertising(props: {
+    hasPadding: boolean;
+}) {
     return (
-        <section className={styles.advertising}>
+        <section className={`${props.hasPadding ? styles.advertising : ''}`}>
             <Tag>
                 Publicidade
             </Tag>
@@ -13,3 +15,7 @@ export function Advertising() {
         </section>
     )
 }
+
+Advertising.defaultProps = {
+    hasPadding: true,
+};
