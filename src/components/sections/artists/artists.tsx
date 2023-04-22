@@ -6,7 +6,7 @@ import { SectionTitle } from '@/components/section-title/section-title'
 import { ScrollContainer } from '@/components/scroll-container/scroll-container'
 import { ArtistCard } from '@/components/artist-card/artist-card'
 
-export function Artists() {
+export function ArtistsSection() {
     return (
         <section className={styles.repertoire}>
             <SectionTitle style={styles.title}>

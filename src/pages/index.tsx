@@ -3,12 +3,12 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
 import Banner from '@public/banner.jpg'
 import { Header } from '@components/header/header'
-import { MostAccessed } from '@sections/home/most-accessed/most-accessed'
-import { Highlights } from '@sections/home/highlights/highlights'
-import { Repertoire } from '@sections/home/repertoire/repertoire'
-import { Artists } from '@/components/sections/home/artists/artists'
-import { BannerMusicasParaMissa } from '@/components/sections/home/banner-musicas-para-missa/banner-musicas-para-missa'
-import { Advertising } from '@/components/advertising/advertising'
+import { MostAccessedSection } from '@sections/most-accessed/most-accessed'
+import { HighlightsSection } from '@sections/highlights/highlights'
+import { RepertoireSection } from '@sections/repertoire/repertoire'
+import { ArtistsSection } from '@/components/sections/artists/artists'
+import { BannerMusicasParaMissaSection } from '@sections/banner-musicas-para-missa/banner-musicas-para-missa'
+import { AdvertisingSection } from '@/components/sections/advertising/advertising'
 
 export default function Home() {
     return (
@@ -29,12 +29,12 @@ export default function Home() {
                     <Image src={Banner} alt='' priority />
                 </section>
 
-                <Highlights />
-                <MostAccessed />
-                <Repertoire />
-                <Artists />
-                <BannerMusicasParaMissa />
-                <Advertising />
+                <HighlightsSection />
+                <MostAccessedSection />
+                <RepertoireSection />
+                <ArtistsSection />
+                <BannerMusicasParaMissaSection />
+                <AdvertisingSection />
             </main>
         </>
     )

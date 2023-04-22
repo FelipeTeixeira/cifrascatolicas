@@ -4,7 +4,7 @@ import Artista from '@public/teste/artista.png'
 import { TagLink } from '@/components/tag-link/tag-link'
 import { SectionTitle } from '@/components/section-title/section-title'
 
-export function MostAccessed() {
+export function MostAccessedSection() {
     return (
         <section className={styles.mostAccessed}>
             <SectionTitle>

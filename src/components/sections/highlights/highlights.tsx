@@ -1,10 +1,10 @@
 import { Card } from '@/components/card/card'
 import styles from './highlights.module.scss'
 import CifraSimplificada from '@public/teste/cifra-simplificada.png'
-import { Advertising } from '@/components/advertising/advertising'
+import { AdvertisingSection } from '@/components/sections/advertising/advertising'
 import { ScrollContainer } from '@/components/scroll-container/scroll-container'
 
-export function Highlights() {
+export function HighlightsSection() {
     return (
         <section className={styles.highlights}>
             <ScrollContainer style={styles.scrollContainer} hasPadding={true}>
@@ -13,7 +13,7 @@ export function Highlights() {
                 <Card image={CifraSimplificada} />
             </ScrollContainer>
 
-            <Advertising />
+            <AdvertisingSection />
         </section>
     )
 }

@@ -2,7 +2,7 @@ import styles from './banner-musicas-para-missa.module.scss'
 import Banner from '@public/banner-musicas-para-missa.png'
 import Image from 'next/image'
 
-export function BannerMusicasParaMissa() {
+export function BannerMusicasParaMissaSection() {
     return (
         <section className={styles.sectionBanner}>
             <div className={styles.container}>

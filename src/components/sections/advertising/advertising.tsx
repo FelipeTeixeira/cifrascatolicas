@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import styles from './advertising.module.scss'
-import { Tag } from '../tag/tag'
+import { Tag } from '../../tag/tag'
 import Anuncio from '@public/teste/anuncio.png'
 
-export function Advertising(props: {
+export function AdvertisingSection(props: {
     hasPadding: boolean;
 }) {
     return (
@@ -16,6 +16,6 @@ export function Advertising(props: {
     )
 }
 
-Advertising.defaultProps = {
+AdvertisingSection.defaultProps = {
     hasPadding: true,
 };

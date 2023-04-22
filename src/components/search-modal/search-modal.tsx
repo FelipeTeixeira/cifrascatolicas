@@ -6,7 +6,7 @@ import { SearchWithBackgroundIcon } from '../icons/search-with-background-icon'
 import { Thumbnail } from '../thumbnail/thumbnail'
 import Artista from '@public/teste/artista.png'
 import { TagLink } from '../tag-link/tag-link'
-import { Advertising } from '../advertising/advertising'
+import { AdvertisingSection } from '../sections/advertising/advertising'
 import { MouseEventHandler } from 'react'
 
 export function SearchModal(props: {
@@ -53,7 +53,7 @@ export function SearchModal(props: {
                 Acessar todos
             </TagLink>
 
-            <Advertising hasPadding={false} />
+            <AdvertisingSection hasPadding={false} />
 
             <span className={styles.iconSearch}>
                 <SearchWithBackgroundIcon />

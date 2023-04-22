@@ -2,8 +2,8 @@ import Head from 'next/head'
 import styles from '@/styles/repertorio.module.scss'
 import { Header } from '@components/header/header'
 import { Button } from '@/components/button/button'
-import { Repertoire } from '@/components/sections/home/repertoire/repertoire'
-import { Advertising } from '@/components/advertising/advertising'
+import { RepertoireSection } from '@sections/repertoire/repertoire'
+import { AdvertisingSection } from '@/components/sections/advertising/advertising'
 import { AddIcon } from '@/components/icons/add-icon'
 
 export default function Repertorio() {
@@ -28,8 +28,8 @@ export default function Repertorio() {
                     </Button>
                 </section>
 
-                <Repertoire />
-                <Advertising />
+                <RepertoireSection />
+                <AdvertisingSection />
 
             </main>
         </>
