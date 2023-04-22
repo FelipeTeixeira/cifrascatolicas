@@ -5,11 +5,11 @@ import Anuncio from '@public/teste/anuncio.png'
 
 export function Advertising() {
     return (
-        <div className={styles.advertising}>
+        <section className={styles.advertising}>
             <Tag>
                 Publicidade
             </Tag>
             <Image src={Anuncio} alt='' className={styles.image} />
-        </div>
+        </section>
     )
 }

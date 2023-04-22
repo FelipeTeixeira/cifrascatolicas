@@ -7,6 +7,8 @@ import { MostAccessed } from '@sections/home/most-accessed/most-accessed'
 import { Highlights } from '@sections/home/highlights/highlights'
 import { Repertoire } from '@sections/home/repertoire/repertoire'
 import { Artists } from '@/components/sections/home/artists/artists'
+import { BannerMusicasParaMissa } from '@/components/sections/home/banner-musicas-para-missa/banner-musicas-para-missa'
+import { Advertising } from '@/components/advertising/advertising'
 
 export default function Home() {
     return (
@@ -31,6 +33,8 @@ export default function Home() {
                 <MostAccessed />
                 <Repertoire />
                 <Artists />
+                <BannerMusicasParaMissa />
+                <Advertising />
             </main>
         </>
     )

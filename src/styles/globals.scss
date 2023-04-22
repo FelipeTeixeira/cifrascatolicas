@@ -1,6 +1,6 @@
 :root {
-    --font-bebas: 'Bebas Neue', cursive;
-    --font-nunito: 'Nunito Sans', sans-serif;
+    --font-bebas: "Bebas Neue", cursive;
+    --font-nunito: "Nunito Sans", sans-serif;
     --primary: #b69548;
     --space-1: 8px;
     --space-2: 16px;
@@ -14,7 +14,7 @@
 }
 
 body {
-    color: #18181B;
+    color: #18181b;
     font-family: var(--font-nunito);
     background-color: #fff;
 }
@@ -42,4 +42,9 @@ li {
 
 section {
     position: relative;
+}
+
+button {
+    background: none;
+    border: none;
 }

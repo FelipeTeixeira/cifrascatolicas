@@ -1,0 +1,24 @@
+.sectionBanner {
+    padding: var(--space-3);
+}
+
+.container {
+    color: #fff;
+    position: absolute;
+    padding: var(--space-2);
+}
+
+.banner {
+    border-bottom: 3px solid #b69548;
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.description {
+    font-size: 12px;
+    max-width: 192px;
+    margin-top: var(--space-1);
+}
