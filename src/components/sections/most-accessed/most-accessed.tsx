@@ -1,8 +1,8 @@
-import { Thumbnail } from '@/components/thumbnail/thumbnail'
+import { Thumbnail } from '@components/thumbnail/thumbnail'
 import styles from './most-accessed.module.scss'
 import Artista from '@public/teste/artista.png'
-import { TagLink } from '@/components/tag-link/tag-link'
-import { SectionTitle } from '@/components/section-title/section-title'
+import { TagLink } from '@components/tag-link/tag-link'
+import { SectionTitle } from '@components/section-title/section-title'
 
 export function MostAccessedSection() {
     return (

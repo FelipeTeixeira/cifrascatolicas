@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './header.module.scss'
 import Logo from '@public/cifras-catolicas-logo.png'
-import { Menu } from '../menu/menu'
+import { Menu } from '@components/menu/menu'
 
 export function Header(props: {
     hasBackground: boolean;

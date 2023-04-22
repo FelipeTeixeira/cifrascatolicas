@@ -1,12 +1,12 @@
 import styles from './search-modal.module.scss'
 import Logo from '@public/cifras-catolicas-logo.png'
 import Image from 'next/image'
-import { SearchIcon } from '../icons/search-icon'
-import { SearchWithBackgroundIcon } from '../icons/search-with-background-icon'
-import { Thumbnail } from '../thumbnail/thumbnail'
+import { SearchIcon } from '@components/icons/search-icon'
+import { SearchWithBackgroundIcon } from '@components/icons/search-with-background-icon'
+import { Thumbnail } from '@components/thumbnail/thumbnail'
 import Artista from '@public/teste/artista.png'
-import { TagLink } from '../tag-link/tag-link'
-import { AdvertisingSection } from '../sections/advertising/advertising'
+import { TagLink } from '@components/tag-link/tag-link'
+import { AdvertisingSection } from '@components/sections/advertising/advertising'
 import { MouseEventHandler } from 'react'
 
 export function SearchModal(props: {

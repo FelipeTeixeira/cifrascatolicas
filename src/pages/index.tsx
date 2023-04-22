@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@/styles/Home.module.scss'
+import styles from '@styles/Home.module.scss'
 import Banner from '@public/banner.jpg'
 import { Header } from '@components/header/header'
 import { MostAccessedSection } from '@sections/most-accessed/most-accessed'
 import { HighlightsSection } from '@sections/highlights/highlights'
 import { RepertoireSection } from '@sections/repertoire/repertoire'
-import { ArtistsSection } from '@/components/sections/artists/artists'
+import { ArtistsSection } from '@components/sections/artists/artists'
 import { BannerMusicasParaMissaSection } from '@sections/banner-musicas-para-missa/banner-musicas-para-missa'
-import { AdvertisingSection } from '@/components/sections/advertising/advertising'
+import { AdvertisingSection } from '@components/sections/advertising/advertising'
 
 export default function Home() {
     return (

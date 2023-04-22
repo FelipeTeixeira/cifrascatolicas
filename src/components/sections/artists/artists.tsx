@@ -1,10 +1,10 @@
 import styles from './artists.module.scss'
 import Artista from '@public/teste/artista.png'
 import Artista2 from '@public/teste/artista-2.png'
-import { TagLink } from '@/components/tag-link/tag-link'
-import { SectionTitle } from '@/components/section-title/section-title'
-import { ScrollContainer } from '@/components/scroll-container/scroll-container'
-import { ArtistCard } from '@/components/artist-card/artist-card'
+import { TagLink } from '@components/tag-link/tag-link'
+import { SectionTitle } from '@components/section-title/section-title'
+import { ScrollContainer } from '@components/scroll-container/scroll-container'
+import { ArtistCard } from '@components/artist-card/artist-card'
 
 export function ArtistsSection() {
     return (

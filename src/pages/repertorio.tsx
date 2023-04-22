@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import styles from '@/styles/repertorio.module.scss'
+import styles from '@styles/repertorio.module.scss'
 import { Header } from '@components/header/header'
-import { Button } from '@/components/button/button'
+import { Button } from '@components/button/button'
 import { RepertoireSection } from '@sections/repertoire/repertoire'
-import { AdvertisingSection } from '@/components/sections/advertising/advertising'
-import { AddIcon } from '@/components/icons/add-icon'
+import { AdvertisingSection } from '@components/sections/advertising/advertising'
+import { AddIcon } from '@components/icons/add-icon'
 
 export default function Repertorio() {
     return (

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './advertising.module.scss'
-import { Tag } from '../../tag/tag'
+import { Tag } from '@components/tag/tag'
 import Anuncio from '@public/teste/anuncio.png'
 
 export function AdvertisingSection(props: {
