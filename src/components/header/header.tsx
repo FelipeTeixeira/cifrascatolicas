@@ -8,7 +8,6 @@ export function Header() {
         <>
             <header className={styles.header}>
                 <Image src={Logo} alt='Logo do Cifras Católicas' priority className={styles.logo} />
-
                 <Menu />
             </header>
         </>
