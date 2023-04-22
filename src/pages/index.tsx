@@ -18,7 +18,7 @@ export default function Home() {
                 <meta name="description" content="Todas as músicas católicas reunidas para você tocar!" />
             </Head>
 
-            <Header />
+            <Header hasBackground={false} />
 
             <main className={styles.main}>
                 <section>
