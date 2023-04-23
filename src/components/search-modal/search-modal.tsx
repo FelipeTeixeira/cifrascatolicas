@@ -1,13 +1,14 @@
 import styles from './search-modal.module.scss'
 import Logo from '@public/cifras-catolicas-logo.png'
 import Image from 'next/image'
-import { SearchIcon } from '@components/icons/search-icon'
 import { SearchWithBackgroundIcon } from '@components/icons/search-with-background-icon'
 import { Thumbnail } from '@components/thumbnail/thumbnail'
 import Artista from '@public/teste/artista.png'
 import { TagLink } from '@components/tag-link/tag-link'
 import { AdvertisingSection } from '@components/sections/advertising/advertising'
 import { MouseEventHandler } from 'react'
+import { CloseIcon } from '@components/icons/close-icon'
+import { SearchInput } from '@components/search-input/search-input'
 
 export function SearchModal(props: {
     isVisible: boolean;
@@ -15,18 +16,14 @@ export function SearchModal(props: {
 }) {
     return (
         <div className={`${styles.searchModal} ${props.isVisible ? styles.isActive : ''}`}>
-            <Image src={Logo} alt='Logo do Cifras Católicas' priority className={styles.logo} />
 
             <button type='button' className={styles.closeButton} onClick={props.onClose}>
-                X
+                <CloseIcon />
             </button>
 
-            <div className={styles.formGroup}>
-                <span className={styles.formGroup__icon}>
-                    <SearchIcon width={20} height={20} />
-                </span>
-                <input type="search" placeholder='Buscar música ou artista' autoComplete='off' />
-            </div>
+            <Image src={Logo} alt='Logo do Cifras Católicas' priority className={styles.logo} />
+
+            <SearchInput placeholder='Buscar música ou artista' />
 
             <ul className={styles.list}>
                 <li>

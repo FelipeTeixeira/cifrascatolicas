@@ -31,6 +31,9 @@
             ],
             "@sections/*": [
                 "./src/components/sections/*"
+            ],
+            "@interfaces/*": [
+                "./src/core/interfaces/*"
             ]
         }
     },

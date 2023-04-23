@@ -1,0 +1,20 @@
+.musicSelect {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2);
+    border-bottom: 1px solid #f4f4f5;
+}
+
+.text {
+    font-size: 12px;
+    color: #52525b;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+}
+
+.title {
+    font-size: 14px;
+    color: #27272a;
+}

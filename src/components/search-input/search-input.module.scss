@@ -1,0 +1,24 @@
+.formGroup {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input {
+        padding-left: var(--space-5);
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+        border-color: transparent;
+
+        &:focus {
+            border-color: #b69548;
+        }
+    }
+}
+
+.icon {
+    position: absolute;
+    left: var(--space-2);
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+}

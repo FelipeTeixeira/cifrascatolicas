@@ -1,0 +1,51 @@
+.title {
+    font-size: 18px;
+    color: #3f3f46;
+}
+
+.description {
+    font-size: 14px;
+    color: #71717a;
+    margin: var(--space-1) 0 var(--space-2);
+}
+
+.stepperContainer {
+    display: flex;
+    overflow: hidden;
+}
+
+.stepperItem {
+    display: flex;
+    flex-direction: column;
+    min-height: 246px;
+    transition: opacity 1.2s ease;
+    opacity: 1;
+    transform: translate(0);
+
+    &.second {
+        min-height: 74vh;
+    }
+
+    &.hide {
+        opacity: 0;
+        width: 0;
+        min-height: 0;
+        height: 0;
+        pointer-events: none;
+        overflow: hidden;
+        transform: translate(9999px);
+    }
+
+    > button {
+        margin-top: auto;
+    }
+}
+
+.containerMusic {
+    margin: var(--space-2) 0;
+}
+
+.totalMusic {
+    font-size: 12px;
+    color: #b69548;
+}
