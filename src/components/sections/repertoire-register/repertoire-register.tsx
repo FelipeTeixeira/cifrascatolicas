@@ -6,6 +6,7 @@ import { MusicSelect } from '@components/music-select/music-select';
 import { Song } from '@interfaces/song.interface';
 
 export function RepertoireRegisterSection(props: {
+    onCreateRepertoire: Function;
     onSelectMusic: Function;
     songs: Song[];
 }) {
@@ -55,7 +56,7 @@ export function RepertoireRegisterSection(props: {
                     {props.songs.length} músicas escolhidas
                 </strong>
 
-                <Button onClick={() => alert('teste')}>
+                <Button onClick={() => props.onCreateRepertoire()}>
                     Criar repertório
                 </Button>
             </li>
