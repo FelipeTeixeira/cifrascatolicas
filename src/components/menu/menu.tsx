@@ -16,7 +16,7 @@ export function Menu() {
             <nav className={styles.nav}>
                 <Link href="/" className={`${styles.link} ${router.pathname === '/' ? styles.isActive : ''}`}>
                     <HomeIcon />
-                    Inicio
+                    Início
                 </Link>
 
                 <button type='button' className={styles.searchButton} onClick={() => setVisible(true)}>
