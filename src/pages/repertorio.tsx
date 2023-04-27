@@ -30,7 +30,7 @@ export default function Repertorio() {
         },
         {
             music: '3- Fogo abrasador',
-            artist: '3- Comunidade Católica Colo de Deus',
+            artist: 'Comunidade Católica Colo de Deus',
             image: Artista,
         }
     ];
@@ -56,7 +56,8 @@ export default function Repertorio() {
                     </Button>
                 </section>
 
-                <RepertoireListSection songs={MOCK} />
+                <RepertoireListSection name='Missa de domingo' songs={MOCK} />
+                <RepertoireListSection name='Missa de sábado' songs={MOCK} />
                 <RepertoireSection />
                 <AdvertisingSection />
 
