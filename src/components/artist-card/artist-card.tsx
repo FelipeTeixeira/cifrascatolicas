@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image'
 import styles from './artist-card.module.scss'
 
+// TODO - mudar nome pra ficar correto
 export function ArtistCard(props: {
     image: StaticImageData;
     legend: string;
