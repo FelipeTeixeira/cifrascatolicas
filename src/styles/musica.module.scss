@@ -1,0 +1,22 @@
+.hideMobile {
+    display: none;
+
+    @media (min-width: 800px) {
+        display: block;
+    }
+}
+
+.section {
+    padding: 0 var(--space-3);
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--space-0) 0;
+    padding: 0 var(--space-3);
+
+    &__counterButton {
+        margin-bottom: 0;
+    }
+}

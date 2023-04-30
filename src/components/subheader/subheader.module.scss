@@ -1,0 +1,32 @@
+.subheader {
+    display: flex;
+    align-items: center;
+
+    background-color: #fff;
+    padding: var(--space-2) var(--space-3);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--height-header);
+    z-index: 2;
+
+    strong {
+        font-size: 12px;
+        font-weight: 600;
+        margin: 0 auto;
+    }
+}
+
+.iconBack,
+.search {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    background-color: #fafafa;
+}

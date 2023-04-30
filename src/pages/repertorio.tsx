@@ -44,7 +44,7 @@ export default function Repertorio() {
 
             <Header />
 
-            <main className={styles.main}>
+            <main>
                 <section className={styles.section}>
                     <h1 className={styles.title}>
                         Crie seu repertório e salve as músicas para tocar no offline

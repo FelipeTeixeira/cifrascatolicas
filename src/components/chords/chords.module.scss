@@ -1,0 +1,36 @@
+.chord {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+
+    strong {
+        font-size: 10px;
+        font-weight: 600;
+        color: #b69548;
+    }
+}
+
+.chordNote {
+    font-size: 6px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3f3f46;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 30px;
+    left: -4px;
+
+    + .chordNote {
+        left: auto;
+        right: -4px;
+        top: 50px;
+    }
+}

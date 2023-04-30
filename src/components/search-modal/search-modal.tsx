@@ -21,7 +21,7 @@ export function SearchModal(props: {
                 <CloseIcon />
             </button>
 
-            <Image src={Logo} alt='Logo do Cifras Católicas' priority className={styles.logo} />
+            <Image src={Logo} alt='Logo do Cifras Católicas' className={styles.logo} />
 
             <SearchInput placeholder='Buscar música ou artista' />
 

@@ -1,0 +1,43 @@
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f5f3f0;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-2);
+    gap: var(--space-1);
+}
+
+.video {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+    iframe {
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.soung {
+    font-size: 14px;
+    line-height: 36px;
+    font-weight: normal;
+    margin-right: auto;
+
+    strong {
+        font-weight: bold;
+    }
+}

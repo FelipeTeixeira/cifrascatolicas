@@ -1,4 +1,5 @@
 .button {
+    font-size: 12px;
     width: 24px;
     height: 24px;
     background-color: var(--color-primary);
@@ -24,5 +25,9 @@
         svg {
             fill: #b69548;
         }
+    }
+
+    &.borderless {
+        border: none;
     }
 }

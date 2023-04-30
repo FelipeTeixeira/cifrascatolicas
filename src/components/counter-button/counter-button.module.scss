@@ -1,0 +1,22 @@
+.counterButton {
+    font-size: 14px;
+    font-weight: 600;
+    color: #52525B;
+    min-width: 108px;
+    background-color: #f5f3f0;
+    border-radius: 20px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: max-content;
+    gap: var(--space-1);
+
+    svg {
+        fill: #B69548;
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+    }
+}
