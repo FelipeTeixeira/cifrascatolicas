@@ -18,9 +18,9 @@ export function ArtistsSection() {
             </TagLink>
 
             <ScrollContainer maxWidth='140px'>
-                <ArtistCard image={Artista2} name='Padre Antônio Maria' />
-                <ArtistCard image={Artista} name='Eliana Ribeiro' />
-                <ArtistCard image={Artista2} name='Padre Antônio Maria' />
+                <ArtistCard image={Artista2} legend='Padre Antônio Maria' />
+                <ArtistCard image={Artista} legend='Eliana Ribeiro' />
+                <ArtistCard image={Artista2} legend='Padre Antônio Maria' />
             </ScrollContainer>
         </section>
     )

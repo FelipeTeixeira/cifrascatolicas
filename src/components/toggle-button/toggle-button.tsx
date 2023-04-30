@@ -3,12 +3,17 @@ import styles from './toggle-button.module.scss'
 
 export function ToggleButton(props: {
     options: string[];
+    // TODO - melhorar tipagem dos onClick
     onClick: any;
+    hasButtonSpacing: boolean;
 }) {
     const [selected, setSelected] = useState(props.options[0]);
 
     return (
-        <div className={styles.toggleButton}>
+        <div className={`
+            ${styles.toggleButton}
+            ${props.hasButtonSpacing ? styles.hasButtonSpacing : ''}
+        `}>
             {props.options.map((option, index) => (
                 <button
                     key={index}
@@ -27,3 +32,7 @@ export function ToggleButton(props: {
         </div>
     )
 }
+
+ToggleButton.defaultProps = {
+    hasButtonSpacing: false,
+};

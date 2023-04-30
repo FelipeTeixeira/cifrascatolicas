@@ -16,6 +16,8 @@ export function Toolbar() {
             <CircleButton onClick={() => alert('teste')} color='white' hasBorder={false}>
                 1x
             </CircleButton>
+
+            {/* BOTAO DE SUBIR A TELA */}
         </div>
     )
 }

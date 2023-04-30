@@ -1,0 +1,21 @@
+.section {
+    padding: var(--space-3);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 8px;
+
+    li {
+        font-size: 10px;
+        color: #71717a;
+    }
+
+    strong {
+        font-weight: 600;
+        color: #3f3f46;
+        display: block;
+        margin-top: 8px;
+    }
+}

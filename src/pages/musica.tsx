@@ -36,7 +36,7 @@ export default function Musica() {
                 <meta name="description" content="Água viva - Adriana Gil" />
             </Head>
 
-            <Header style={styles.hideMobile} />
+            <Header hideMobile={true} />
             <SubHeader />
 
             <main>

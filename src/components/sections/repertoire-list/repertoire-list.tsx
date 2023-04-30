@@ -44,7 +44,6 @@ export function RepertoireListSection(props: {
                                 </button>
                             </li>
                         ))}
-
                     </ul>
 
                     <TagLink style={styles.downloadButton}>

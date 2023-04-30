@@ -6,13 +6,15 @@ import Link from 'next/link';
 
 export function Header(props: {
     hasBackground: boolean;
+    hideMobile: boolean;
     style: string;
 }) {
     return (
         <header className={`
             ${styles.header}
             ${props.style}
-            ${props.hasBackground ? '' : styles.hasBackground}`
+            ${props.hasBackground ? '' : styles.hasBackground}
+            ${props.hideMobile ? styles.hideMobile : ''}`
         }>
             <Link href="/">
                 <Image src={Logo} alt='Logo do Cifras Católicas' priority className={styles.logo} />
@@ -24,5 +26,6 @@ export function Header(props: {
 
 Header.defaultProps = {
     hasBackground: true,
+    hideMobile: false,
     style: '',
 };
