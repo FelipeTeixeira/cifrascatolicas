@@ -1,7 +1,7 @@
 .highlights {
+    padding-top: var(--space-3);
     margin-bottom: var(--space-3);
-}
-
-.scrollContainer {
-    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
 }

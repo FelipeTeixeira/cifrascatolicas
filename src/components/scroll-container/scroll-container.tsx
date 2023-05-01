@@ -5,10 +5,9 @@ export function ScrollContainer(props: {
     children: ReactNode[];
     style?: string;
     maxWidth?: string;
-    hasPadding?: boolean;
 }) {
     return (
-        <ul className={`${styles.scrollContainer} ${props.style || ''} ${props.hasPadding ? styles.hasPadding : ''}`}>
+        <ul className={`${styles.scrollContainer} ${props.style || ''}`}>
             {props?.children.map((children, index) => (
                 <li key={index} style={{ maxWidth: props.maxWidth || '280px' }}>
                     {children}
