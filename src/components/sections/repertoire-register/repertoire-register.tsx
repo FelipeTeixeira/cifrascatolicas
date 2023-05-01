@@ -2,12 +2,12 @@ import { useState } from 'react';
 import styles from './repertoire-register.module.scss'
 import { Button } from '@components/button/button';
 import { SearchInput } from '@components/search-input/search-input';
-import { MusicSelect } from '@components/music-select/music-select';
+import { SongSelect } from '@components/song-select/song-select';
 import { Song } from '@interfaces/song.interface';
 
 export function RepertoireRegisterSection(props: {
     onCreateRepertoire: Function;
-    onSelectMusic: Function;
+    onSelectSong: Function;
     songs: Song[];
 }) {
     const [stepperVisible, setStepperVisible] = useState<'first' | 'second'>('first');
@@ -42,17 +42,17 @@ export function RepertoireRegisterSection(props: {
 
                 <SearchInput placeholder='Buscar música' />
 
-                <ul className={styles.containerMusic}>
+                <ul className={styles.containerSong}>
                     {props.songs.map((song, index) => (
                         <li key={index}>
-                            <MusicSelect
+                            <SongSelect
                                 song={song}
-                                onSelectMusic={() => props.onSelectMusic(song)} />
+                                onSelectSong={() => props.onSelectSong(song)} />
                         </li>
                     ))}
                 </ul>
 
-                <strong className={styles.totalMusic}>
+                <strong className={styles.totalSong}>
                     {props.songs.length} músicas escolhidas
                 </strong>
 

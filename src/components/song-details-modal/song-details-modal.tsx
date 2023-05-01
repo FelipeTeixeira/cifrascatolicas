@@ -1,9 +1,9 @@
 import { CloseIcon } from '@components/icons/close-icon';
-import styles from './music-details-modal.module.scss'
+import styles from './song-details-modal.module.scss'
 import { MouseEventHandler } from 'react'
 import { Song } from '@interfaces/song.interface';
 
-export function MusicDetailsModal(props: {
+export function SongDetailsModal(props: {
     song: Song;
     isVisible: boolean;
     onClose: MouseEventHandler;
@@ -18,7 +18,7 @@ export function MusicDetailsModal(props: {
                 </button>
 
                 <h2 className={styles.title}>
-                    {props.song.music}
+                    {props.song.song}
                 </h2>
 
                 <p className={styles.description}>
@@ -45,6 +45,6 @@ export function MusicDetailsModal(props: {
     )
 }
 
-MusicDetailsModal.defaultProps = {
+SongDetailsModal.defaultProps = {
     isVisible: false
 };

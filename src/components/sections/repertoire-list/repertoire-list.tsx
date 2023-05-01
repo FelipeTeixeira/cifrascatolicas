@@ -28,15 +28,15 @@ export function RepertoireListSection(props: {
                 <div className={`${styles.accordion__body} ${expand ? styles.isVisible : ''}`}>
                     <ul>
 
-                        {props.songs.map((song, index) => (
+                        {props.songs.map((item, index) => (
                             <li key={index} className={styles.songItem}>
-                                {song.image && <Image src={song.image} alt={song.artist} />}
+                                {item.image && <Image src={item.image} alt={item.artist} />}
 
                                 <p className={styles.text}>
                                     <strong>
-                                        {song.music}
+                                        {item.song}
                                     </strong>
-                                    {song.artist}
+                                    {item.artist}
                                 </p>
 
                                 <button className={styles.deleteButton} >

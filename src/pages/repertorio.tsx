@@ -8,7 +8,7 @@ import { AddIcon } from '@components/icons/add-icon'
 import { BottomSheet } from '@components/bottom-sheet/bottom-sheet'
 import { useState } from 'react'
 import { RepertoireRegisterSection } from '@sections/repertoire-register/repertoire-register'
-import { MusicDetailsModal } from '@components/music-details-modal/music-details-modal'
+import { SongDetailsModal } from '@components/song-details-modal/song-details-modal'
 import { Song } from '@interfaces/song.interface'
 import { RepertoireListSection } from '@sections/repertoire-list/repertoire-list'
 import Artista from '@public/teste/artista.png'
@@ -19,17 +19,17 @@ export default function Repertorio() {
     const [selectedSong, setSelectedSong] = useState<Song>();
     const MOCK: Song[] = [
         {
-            music: '1- Fogo abrasador',
+            song: '1- Fogo abrasador',
             artist: '1- Comunidade Católica Colo de Deus',
             image: Artista,
         },
         {
-            music: '2- Fogo abrasador',
+            song: '2- Fogo abrasador',
             artist: '2- Comunidade Católica Colo de Deus',
             image: Artista2,
         },
         {
-            music: '3- Fogo abrasador',
+            song: '3- Fogo abrasador',
             artist: 'Comunidade Católica Colo de Deus',
             image: Artista,
         }
@@ -65,13 +65,13 @@ export default function Repertorio() {
                     {visible &&
                         <RepertoireRegisterSection
                             songs={MOCK}
-                            onSelectMusic={(event: Song) => setSelectedSong(event)}
+                            onSelectSong={(event: Song) => setSelectedSong(event)}
                             onCreateRepertoire={() => setVisible(false)} />
                     }
                 </BottomSheet>
 
                 {selectedSong &&
-                    <MusicDetailsModal
+                    <SongDetailsModal
                         song={selectedSong}
                         onClose={() => setSelectedSong(undefined)}
                     />
