@@ -11,7 +11,7 @@ export function DownloadIcon(props: {
 }
 
 DownloadIcon.defaultProps = {
-    fill: '#A1A1AA',
+    fill: '#B69548',
     width: 24,
     height: 24,
 };

@@ -20,7 +20,11 @@
 .viewMore {
     position: absolute;
     top: var(--space-3);
-    right: 0;
+    right: var(--space-3);
+
+    @include mq("desktop") {
+        right: 0;
+    }
 }
 
 .scrollContainer {

@@ -4,10 +4,18 @@ import { MouseEventHandler, ReactNode } from 'react';
 export function Button(props: {
     children: ReactNode;
     onClick: MouseEventHandler;
+    style?: string;
 }) {
     return (
-        <button type='button' className={styles.button} onClick={props.onClick}>
+        <button
+            className={`${styles.button} ${props.style}`}
+            type='button'
+            onClick={props.onClick}>
             {props.children}
         </button>
     )
 }
+
+Button.defaultProps = {
+    style: '',
+};

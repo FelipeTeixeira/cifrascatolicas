@@ -22,7 +22,7 @@ export function RepertoireListSection(props: {
                     className={`${styles.accordion__header} ${expand ? styles.isActive : ''}`}
                     type='button'>
                     {props.name}
-                    <ArrowExpandIcon width={16} height={16} />
+                    <ArrowExpandIcon />
                 </button>
 
                 <div className={`${styles.accordion__body} ${expand ? styles.isVisible : ''}`}>

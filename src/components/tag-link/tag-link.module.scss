@@ -15,8 +15,13 @@
     gap: 2px;
 
     @include mq("desktop") {
-        font-size: 20px;
-        line-height: 36px;
+        font-size: 16px;
+        line-height: 28px;
         padding: 0 var(--space-0);
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
     }
 }

@@ -13,6 +13,7 @@ import { Song } from '@interfaces/song.interface'
 import { RepertoireListSection } from '@sections/repertoire-list/repertoire-list'
 import Artista from '@public/teste/artista.png'
 import Artista2 from '@public/teste/artista-2.png'
+import { Container } from '@components/container/container'
 
 export default function Repertorio() {
     const [visible, setVisible] = useState(false);
@@ -46,19 +47,23 @@ export default function Repertorio() {
 
             <main>
                 <section className={styles.section}>
-                    <h1 className={styles.title}>
-                        Crie seu repertório e salve as músicas para tocar no offline
-                    </h1>
+                    <Container>
+                        <h1 className={styles.title}>
+                            Crie seu repertório e salve as músicas para tocar no offline
+                        </h1>
 
-                    <Button onClick={() => setVisible(true)}>
-                        <AddIcon fill='#fff' width={30} height={30} />
-                        Criar repertório
-                    </Button>
+                        <Button onClick={() => setVisible(true)} style={styles.button}>
+                            <AddIcon fill='#fff' />
+                            Criar repertório
+                        </Button>
+                    </Container>
                 </section>
 
                 <RepertoireListSection name='Missa de domingo' songs={MOCK} />
                 <RepertoireListSection name='Missa de sábado' songs={MOCK} />
+
                 <RepertoireSection />
+
                 <AdvertisingSection />
 
                 <BottomSheet isVisible={visible} onClose={() => setVisible(false)} >

@@ -1,3 +1,5 @@
+@import "@styles/variables";
+
 .section {
     padding: 0 var(--space-3) var(--space-2);
 }
@@ -8,6 +10,14 @@
     overflow: hidden;
     padding: 0 var(--space-2);
 
+    max-width: var(--width-container);
+    width: 100%;
+    margin: 0 auto;
+
+    @include mq("desktop") {
+        padding: 0 var(--space-4);
+    }
+
     &__header {
         font-size: 12px;
         line-height: 48px;
@@ -16,6 +26,22 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        cursor: pointer;
+
+        svg {
+            width: 16px;
+            height: 16px;
+
+            @include mq("desktop") {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        @include mq("desktop") {
+            font-size: 20px;
+            line-height: 60px;
+        }
 
         &.isActive {
             svg {
@@ -40,12 +66,21 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 8px 0;
+    padding: var(--space-1) 0;
+
+    @include mq("desktop") {
+        padding: var(--space-2) 0;
+    }
 
     img {
         width: 32px;
         height: 32px;
         border-radius: 50%;
+
+        @include mq("desktop") {
+            width: 40px;
+            height: 40px;
+        }
     }
 }
 
@@ -57,8 +92,16 @@
     margin-right: auto;
     max-width: 70%;
 
+    @include mq("desktop") {
+        font-size: 14px;
+    }
+
     strong {
         font-size: 14px;
+
+        @include mq("desktop") {
+            font-size: 16px;
+        }
     }
 }
 
@@ -69,12 +112,21 @@
 
     svg {
         fill: #b80505;
+
+        @include mq("desktop") {
+            width: 26px;
+            height: 26px;
+        }
     }
 }
 
 .downloadButton {
     margin: var(--space-1) 0 var(--space-2);
     min-width: 70px;
+
+    @include mq("desktop") {
+        min-width: 140px;
+    }
 }
 
 @keyframes slideaway {
