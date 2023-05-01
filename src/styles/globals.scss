@@ -1,15 +1,22 @@
+@import "@styles/variables";
+
 :root {
     --font-bebas: "Bebas Neue", cursive;
     --font-nunito: "Nunito Sans", sans-serif;
     --color-primary: #b69548;
     --height-header: 62px;
     --height-menu: 60px;
+    --width-container: 1160px;
     --space-1: 8px;
     --space-0: 24px;
     --space-2: 16px;
     --space-3: 32px;
     --space-4: 40px;
     --space-5: 48px;
+
+    @include mq("desktop") {
+        --height-header: 80px;
+    }
 }
 
 * {
@@ -94,4 +101,18 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.showMobile {
+    @include mq("desktop") {
+        display: none;
+    }
+}
+
+.showDesktop {
+    display: none;
+
+    @include mq("desktop") {
+        display: block;
+    }
 }

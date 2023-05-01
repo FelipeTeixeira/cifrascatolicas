@@ -1,4 +1,4 @@
-import styles from './menu.module.scss'
+import styles from './menu-mobile.module.scss'
 import { HomeIcon } from '@components/icons/home-icon'
 import { RepertoireIcon } from '@components/icons/repertoire-icon'
 import { SearchIcon } from '@components/icons/search-icon'
@@ -7,7 +7,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export function Menu() {
+export function MenuMobile() {
     const [visible, setVisible] = useState(false);
     const router = useRouter();
 

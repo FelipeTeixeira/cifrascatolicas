@@ -7,7 +7,13 @@ import { ScrollContainer } from '@components/scroll-container/scroll-container'
 export function HighlightsSection() {
     return (
         <section className={styles.highlights}>
-            <ScrollContainer>
+            <ScrollContainer style={styles.scrollContainer}>
+                <Card image={CifraSimplificada} />
+                <Card image={CifraSimplificada} />
+                <Card image={CifraSimplificada} />
+                <Card image={CifraSimplificada} />
+                <Card image={CifraSimplificada} />
+                <Card image={CifraSimplificada} />
                 <Card image={CifraSimplificada} />
                 <Card image={CifraSimplificada} />
                 <Card image={CifraSimplificada} />

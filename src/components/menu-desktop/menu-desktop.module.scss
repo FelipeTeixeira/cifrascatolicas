@@ -1,0 +1,42 @@
+@import "@styles/variables";
+
+@include mq("desktop") {
+    .logo {
+        width: 104px;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .link {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: var(--height-header);
+
+        color: #fff;
+        white-space: nowrap;
+        padding: 0 var(--space-3);
+
+        &:first-child {
+            margin-left: auto;
+        }
+
+        &:hover {
+            color: #b69548;
+        }
+    }
+
+    .input {
+        width: 326px;
+        margin-left: auto;
+    }
+}
+
+.nav {
+    @include mq("desktop", max) {
+        display: none;
+    }
+}

@@ -1,3 +1,5 @@
+@import "@styles/variables";
+
 .title {
     font-family: var(--font-bebas);
     font-weight: normal;
@@ -5,11 +7,31 @@
     line-height: 34px;
     color: #f5f3f0;
     max-width: 182px;
-    position: absolute;
-    left: var(--space-3);
-    bottom: var(--space-3);
+
+    @include mq("desktop") {
+        font-size: 50px;
+        line-height: 60px;
+        max-width: 530px;
+    }
 }
 
 .main {
     padding-top: 0;
+
+    .container {
+        position: absolute;
+        left: var(--space-3);
+        bottom: var(--space-3);
+        width: auto;
+
+        @include mq("desktop") {
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+.banner {
+    width: 100%;
+    max-height: 466px;
 }

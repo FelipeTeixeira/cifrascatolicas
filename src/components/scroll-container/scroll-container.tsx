@@ -4,12 +4,11 @@ import { ReactNode } from 'react';
 export function ScrollContainer(props: {
     children: ReactNode[];
     style?: string;
-    maxWidth?: string;
 }) {
     return (
         <ul className={`${styles.scrollContainer} ${props.style || ''}`}>
             {props?.children.map((children, index) => (
-                <li key={index} style={{ maxWidth: props.maxWidth || '280px' }}>
+                <li key={index}>
                     {children}
                 </li>
             ))}

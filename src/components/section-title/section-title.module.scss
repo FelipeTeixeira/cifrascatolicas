@@ -1,4 +1,11 @@
+@import "@styles/variables";
+
 .title {
     font-size: 18px;
     margin-bottom: var(--space-2);
+
+    @include mq("desktop") {
+        font-size: 32px;
+        margin-bottom: var(--space-0);
+    }
 }

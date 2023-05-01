@@ -1,0 +1,30 @@
+@import "@styles/variables";
+
+.footer {
+    display: none;
+}
+
+@include mq("desktop") {
+    .footer {
+        display: block;
+        background-color: #fafafa;
+        border-top: 1px solid #b69548;
+        padding: var(--space-3) 0 var(--space-2);
+    }
+
+    .copyright {
+        font-weight: 700;
+        font-size: 12px;
+        color: #a1a1aa;
+        text-align: center;
+    }
+
+    .menus {
+        font-size: 14px;
+        color: #52525b;
+        margin-left: auto;
+        display: flex;
+        gap: var(--space-3);
+
+    }
+}

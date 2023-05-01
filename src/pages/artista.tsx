@@ -21,7 +21,7 @@ export default function Artista() {
                 <meta name="description" content="Frei Gilson" />
             </Head>
 
-            <Header hideMobile={true} />
+            <Header />
             <SubHeader />
 
             <main>

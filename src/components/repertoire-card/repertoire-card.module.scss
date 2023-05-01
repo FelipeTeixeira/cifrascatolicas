@@ -1,3 +1,5 @@
+@import "@styles/variables";
+
 .repertoireCard {
     border-radius: var(--space-1);
     overflow: hidden;
@@ -26,4 +28,9 @@
     position: absolute;
     bottom: var(--space-2);
     z-index: 2;
+
+    @include mq("desktop") {
+        font-size: 16px;
+        bottom: var(--space-3);
+    }
 }

@@ -14,7 +14,7 @@ export default function Album() {
                 <meta name="description" content="Eu Vou Crer em Ti" />
             </Head>
 
-            <Header hideMobile={true} />
+            <Header/>
             <SubHeader />
 
             <main>

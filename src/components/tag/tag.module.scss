@@ -1,3 +1,5 @@
+@import "@styles/variables";
+
 .tag {
     font-size: 10px;
     color: #71717a;
@@ -5,4 +7,8 @@
     border-radius: 2px;
     padding: 2px 4px;
     max-width: max-content;
+
+    @include mq("desktop") {
+        font-size: 16px;
+    }
 }

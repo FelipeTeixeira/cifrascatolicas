@@ -1,6 +1,9 @@
+@import "@styles/variables";
+
 .tagLink {
     font-size: 10px;
     font-weight: 600;
+    cursor: pointer;
     color: var(--color-primary);
     border-radius: 20px;
     padding: 0 10px;
@@ -10,4 +13,10 @@
     align-items: center;
     justify-content: center;
     gap: 2px;
+
+    @include mq("desktop") {
+        font-size: 20px;
+        line-height: 36px;
+        padding: 0 var(--space-0);
+    }
 }

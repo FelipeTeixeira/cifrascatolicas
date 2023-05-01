@@ -1,3 +1,5 @@
+@import "@styles/variables";
+
 .header {
     background-color: #fff;
     padding: var(--space-2) var(--space-3);
@@ -10,16 +12,17 @@
     &.hasBackground {
         background: rgba(5, 5, 5, 0.4);
     }
+
+    @include mq("desktop") {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .logo {
     width: 104px;
-}
 
-.hideMobile {
-    display: none;
-
-    @media (min-width: 800px) {
-        display: block;
+    @include mq("desktop") {
+        width: 156px;
     }
 }

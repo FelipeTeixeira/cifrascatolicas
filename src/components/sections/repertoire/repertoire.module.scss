@@ -1,14 +1,34 @@
+@import "@styles/variables";
+
 .repertoire {
     margin-bottom: var(--space-3);
+
+    @include mq("desktop") {
+        margin-bottom: var(--space-4);
+    }
 }
 
 .title {
     padding-top: var(--space-3);
     padding-left: var(--space-3);
+
+    @include mq("desktop") {
+        padding-left: 0;
+    }
 }
 
 .viewMore {
     position: absolute;
     top: var(--space-3);
-    right: var(--space-3);
+    right: 0;
+}
+
+.scrollContainer {
+    li {
+        max-width: 134px;
+
+        @include mq("desktop") {
+            max-width: 240px;
+        }
+    }
 }

@@ -1,15 +1,35 @@
+@import "@styles/variables";
+
 .repertoire {
     padding-bottom: var(--space-3);
-    background-color: #F5F3F0;
+    background-color: #f5f3f0;
+
+    @include mq("desktop") {
+        padding-bottom: var(--space-4);
+    }
 }
 
 .title {
     padding-top: var(--space-3);
     padding-left: var(--space-3);
+
+    @include mq("desktop") {
+        padding-left: 0;
+    }
 }
 
 .viewMore {
     position: absolute;
     top: var(--space-3);
-    right: var(--space-3);
+    right: 0;
+}
+
+.scrollContainer {
+    li {
+        max-width: 140px;
+
+        @include mq("desktop") {
+            max-width: 240px;
+        }
+    }
 }
