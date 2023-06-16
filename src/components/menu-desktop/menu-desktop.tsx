@@ -3,7 +3,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { SearchInput } from '@components/search-input/search-input'
 
-export function MenuDesktop() {
+export function MenuDesktop(props: {
+    textColor: 'white' | 'black'
+}) {
     const router = useRouter();
     const menus = [
         { name: 'Repertório', url: 'repertorio' },
@@ -18,8 +20,11 @@ export function MenuDesktop() {
                     <Link
                         key={index}
                         href={menu.url}
-                        className={`${styles.link} ${router.pathname === menu.url ? styles.isActive : ''}`}
-                    >
+                        className={`
+                            ${styles.link}
+                            ${router.pathname === menu.url ? styles.isActive : ''}
+                            ${props.textColor === 'white' ? styles.textWhite : ''}
+                    `}>
                         {menu.name}
                     </Link>
                 ))}
@@ -32,3 +37,7 @@ export function MenuDesktop() {
         </>
     )
 }
+
+MenuDesktop.defaultProps = {
+    textColor: 'black',
+};

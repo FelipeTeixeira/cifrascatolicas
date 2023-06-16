@@ -1,19 +1,27 @@
+@import "@styles/variables";
+
 .counterButton {
     font-size: 14px;
     font-weight: 600;
-    color: #52525B;
+    color: #52525b;
     min-width: 108px;
     background-color: #f5f3f0;
     border-radius: 20px;
-    height: 26px;
+    height: var(--height-button-small);
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: max-content;
     gap: var(--space-1);
 
+    @include mq("desktop") {
+        background-color: #fff;
+        min-width: 150px;
+        justify-content: space-around;
+    }
+
     svg {
-        fill: #B69548;
+        fill: #b69548;
         display: flex;
         align-items: center;
         width: 20px;

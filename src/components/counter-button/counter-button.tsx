@@ -10,9 +10,7 @@ export function CounterButton(props: {
             <button
                 type='button'
                 className={styles.button}>
-
                 <RemoveIcon />
-
             </button>
 
             {props.name}

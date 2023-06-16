@@ -6,6 +6,7 @@
     --color-primary: #b69548;
     --height-header: 62px;
     --height-menu: 60px;
+    --height-button-small: 26px;
     --width-container: 1160px;
     --space-1: 8px;
     --space-0: 24px;
@@ -13,9 +14,11 @@
     --space-3: 32px;
     --space-4: 40px;
     --space-5: 48px;
+    --space-6: 56px;
 
     @include mq("desktop") {
         --height-header: 80px;
+        --height-button-small: 36px;
     }
 }
 
@@ -61,6 +64,7 @@ button {
     font-family: var(--font-nunito);
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 input {
@@ -101,6 +105,11 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    @include mq("desktop") {
+        padding-bottom: 0;
+    }
+
 }
 
 .showMobile {

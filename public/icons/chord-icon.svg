@@ -1,0 +1,16 @@
+<svg width="30" height="58" viewBox="0 0 30 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="28.5" cy="56.5" r="1.5" fill="#71717A" />
+<circle cx="19.5" cy="56.5" r="1.5" fill="#71717A" />
+<circle cx="10.5" cy="56.5" r="1.5" fill="#71717A" />
+<circle cx="1.5" cy="56.5" r="1.5" fill="#71717A" />
+<line x1="1" y1="12.5" x2="29" y2="12.5" stroke="#E4E4E7" />
+<line x1="1" y1="23.5" x2="29" y2="23.5" stroke="#E4E4E7" />
+<line x1="1" y1="33.5" x2="29" y2="33.5" stroke="#E4E4E7" />
+<line x1="1" y1="44.5" x2="29" y2="44.5" stroke="#E4E4E7" />
+<line x1="10.5" y1="2" x2="10.5" y2="56" stroke="#71717A" />
+<line x1="19.5" y1="2" x2="19.5" y2="56" stroke="#71717A" />
+<mask id="path-11-inside-1_206_2412" fill="white">
+<path d="M1 2C1 0.89543 1.89543 0 3 0H27C28.1046 0 29 0.895431 29 2V56H1V2Z" />
+</mask>
+<path d="M0 1C0 -0.656854 1.34315 -2 3 -2H27C28.6569 -2 30 -0.656854 30 1L28 2C28 2 27.5523 2 27 2H3C2.44772 2 2 2 2 2L0 1ZM29 56H1H29ZM0 56V1C0 -0.656854 1.34315 -2 3 -2V2C2.44772 2 2 2 2 2V56H0ZM27 -2C28.6569 -2 30 -0.656854 30 1V56H28V2C28 2 27.5523 2 27 2V-2Z" fill="#71717A" mask="url(#path-11-inside-1_206_2412)" />
+</svg>

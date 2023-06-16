@@ -16,7 +16,10 @@
     @include mq("desktop") {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid #f4f4f5;
+
+        &:not(.hasBackground) {
+            border-bottom: 1px solid #f4f4f5;
+        }
     }
 }
 
