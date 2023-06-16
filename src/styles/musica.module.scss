@@ -44,6 +44,14 @@
         background-color: #f5f3f0;
         padding: var(--space-3) 0;
         width: 450px;
+        position: relative;
+    }
+}
+
+.contentTools {
+    @include mq("desktop") {
+        position: sticky;
+        top: var(--space-0);
     }
 }
 
@@ -98,14 +106,7 @@ ul.chords {
     padding: 0 var(--space-3);
 
     @include mq("desktop") {
-        flex-direction: column;
         padding: 0;
-    }
-
-    @include mq("desktop") {
-        .border:not(:first-child) {
-            margin-top: var(--space-3);
-        }
     }
 }
 
@@ -113,6 +114,7 @@ ul.chords {
     display: none;
 
     @include mq("desktop") {
+        font-size: 14px;
         font-weight: 600;
         line-height: 1;
         display: block;

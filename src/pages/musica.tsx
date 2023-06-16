@@ -42,43 +42,44 @@ export default function Musica() {
 
             <main className={styles.main}>
                 <div className={styles.tools}>
-                    <section className={styles.section}>
-                        <Video />
-                    </section>
+                    <div className={styles.contentTools}>
+                        <section className={styles.section}>
+                            <Video />
+                        </section>
 
-                    <section className={`${styles.actions} ${styles.border}`}>
-                        <RadioGroup
-                            selected={'Violão'}
-                            options={['Violão', 'Guitarra', 'Cavaco', 'Teclado']}
-                        />
+                        <section className={`${styles.actions} ${styles.border}`}>
+                            <RadioGroup
+                                selected={'Violão'}
+                                options={['Violão', 'Guitarra', 'Cavaco', 'Teclado']}
+                            />
 
-                        <ToggleButton
-                            onClick={(event: string) => console.log(event)}
-                            options={['Original', 'Simplificada']}
-                        />
-                    </section>
+                            <ToggleButton
+                                onClick={(event: string) => console.log(event)}
+                                options={['Original', 'Simplificada']}
+                            />
+                        </section>
 
-                    <section>
-                        <Chords options={chords} className={styles.chords} />
-                    </section>
+                        <section>
+                            <Chords options={chords} className={styles.chords} />
+                        </section>
 
-                    <section className={styles.counterButtonSection}>
-                        <section className={styles.border}>
-                            <span className={styles.label}>Ajuste o tom</span>
-                            <CounterButton name='Tom' />
+                        <section className={styles.counterButtonSection}>
+                            <section className={styles.border}>
+                                <span className={styles.label}>Ajuste o tom</span>
+                                <CounterButton name='Tom' />
+                            </section>
+
+                            <section className={styles.border}>
+                                <span className={styles.label}>Ajuste o tamanho da letra</span>
+                                <CounterButton name='Letra' />
+                            </section>
                         </section>
 
                         <section className={styles.border}>
-                            <span className={styles.label}>Ajuste o tamanho da letra</span>
-                            <CounterButton name='Letra' />
+                            <span className={styles.label}>Ative a auto rolagem</span>
+                            <Toolbar />
                         </section>
-                    </section>
-
-                    <section className={styles.border}>
-                        <span className={styles.label}>Ative a auto rolagem</span>
-                        <Toolbar />
-                    </section>
-
+                    </div>
                 </div>
 
                 <div className={styles.content}>
