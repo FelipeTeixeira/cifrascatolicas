@@ -1,3 +1,25 @@
+@import "@styles/variables";
+
+.title {
+    font-size: 24px;
+
+    @include mq("desktop") {
+        font-size: 32px;
+        margin-top: var(--space-0);
+    }
+
+    strong {
+        font-size: 16px;
+        font-weight: normal;
+        display: block;
+
+        @include mq("desktop") {
+            font-size: 20px;
+            margin-top: var(--space-1);
+        }
+    }
+}
+
 .section {
     padding: 0 var(--space-3);
 }
@@ -7,8 +29,93 @@
     justify-content: space-between;
     margin: var(--space-0) 0;
     padding: 0 var(--space-3);
+}
 
-    &__counterButton {
-        margin-bottom: 0;
+.main {
+    @include mq("desktop") {
+        flex-direction: row-reverse;
+        max-width: var(--width-container);
+        margin: 0 auto;
+    }
+}
+
+.tools {
+    @include mq("desktop") {
+        background-color: #f5f3f0;
+        padding: var(--space-3) 0;
+        width: 450px;
+    }
+}
+
+.content {
+    @include mq("desktop") {
+        flex: 1;
+        margin-bottom: var(--space-6);
+    }
+}
+
+.cipherSection {
+    @include mq("desktop") {
+        padding: 0;
+    }
+}
+
+ul.chords {
+    margin-left: 4px;
+
+    @include mq("desktop") {
+        padding: 0 var(--space-3);
+    }
+}
+
+.border {
+    @include mq("desktop") {
+        position: relative;
+        padding: var(--space-3);
+        padding-bottom: 0;
+    }
+
+    @include mq("desktop") {
+        &::before {
+            content: "";
+            display: block;
+            background-color: #fff;
+            height: 1px;
+            width: calc(100% - var(--space-6));
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+}
+
+.counterButtonSection {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--space-0) 0;
+    padding: 0 var(--space-3);
+
+    @include mq("desktop") {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    @include mq("desktop") {
+        .border:not(:first-child) {
+            margin-top: var(--space-3);
+        }
+    }
+}
+
+.label {
+    display: none;
+
+    @include mq("desktop") {
+        font-weight: 600;
+        line-height: 1;
+        display: block;
+        margin-bottom: var(--space-2);
     }
 }
