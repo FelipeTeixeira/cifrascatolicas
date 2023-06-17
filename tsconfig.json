@@ -34,6 +34,12 @@
             ],
             "@interfaces/*": [
                 "./src/core/interfaces/*"
+            ],
+            "@utils/*": [
+                "./src/core/utils/*"
+            ],
+            "@services/*": [
+                "./src/core/services/*"
             ]
         }
     },
