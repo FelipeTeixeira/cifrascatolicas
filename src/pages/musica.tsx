@@ -17,7 +17,6 @@ import { useEffect, useState } from 'react';
 import { Cipher } from '@components/cipher/cipher';
 import { Chords } from '@components/chords/chords';
 import { RadioGroup } from '@components/radio-group/radio-group';
-import { Footer } from '@components/footer/footer';
 
 export default function Musica() {
     const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
