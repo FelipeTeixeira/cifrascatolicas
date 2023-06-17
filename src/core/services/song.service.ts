@@ -14,7 +14,7 @@ export type SongType = {
 };
 
 export async function getSong(): Promise<SongType> {
-    const res = await fetch(`${process.env.API}/teste`);
+    const res = await fetch(`${process.env.API}/artistas/daniel-de-angeles/acolhe-o-deus-o-nosso-canto`);
     const song: SongType = await res.json();
     return song;
 }
