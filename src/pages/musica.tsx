@@ -7,7 +7,6 @@ async function fetchTeste() {
 
 import Head from 'next/head'
 import styles from '@styles/musica.module.scss'
-import { Header } from '@components/header/header'
 import { SubHeader } from '@components/subheader/subheader'
 import { Video } from '@components/video/video'
 import { ToggleButton } from '@components/toggle-button/toggle-button'
@@ -37,7 +36,6 @@ export default function Musica() {
                 <meta name="description" content="Água viva - Adriana Gil" />
             </Head>
 
-            <Header />
             <SubHeader />
 
             <main className={styles.main}>
@@ -96,7 +94,6 @@ export default function Musica() {
                     <AdvertisingSection hasPadding={false} />
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

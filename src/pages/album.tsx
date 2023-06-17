@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '@styles/album.module.scss'
-import { Header } from '@components/header/header'
 import { SubHeader } from '@components/subheader/subheader'
 import AlbumImage from '@public/teste/album.png'
 import { PlaylistSection } from '@components/sections/playlist/playlist'
@@ -14,7 +13,6 @@ export default function Album() {
                 <meta name="description" content="Eu Vou Crer em Ti" />
             </Head>
 
-            <Header/>
             <SubHeader />
 
             <main>

@@ -21,6 +21,7 @@ export function Header(props: {
                     <Image src={Logo} alt='Logo do Cifras Católicas' priority className={styles.logo} />
                 </Link>
                 <MenuMobile />
+
                 <MenuDesktop textColor={props.hasBackground ? 'black' : 'white'} />
             </Container>
         </header>

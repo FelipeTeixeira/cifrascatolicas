@@ -6,7 +6,7 @@ export function Toolbar() {
     return (
         <div className={styles.toolbar}>
             <p>
-            Auto rolagem
+                Auto rolagem
             </p>
 
             <CircleButton onClick={() => alert('teste')} hasBorder={false}>

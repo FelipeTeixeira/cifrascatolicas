@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '@styles/repertorio.module.scss'
-import { Header } from '@components/header/header'
 import { Button } from '@components/button/button'
 import { RepertoireSection } from '@sections/repertoire/repertoire'
 import { AdvertisingSection } from '@sections/advertising/advertising'
@@ -42,8 +41,6 @@ export default function Repertorio() {
                 <title>Cifras Católicas - Criar repertório</title>
                 <meta name="description" content="Crie seu repertório e salve as músicas para tocar no offline" />
             </Head>
-
-            <Header />
 
             <main>
                 <section className={styles.section}>

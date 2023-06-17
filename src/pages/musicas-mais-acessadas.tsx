@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Artista from '@public/teste/artista.png'
-import { Header } from '@components/header/header'
 import { SubHeader } from '@components/subheader/subheader'
 import { SectionTitle } from '@components/section-title/section-title'
 import { Thumbnail } from '@components/thumbnail/thumbnail'
@@ -14,7 +13,6 @@ export default function MusicasMaisAcessadas() {
                 <meta name="description" content="Músicas mais acessadas" />
             </Head>
 
-            <Header />
             <SubHeader />
 
             <main>

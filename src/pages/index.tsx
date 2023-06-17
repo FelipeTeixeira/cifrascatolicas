@@ -3,7 +3,6 @@ import Image from 'next/image'
 import styles from '@styles/home.module.scss'
 import BannerDesktop from '@public/banner-desktop.jpg'
 import BannerMobile from '@public/banner-mobile.jpg'
-import { Header } from '@components/header/header'
 import { MostAccessedSection } from '@sections/most-accessed/most-accessed'
 import { HighlightsSection } from '@sections/highlights/highlights'
 import { RepertoireSection } from '@sections/repertoire/repertoire'
@@ -20,8 +19,6 @@ export default function Home() {
                 <title>Cifras Católicas</title>
                 <meta name="description" content="Todas as músicas católicas reunidas para você tocar!" />
             </Head>
-
-            <Header hasBackground={false} />
 
             <main className={styles.main}>
                 <section>
@@ -51,8 +48,6 @@ export default function Home() {
                 <BannerMusicasParaMissaSection />
                 <AdvertisingSection />
             </main>
-
-            <Footer />
         </>
     )
 }

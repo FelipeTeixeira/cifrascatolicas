@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '@styles/artista.module.scss'
-import { Header } from '@components/header/header'
 import { SubHeader } from '@components/subheader/subheader'
 
 import { ToggleButton } from '@components/toggle-button/toggle-button'
@@ -21,7 +20,6 @@ export default function Artista() {
                 <meta name="description" content="Frei Gilson" />
             </Head>
 
-            <Header />
             <SubHeader />
 
             <main>
