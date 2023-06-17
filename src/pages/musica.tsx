@@ -55,6 +55,19 @@ export default function Musica(props: SongType): JSX.Element {
             <SubHeader />
 
             <main className={styles.main}>
+                <div className={styles.content}>
+                    <section className={`${styles.section} ${styles.cipherSection}`}>
+                        <h1 className={styles.title}>
+                            {nome}
+                            <strong>{artista.nome}</strong>
+                        </h1>
+
+                        {cifra &&
+                            <Cipher cipher={cifra} />
+                        }
+                    </section>
+                    <AdvertisingSection hasPadding={false} />
+                </div>
                 <div className={styles.tools}>
                     <div className={styles.contentTools}>
                         <section className={styles.section}>
@@ -94,20 +107,6 @@ export default function Musica(props: SongType): JSX.Element {
                             <Toolbar />
                         </section>
                     </div>
-                </div>
-
-                <div className={styles.content}>
-                    <section className={`${styles.section} ${styles.cipherSection}`}>
-                        <h1 className={styles.title}>
-                            {nome}
-                            <strong>{artista.nome}</strong>
-                        </h1>
-
-                        {cifra &&
-                            <Cipher cipher={cifra} />
-                        }
-                    </section>
-                    <AdvertisingSection hasPadding={false} />
                 </div>
             </main>
         </>
