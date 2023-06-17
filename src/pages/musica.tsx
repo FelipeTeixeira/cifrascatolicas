@@ -1,8 +1,31 @@
-// TODO Alterar depois
-async function fetchTeste() {
-    const res = await fetch(`api/teste`);
-    const data = await res.json();
-    return data;
+type ArtistaType = {
+    info: string;
+    nome: string;
+    slug: string;
+};
+
+type SongType = {
+    artista: ArtistaType;
+    cifra: string;
+    info: string;
+    nome: string;
+    slug: string;
+    video: string;
+};
+
+export const getStaticProps: GetStaticProps<{
+    song: SongType
+}> = async () => {
+    const res = await fetch('http://localhost:3000/api/teste')
+    const song = await res.json()
+    return { props: song }
+}
+
+export function getVideoId(video: string): string {
+    const videoId = video.split('v=')[1];
+    const ampersandPosition = videoId.indexOf('&');
+    const versaoString = ampersandPosition !== -1 ? videoId.substring(0, ampersandPosition) : videoId;
+    return versaoString;
 }
 
 import Head from 'next/head'
@@ -13,26 +36,20 @@ import { ToggleButton } from '@components/toggle-button/toggle-button'
 import { CounterButton } from '@components/counter-button/counter-button'
 import { AdvertisingSection } from '@components/sections/advertising/advertising'
 import { Toolbar } from '@components/toolbar/toolbar'
-import { useEffect, useState } from 'react';
 import { Cipher } from '@components/cipher/cipher';
 import { Chords } from '@components/chords/chords';
 import { RadioGroup } from '@components/radio-group/radio-group';
+import { GetStaticProps } from 'next';
 
-export default function Musica() {
+export default function Musica(props: SongType): JSX.Element {
+    const { artista, cifra, info, nome, slug, video } = props;
     const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
-    const [product, setProduct] = useState<any>();
-
-    useEffect(() => {
-        fetchTeste().then((response: any) => {
-            setProduct(response);
-        });
-    }, []);
 
     return (
         <>
             <Head>
-                <title>Cifras Católicas - Água viva - Adriana Gil</title>
-                <meta name="description" content="Água viva - Adriana Gil" />
+                <title>{`${nome.trim()} - ${artista.nome} | Cifras Católicas`}</title>
+                <meta name="description" content={`${nome} - ${artista.nome}`} />
             </Head>
 
             <SubHeader />
@@ -41,7 +58,7 @@ export default function Musica() {
                 <div className={styles.tools}>
                     <div className={styles.contentTools}>
                         <section className={styles.section}>
-                            <Video />
+                            <Video songName={nome} videoId={getVideoId(video)} />
                         </section>
 
                         <section className={`${styles.actions} ${styles.border}`}>
@@ -82,12 +99,12 @@ export default function Musica() {
                 <div className={styles.content}>
                     <section className={`${styles.section} ${styles.cipherSection}`}>
                         <h1 className={styles.title}>
-                            Água viva
-                            <strong>Adriana Gil</strong>
+                            {nome}
+                            <strong>{artista.nome}</strong>
                         </h1>
 
-                        {product &&
-                            <Cipher cipher={product.cifra} />
+                        {cifra &&
+                            <Cipher cipher={cifra} />
                         }
                     </section>
                     <AdvertisingSection hasPadding={false} />

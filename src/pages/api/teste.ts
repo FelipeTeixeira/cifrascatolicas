@@ -13,7 +13,7 @@ export default async function handler(
 ) {
     // TODO Alterar depois
     const url =
-        'https://api.musicasparamissa.com.br/cifrascatolicas/artistas/daniel-de-angeles/acolhe-o-deus-o-nosso-canto';
+        'http://api.musicasparamissa.com.br/cifrascatolicas/artistas/daniel-de-angeles/acolhe-o-deus-o-nosso-canto';
     superagent.get(url).then((response: any) => {
         res.status(200).send(response.text);
     });
