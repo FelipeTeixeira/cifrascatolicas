@@ -13,6 +13,8 @@ import { RepertoireListSection } from '@sections/repertoire-list/repertoire-list
 import Artista from '@public/teste/artista.png'
 import Artista2 from '@public/teste/artista-2.png'
 import { Container } from '@components/container/container'
+import { Section } from '@components/section/section'
+import { PageTitle } from '@components/page-title/page-title'
 
 export default function Repertorio() {
     const [visible, setVisible] = useState(false);
@@ -43,18 +45,18 @@ export default function Repertorio() {
             </Head>
 
             <main>
-                <section className={styles.section}>
+                <Section style={styles.section}>
                     <Container>
-                        <h1 className={styles.title}>
+                        <PageTitle>
                             Crie seu repertório e salve as músicas para tocar no offline
-                        </h1>
+                        </PageTitle>
 
                         <Button onClick={() => setVisible(true)} style={styles.button}>
                             <AddIcon fill='#fff' />
                             Criar repertório
                         </Button>
                     </Container>
-                </section>
+                </Section>
 
                 <RepertoireListSection name='Missa de domingo' songs={MOCK} />
                 <RepertoireListSection name='Missa de sábado' songs={MOCK} />

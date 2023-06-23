@@ -4,6 +4,9 @@ import { SubHeader } from '@components/subheader/subheader'
 import AlbumImage from '@public/teste/album.png'
 import { PlaylistSection } from '@components/sections/playlist/playlist'
 import { ArtistCard } from '@components/artist-card/artist-card'
+import { Section } from '@components/section/section'
+import { Container } from '@components/container/container'
+import { PageTitle } from '@components/page-title/page-title'
 
 export default function Album() {
     return (
@@ -16,30 +19,33 @@ export default function Album() {
             <SubHeader />
 
             <main>
-                <section className={styles.section}>
-                    <ArtistCard image={AlbumImage} />
 
-                    <div>
-                        <h1 className={styles.title}>
-                            Eu Vou Crer em Ti
-                        </h1>
+                <Section>
+                    <Container style={styles.container}>
+                        <ArtistCard image={AlbumImage} />
 
-                        <p className={styles.detail}>
-                            Álbum
-                            <span>
-                                Frei Gilson
-                            </span>
-                        </p>
+                        <div className={styles.content}>
+                            <PageTitle>
+                                Eu Vou Crer em Ti
+                            </PageTitle>
 
-                        <p className={styles.detail}>
-                            10 músicas
-                            <span>
-                                32 minutos
-                            </span>
-                        </p>
-                    </div>
+                            <p className={styles.detail}>
+                                Álbum
+                                <span>
+                                    Frei Gilson
+                                </span>
+                            </p>
 
-                </section>
+                            <p className={styles.detail}>
+                                10 músicas
+                                <span>
+                                    32 minutos
+                                </span>
+                            </p>
+                        </div>
+                    </Container>
+                </Section>
+
                 <PlaylistSection />
             </main >
         </>

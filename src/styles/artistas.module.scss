@@ -1,0 +1,32 @@
+@import "@styles/variables";
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+
+    @include mq("desktop") {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--space-0);
+    }
+}
+
+.link {
+    strong {
+        font-size: 14px;
+        color: #b69548;
+        margin-top: var(--space-1);
+        display: inline-block;
+        line-height: 1;
+
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        white-space: pre-wrap;
+
+        @include mq("desktop") {
+            font-size: 16px;
+        }
+    }
+}

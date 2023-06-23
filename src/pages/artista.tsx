@@ -9,6 +9,9 @@ import Image from 'next/image'
 import { PlaylistSection } from '@components/sections/playlist/playlist'
 import { useState } from 'react'
 import { AlbumSection } from '@components/sections/album/album'
+import { Section } from '@components/section/section'
+import { Container } from '@components/container/container'
+import { PageTitle } from '@components/page-title/page-title'
 
 export default function Artista() {
     const [tabSelected, setTabSelected] = useState('Músicas');
@@ -23,22 +26,23 @@ export default function Artista() {
             <SubHeader />
 
             <main>
-                <section className={styles.section}>
-                    <Image src={Artista2} alt='Frei Gilson' className={styles.avatar} />
+                <Section>
+                    <Container style={styles.container}>
+                        <Image src={Artista2} alt='Frei Gilson' className={styles.avatar} />
 
-                    <div>
-                        <h1 className={styles.title}>
-                            Frei Gilson
-                        </h1>
+                        <div>
+                            <PageTitle>
+                                Frei Gilson
+                            </PageTitle>
 
-                        <ToggleButton
-                            onClick={(event: string) => setTabSelected(event)}
-                            options={['Músicas', 'Álbuns']}
-                            hasButtonSpacing={true}
-                        />
-                    </div>
-
-                </section>
+                            <ToggleButton
+                                onClick={(event: string) => setTabSelected(event)}
+                                options={['Músicas', 'Álbuns']}
+                                hasButtonSpacing={true}
+                            />
+                        </div>
+                    </Container>
+                </Section>
 
                 {tabSelected === 'Músicas' && <PlaylistSection />}
                 {tabSelected === 'Álbuns' && <AlbumSection />}

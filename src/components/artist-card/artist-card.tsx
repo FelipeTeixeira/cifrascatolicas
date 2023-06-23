@@ -5,12 +5,11 @@ import styles from './artist-card.module.scss'
 export function ArtistCard(props: {
     image: StaticImageData;
     legend: string;
+    style: string;
 }) {
     return (
-        <div className={styles.artistCard}>
-            <strong className={styles.legend}>
-                {props.legend}
-            </strong>
+        <div className={`${styles.artistCard} ${props.style}`}>
+            {props.legend ? <strong className={styles.legend}>{props.legend}</strong> : null}
             <Image src={props.image} alt='Logo do Cifras Católicas' />
         </div>
     )
@@ -18,4 +17,5 @@ export function ArtistCard(props: {
 
 ArtistCard.defaultProps = {
     legend: '',
+    style: '',
 };

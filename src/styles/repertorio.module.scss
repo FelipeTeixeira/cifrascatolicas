@@ -1,19 +1,7 @@
 @import "@styles/variables";
 
-.title {
-    font-weight: 700;
-    font-size: 18px;
-    color: #3f3f46;
-    margin-bottom: var(--space-3);
-
-    @include mq("desktop") {
-        font-size: 32px;
-    }
-}
-
 .section {
-    padding: var(--space-3);
-    margin-bottom: auto;
+    margin-bottom: var(--space-0);
 
     .button {
         font-size: 14px;

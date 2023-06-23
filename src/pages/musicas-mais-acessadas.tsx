@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Artista from '@public/teste/artista.png'
 import { SubHeader } from '@components/subheader/subheader'
-import { SectionTitle } from '@components/section-title/section-title'
 import { Thumbnail } from '@components/thumbnail/thumbnail'
 import { Section } from '@components/section/section'
+import { PageTitle } from '@components/page-title/page-title'
+import { Container } from '@components/container/container'
 
 export default function MusicasMaisAcessadas() {
     return (
@@ -17,30 +18,32 @@ export default function MusicasMaisAcessadas() {
 
             <main>
                 <Section>
-                    <SectionTitle>
-                        Músicas mais acessadas
-                    </SectionTitle>
+                    <Container>
+                        <PageTitle>
+                            Músicas mais acessadas
+                        </PageTitle>
 
-                    <ul>
-                        <li>
-                            <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                        </li>
-                        <li>
-                            <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                        </li>
-                        <li>
-                            <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                        </li>
-                        <li>
-                            <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                        </li>
-                        <li>
-                            <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                        </li>
-                        <li>
-                            <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                        </li>
-                    </ul>
+                        <ul>
+                            <li>
+                                <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                            </li>
+                            <li>
+                                <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                            </li>
+                            <li>
+                                <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                            </li>
+                            <li>
+                                <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                            </li>
+                            <li>
+                                <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                            </li>
+                            <li>
+                                <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                            </li>
+                        </ul>
+                    </Container>
                 </Section>
             </main >
         </>

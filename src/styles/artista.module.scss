@@ -1,9 +1,11 @@
+@import "@styles/variables";
+
 $avatar-size: 80px;
 
-.section {
-    padding: 0 var(--space-3);
+.container {
     display: flex;
     align-items: center;
+    flex-direction: row;
     gap: var(--space-0);
 }
 
@@ -12,6 +14,12 @@ $avatar-size: 80px;
     height: $avatar-size;
     display: block;
     border-radius: 50%;
+
+    @include mq("desktop") {
+        $avatar-size: 140px;
+        width: $avatar-size;
+        height: $avatar-size;
+    }
 }
 
 .title {
