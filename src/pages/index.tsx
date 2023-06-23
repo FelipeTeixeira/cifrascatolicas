@@ -10,7 +10,6 @@ import { ArtistsSection } from '@components/sections/artists/artists'
 import { BannerMusicasParaMissaSection } from '@sections/banner-musicas-para-missa/banner-musicas-para-missa'
 import { AdvertisingSection } from '@components/sections/advertising/advertising'
 import { Container } from '@components/container/container'
-import { Footer } from '@components/footer/footer'
 
 export default function Home() {
     return (
