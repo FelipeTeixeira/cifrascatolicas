@@ -6,6 +6,7 @@
     --color-primary: #b69548;
     --height-header: 62px;
     --height-menu: 60px;
+    --height-footer: 112px;
     --height-button-small: 26px;
     --width-container: 1160px;
     --space-1: 8px;
@@ -26,6 +27,10 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+html {
+    height: -webkit-fill-available;
 }
 
 body {
@@ -101,16 +106,14 @@ svg {
 }
 
 main {
-    padding: var(--height-header) 0 calc(var(--height-menu) + var(--space-5));
+    padding-top: calc(var(--height-header) + var(--space-0));
+    min-height: calc(100vh - var(--height-footer));
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin-top: var(--space-0);
 
     @include mq("desktop") {
         padding-bottom: 0;
     }
-
 }
 
 .showMobile {

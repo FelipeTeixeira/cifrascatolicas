@@ -10,6 +10,7 @@
         background-color: #fafafa;
         border-top: 1px solid #b69548;
         padding: var(--space-3) 0 var(--space-2);
+        min-height: var(--height-footer);
     }
 
     .copyright {
@@ -25,6 +26,5 @@
         margin-left: auto;
         display: flex;
         gap: var(--space-3);
-
     }
 }
