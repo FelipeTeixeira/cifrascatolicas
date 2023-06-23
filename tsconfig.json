@@ -40,6 +40,9 @@
             ],
             "@services/*": [
                 "./src/core/services/*"
+            ],
+            "@hooks/*": [
+                "./src/core/hooks/*"
             ]
         }
     },

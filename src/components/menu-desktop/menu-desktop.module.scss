@@ -19,6 +19,7 @@
         color: #52525b;
         white-space: nowrap;
         padding: 0 var(--space-3);
+        transition: color 0.2s ease;
 
         &:first-child {
             margin-left: auto;

@@ -8,9 +8,27 @@
     width: 100%;
     height: var(--height-header);
     z-index: 2;
+    will-change: top;
+    transition: top 0.2s ease, background 0.2s ease;
+
+    span {
+        font-weight: bold;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    @include mq("desktop") {
+        position: fixed;
+    }
 
     &.hasBackground {
         background: rgba(5, 5, 5, 0.4);
+    }
+
+    @include mq("desktop") {
+        &.hide {
+            top: calc((var(--height-header) + var(--space-1)) * -1);
+        }
     }
 
     @include mq("desktop") {
