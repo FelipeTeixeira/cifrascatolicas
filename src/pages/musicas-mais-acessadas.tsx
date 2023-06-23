@@ -5,6 +5,7 @@ import { Thumbnail } from '@components/thumbnail/thumbnail'
 import { Section } from '@components/section/section'
 import { PageTitle } from '@components/page-title/page-title'
 import { Container } from '@components/container/container'
+import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 
 export default function MusicasMaisAcessadas() {
     return (
@@ -18,7 +19,7 @@ export default function MusicasMaisAcessadas() {
 
             <main>
                 <Section>
-                    <Container>
+                    <Container hasSidebar={true}>
                         <PageTitle>
                             Músicas mais acessadas
                         </PageTitle>
@@ -43,6 +44,8 @@ export default function MusicasMaisAcessadas() {
                                 <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
                             </li>
                         </ul>
+
+                        <AdvertisingSidebar />
                     </Container>
                 </Section>
             </main >

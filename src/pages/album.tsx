@@ -7,6 +7,7 @@ import { ArtistCard } from '@components/artist-card/artist-card'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
 import { PageTitle } from '@components/page-title/page-title'
+import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 
 export default function Album() {
     return (
@@ -21,7 +22,7 @@ export default function Album() {
             <main>
 
                 <Section>
-                    <Container style={styles.container}>
+                    <Container style={styles.container} hasSidebar={true}>
                         <ArtistCard image={AlbumImage} />
 
                         <div className={styles.content}>
@@ -43,6 +44,7 @@ export default function Album() {
                                 </span>
                             </p>
                         </div>
+                        <AdvertisingSidebar />
                     </Container>
                 </Section>
 

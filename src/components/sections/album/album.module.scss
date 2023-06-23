@@ -7,11 +7,10 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-2) var(--space-1);
+    gap: var(--space-0);
 
     @include mq("desktop") {
         grid-template-columns: repeat(5, 1fr);
-        row-gap: var(--space-4);
     }
 
     li {

@@ -11,7 +11,7 @@ import { Container } from '@components/container/container'
 export function PlaylistSection() {
     return (
         <Section style={styles.playlist}>
-            <Container>
+            <Container hasSidebar={true}>
                 <ul>
                     {Array.from(Array(10)).map((song, index) => (
                         <li className={styles.soung} key={index}>

@@ -12,6 +12,7 @@ import { AlbumSection } from '@components/sections/album/album'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
 import { PageTitle } from '@components/page-title/page-title'
+import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 
 export default function Artista() {
     const [tabSelected, setTabSelected] = useState('Músicas');
@@ -27,7 +28,7 @@ export default function Artista() {
 
             <main>
                 <Section>
-                    <Container style={styles.container}>
+                    <Container style={styles.container} hasSidebar={true}>
                         <Image src={Artista2} alt='Frei Gilson' className={styles.avatar} />
 
                         <div>
@@ -41,6 +42,7 @@ export default function Artista() {
                                 hasButtonSpacing={true}
                             />
                         </div>
+                        <AdvertisingSidebar />
                     </Container>
                 </Section>
 

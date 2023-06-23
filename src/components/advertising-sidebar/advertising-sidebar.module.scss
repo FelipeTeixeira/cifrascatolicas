@@ -1,0 +1,22 @@
+@import "@styles/variables";
+
+.aside {
+    display: none;
+
+    @include mq("desktop") {
+        display: block;
+        position: absolute;
+        top: 28px;
+        right: 0;
+        width: var(--width-sidebar);
+    }
+}
+
+.tag {
+    margin-bottom: 12px;
+    display: block;
+}
+
+.advertising {
+    margin-bottom: var(--space-4);
+}

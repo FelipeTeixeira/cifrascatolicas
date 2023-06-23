@@ -8,6 +8,7 @@ import { PageTitle } from '@components/page-title/page-title'
 import { ArtistCard } from '@components/artist-card/artist-card'
 import Artista2Image from '@public/teste/artista-2.png'
 import Link from 'next/link'
+import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 
 export default function Artista() {
     return (
@@ -21,7 +22,7 @@ export default function Artista() {
 
             <main>
                 <Section>
-                    <Container>
+                    <Container hasSidebar={true}>
                         <PageTitle>
                             Todos os artistas
                         </PageTitle>
@@ -34,6 +35,7 @@ export default function Artista() {
                                 </Link>
                             ))}
                         </div>
+                        <AdvertisingSidebar />
                     </Container>
                 </Section>
             </main >

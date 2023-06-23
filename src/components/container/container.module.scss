@@ -1,9 +1,17 @@
+@import "@styles/variables";
+
 .container {
     max-width: var(--width-container);
     width: 100%;
     margin: 0 auto;
     display: flex;
     position: relative;
+
+    @include mq("desktop") {
+        &.hasSidebar {
+            padding-right: calc(var(--width-sidebar) + var(--space-6));
+        }
+    }
 }
 
 .flexColumn {
