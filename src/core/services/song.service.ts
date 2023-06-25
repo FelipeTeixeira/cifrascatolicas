@@ -13,10 +13,11 @@ export type SongType = {
     video: string;
 };
 
-export interface Artist {
+export interface ArtistType {
     slug: string;
     nome: string;
     info?: string;
+    musicas: ArtistaType[];
 }
 
 export async function getSong(): Promise<SongType> {
@@ -26,7 +27,12 @@ export async function getSong(): Promise<SongType> {
     return await response.json();
 }
 
-export async function getAllArtist(): Promise<Artist[]> {
+export async function getAllArtist(): Promise<ArtistType[]> {
     const response = await fetch(`${process.env.API}/artistas`);
+    return await response.json();
+}
+
+export async function getArtistDetails(slug: string): Promise<ArtistType> {
+    const response = await fetch(`${process.env.API}/artistas/${slug}`);
     return await response.json();
 }
