@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@styles/home.module.scss'
+import styles from '@styles/index.module.scss'
 import BannerDesktop from '@public/banner-desktop.jpg'
 import BannerMobile from '@public/banner-mobile.jpg'
 import { MostAccessedSection } from '@sections/most-accessed/most-accessed'
