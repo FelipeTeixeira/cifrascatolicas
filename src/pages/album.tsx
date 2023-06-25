@@ -48,7 +48,8 @@ export default function Album() {
                     </Container>
                 </Section>
 
-                <PlaylistSection />
+                {/* TODO - falta integrar */}
+                {/* <PlaylistSection /> */}
             </main >
         </>
     )
