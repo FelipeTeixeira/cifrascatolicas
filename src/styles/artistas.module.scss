@@ -32,9 +32,5 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
         white-space: pre-wrap;
-
-        @include mq("desktop") {
-            font-size: 16px;
-        }
     }
 }
