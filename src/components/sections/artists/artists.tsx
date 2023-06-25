@@ -9,7 +9,7 @@ import { Container } from '@components/container/container'
 
 export function ArtistsSection() {
     return (
-        <section className={styles.repertoire}>
+        <section className={styles.section}>
             <Container>
                 <SectionTitle style={styles.title}>
                     Encontre por artistas
@@ -20,9 +20,24 @@ export function ArtistsSection() {
                 </TagLink>
 
                 <ScrollContainer style={styles.scrollContainer}>
-                    <ArtistCard image={Artista2} legend='Padre Antônio Maria' />
-                    <ArtistCard image={Artista} legend='Eliana Ribeiro' />
-                    <ArtistCard image={Artista2} legend='Padre Antônio Maria' />
+                    <ArtistCard
+                        style={styles.artistImage}
+                        image={Artista2}
+                        legend='Padre Antônio Maria'
+                        alt='Padre Antônio Maria'
+                    />
+                    <ArtistCard
+                        style={styles.artistImage}
+                        image={Artista}
+                        legend='Eliana Ribeiro'
+                        alt='Eliana Ribeiro'
+                    />
+                    <ArtistCard
+                        style={styles.artistImage}
+                        image={Artista2}
+                        legend='Padre Antônio Maria'
+                        alt='Padre Antônio Maria'
+                    />
                 </ScrollContainer>
             </Container>
         </section>

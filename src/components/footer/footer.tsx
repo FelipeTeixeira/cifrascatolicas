@@ -15,7 +15,7 @@ export function Footer() {
         <footer className={styles.footer}>
             <Container flexDirection='row'>
                 <Link href="/">
-                    <Image src={Logo} alt='Logo do Cifras Católicas' priority className={styles.logo} />
+                    <Image src={Logo} alt='Logo do Cifras Católicas' className={styles.logo} />
                 </Link>
 
                 <div className={styles.menus}>

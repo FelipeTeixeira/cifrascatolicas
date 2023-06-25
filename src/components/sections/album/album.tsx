@@ -10,7 +10,7 @@ export function AlbumSection() {
                 <ul className={styles.grid}>
                     {Array.from(Array(7)).map((song, index) => (
                         <li key={index}>
-                            <ArtistCard image={Album} />
+                            <ArtistCard image={Album} alt="" />
 
                             <strong>
                                 Santo Sacrifício

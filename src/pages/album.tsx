@@ -23,7 +23,7 @@ export default function Album() {
 
                 <Section>
                     <Container style={styles.container} hasSidebar={true}>
-                        <ArtistCard image={AlbumImage} />
+                        <ArtistCard image={AlbumImage} alt='Eu Vou Crer em Ti' style={styles.albumImage} />
 
                         <div className={styles.content}>
                             <PageTitle>

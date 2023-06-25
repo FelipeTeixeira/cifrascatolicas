@@ -1,11 +1,21 @@
 @import "@styles/variables";
 
-.repertoire {
+.section {
     padding-bottom: var(--space-3);
     background-color: #f5f3f0;
 
     @include mq("desktop") {
         padding-bottom: var(--space-4);
+    }
+
+    .artistImage {
+        width: 140px;
+        height: 140px;
+
+        @include mq("desktop") {
+            width: 240px;
+            height: 240px;
+        }
     }
 }
 
