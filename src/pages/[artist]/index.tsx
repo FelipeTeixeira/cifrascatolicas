@@ -4,8 +4,6 @@ import { SubHeader } from '@components/subheader/subheader'
 
 import { ToggleButton } from '@components/toggle-button/toggle-button'
 
-import Artista2 from '@public/teste/artista-2.png'
-import Image from 'next/image'
 import { PlaylistSection } from '@components/sections/playlist/playlist'
 import { useState } from 'react'
 import { AlbumSection } from '@components/sections/album/album'
@@ -13,15 +11,37 @@ import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
 import { PageTitle } from '@components/page-title/page-title'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { ArtistType, getArtistDetails } from '@services/song.service'
+import { Avatar } from '@components/avatar/avatar'
 
-export default function Artista() {
+type Props = {
+    artist: ArtistType;
+}
+
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+    const slug = context.params?.artist as string;
+    const artist = await getArtistDetails(slug);
+
+    return { props: { artist } }
+}
+
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+    return {
+        paths: [],
+        fallback: 'blocking'
+    }
+}
+
+export default function Artista(props: Props): JSX.Element {
+    const { nome, musicas, slug } = props.artist;
     const [tabSelected, setTabSelected] = useState('Músicas');
 
     return (
         <>
             <Head>
-                <title>Cifras Católicas - Frei Gilson</title>
-                <meta name="description" content="Frei Gilson" />
+                <title>{`${nome.trim()} - Cifras Católicas`}</title>
+                <meta name="description" content={nome} />
             </Head>
 
             <SubHeader />
@@ -29,11 +49,17 @@ export default function Artista() {
             <main>
                 <Section>
                     <Container style={styles.container} hasSidebar={true}>
-                        <Image src={Artista2} alt='Frei Gilson' className={styles.avatar} />
 
-                        <div>
+                        <figure className={styles.avatar}>
+                            <Avatar
+                                image={`https://cifrascatolicas.com.br/imagens/${slug}.png`}
+                                alt={nome}
+                            />
+                        </figure>
+
+                        <div className={styles.content}>
                             <PageTitle>
-                                Frei Gilson
+                                {nome}
                             </PageTitle>
 
                             <ToggleButton
@@ -46,7 +72,7 @@ export default function Artista() {
                     </Container>
                 </Section>
 
-                {tabSelected === 'Músicas' && <PlaylistSection />}
+                {tabSelected === 'Músicas' && <PlaylistSection songs={musicas} />}
                 {tabSelected === 'Álbuns' && <AlbumSection />}
             </main >
         </>

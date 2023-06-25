@@ -1,5 +1,9 @@
 @import "@styles/variables";
 
+.content {
+    flex: 1;
+}
+
 $avatar-size: 80px;
 
 .container {
@@ -14,6 +18,9 @@ $avatar-size: 80px;
     height: $avatar-size;
     display: block;
     border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.10);
 
     @include mq("desktop") {
         $avatar-size: 140px;

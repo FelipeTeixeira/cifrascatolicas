@@ -6,19 +6,22 @@ import Artista2 from '@public/teste/artista-2.png'
 import Image from 'next/image'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
+import { ArtistaType } from '@services/song.service'
 
 
-export function PlaylistSection() {
+export function PlaylistSection(props: {
+    songs: ArtistaType[]
+}) {
     return (
         <Section style={styles.playlist}>
             <Container hasSidebar={true}>
                 <ul>
-                    {Array.from(Array(10)).map((song, index) => (
+                    {props.songs.map((song, index) => (
                         <li className={styles.soung} key={index}>
                             <Image src={Artista2} alt='Frei Gilson' className={styles.albumImage} />
 
                             <p>
-                                {song}- Eu te levantarei
+                                {song.nome}
                             </p>
 
                             <CircleButton onClick={() => alert('teste')} hasBorder={false}>
