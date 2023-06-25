@@ -23,13 +23,13 @@ export function MenuMobile() {
                     <SearchIcon fill='#fff' />
                 </button>
 
-                <Link href="repertorio" className={`${styles.link} ${router.pathname === '/repertorio' ? styles.isActive : ''}`}>
+                <Link href="/repertorio" className={`${styles.link} ${router.pathname === '/repertorio' ? styles.isActive : ''}`}>
                     <RepertoireIcon />
                     Repertório
                 </Link>
 
             </nav>
-            <SearchModal isVisible={visible} onClose={() => setVisible(false)} />
+            {/* <SearchModal isVisible={visible} onClose={() => setVisible(false)} /> */}
         </>
     )
 }
