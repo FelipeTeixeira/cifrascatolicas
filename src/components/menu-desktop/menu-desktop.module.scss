@@ -9,6 +9,11 @@
         display: flex;
         align-items: center;
         flex: 1;
+
+        .input {
+            width: 326px;
+            margin-left: auto;
+        }
     }
 
     .link {
@@ -32,11 +37,6 @@
         &.textWhite {
             color: #fff;
         }
-    }
-
-    .input {
-        width: 326px;
-        margin-left: auto;
     }
 }
 
