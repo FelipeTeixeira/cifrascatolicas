@@ -6,11 +6,22 @@ import { Container } from '@components/container/container'
 import { Section } from '@components/section/section'
 import { PageTitle } from '@components/page-title/page-title'
 import { ArtistCard } from '@components/artist-card/artist-card'
-import Artista2Image from '@public/teste/artista-2.png'
 import Link from 'next/link'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
+import { Artist, getAllArtist } from '@services/song.service'
+import { GetStaticProps } from 'next'
 
-export default function Artista() {
+
+type Props = {
+    artists: Artist[];
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+    const artists = await getAllArtist();
+    return { props: { artists } }
+}
+
+export default function Artista(props: Props): JSX.Element {
     return (
         <>
             <Head>
@@ -19,7 +30,6 @@ export default function Artista() {
             </Head>
 
             <SubHeader />
-
             <main>
                 <Section>
                     <Container hasSidebar={true}>
@@ -28,10 +38,19 @@ export default function Artista() {
                         </PageTitle>
 
                         <div className={styles.content}>
-                            {Array.from(Array(10)).map((song, index) => (
-                                <Link key={index} href="" className={styles.link} title={index.toString()}>
-                                    <ArtistCard key={index} image={Artista2Image} />
-                                    <strong>Padre Antônio Maria</strong>
+                            {props.artists.map((artist, index) => (
+                                <Link
+                                    href={artist.slug}
+                                    className={styles.link}
+                                    title={artist.nome}
+                                    key={index}>
+
+                                    <ArtistCard
+                                        image={`https://cifrascatolicas.com.br/imagens/${artist.slug}.png`}
+                                        alt={artist.nome}
+                                    />
+
+                                    <strong>{artist.nome}</strong>
                                 </Link>
                             ))}
                         </div>

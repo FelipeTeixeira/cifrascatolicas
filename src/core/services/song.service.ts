@@ -13,8 +13,20 @@ export type SongType = {
     video: string;
 };
 
+export interface Artist {
+    slug: string;
+    nome: string;
+    info?: string;
+}
+
 export async function getSong(): Promise<SongType> {
-    const res = await fetch(`${process.env.API}/artistas/daniel-de-angeles/acolhe-o-deus-o-nosso-canto`);
-    const song: SongType = await res.json();
-    return song;
+    const response = await fetch(
+        `${process.env.API}/artistas/daniel-de-angeles/acolhe-o-deus-o-nosso-canto`
+    );
+    return await response.json();
+}
+
+export async function getAllArtist(): Promise<Artist[]> {
+    const response = await fetch(`${process.env.API}/artistas`);
+    return await response.json();
 }
