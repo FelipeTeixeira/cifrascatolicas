@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 import styles from './artist-card.module.scss'
-import { useState } from 'react';
+import { Avatar } from '@components/avatar/avatar';
 
 // TODO - mudar nome pra ficar correto
 export function ArtistCard(props: {
@@ -9,26 +9,10 @@ export function ArtistCard(props: {
     style: string;
     alt: string;
 }) {
-    const [hideImage, setHideImage] = useState(false);
-
     return (
         <div className={`${styles.artistCard} ${props.style}`}>
             {props.legend ? <strong className={styles.legend}>{props.legend}</strong> : null}
-
-            {!hideImage ?
-                <Image
-                    src={props.image}
-                    alt={props.alt}
-                    fill
-                    loading="lazy"
-                    onError={() => {
-                        setHideImage(true);
-                    }}
-                />
-
-                : <span role="img" className={styles.avatar}>{props.alt}</span>
-            }
-
+            <Avatar image={props.image} alt={props.alt} />
         </div>
     )
 }
