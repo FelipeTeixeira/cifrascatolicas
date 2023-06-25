@@ -6,31 +6,34 @@ import Artista2 from '@public/teste/artista-2.png'
 import Image from 'next/image'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
-import { ArtistaType } from '@services/song.service'
-
+import { SongInterface } from '@interfaces/artist.interface'
+import Link from 'next/link'
 
 export function PlaylistSection(props: {
-    songs: ArtistaType[]
+    songs: SongInterface[],
+    slugArtist: string,
 }) {
     return (
         <Section style={styles.playlist}>
             <Container hasSidebar={true}>
                 <ul>
                     {props.songs.map((song, index) => (
-                        <li className={styles.soung} key={index}>
-                            <Image src={Artista2} alt='Frei Gilson' className={styles.albumImage} />
+                        <li key={index}>
+                            <Link href={`${props.slugArtist}/${song.slug}`} className={styles.song}>
+                                <Image src={Artista2} alt='Frei Gilson' className={styles.albumImage} />
 
-                            <p>
-                                {song.nome}
-                            </p>
+                                <p>
+                                    {song.nome}
+                                </p>
 
-                            <CircleButton onClick={() => alert('teste')} hasBorder={false}>
-                                <PlaylistIcon />
-                            </CircleButton>
+                                <CircleButton onClick={() => alert('teste')} hasBorder={false}>
+                                    <PlaylistIcon />
+                                </CircleButton>
 
-                            <CircleButton onClick={() => alert('teste')} color='white'>
-                                <ShareIcon />
-                            </CircleButton>
+                                <CircleButton onClick={() => alert('teste')} color='white'>
+                                    <ShareIcon />
+                                </CircleButton>
+                            </Link>
                         </li>
                     ))}
                 </ul>

@@ -8,12 +8,13 @@ import { PageTitle } from '@components/page-title/page-title'
 import { ArtistCard } from '@components/artist-card/artist-card'
 import Link from 'next/link'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
-import { Artist, getAllArtist } from '@services/song.service'
 import { GetStaticProps } from 'next'
+import { ArtistInterface } from '@interfaces/artist.interface'
+import { getAllArtist } from '@services/artist.service'
 
 
 type Props = {
-    artists: Artist[];
+    artists: ArtistInterface[];
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {

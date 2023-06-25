@@ -9,21 +9,24 @@ import { Toolbar } from '@components/toolbar/toolbar'
 import { Cipher } from '@components/cipher/cipher';
 import { Chords } from '@components/chords/chords';
 import { RadioGroup } from '@components/radio-group/radio-group';
-import { GetStaticProps } from 'next';
-import { SongType, getSong } from '@services/song.service';
+import { GetServerSideProps } from 'next';
+import { getSong } from '@services/artist.service';
 import { getVideoId } from '@utils/get-video-id.util';
+import { SongDetailsInterface } from '@interfaces/artist.interface'
 
 type Props = {
-    song: SongType;
+    song: SongDetailsInterface;
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-    const song = await getSong();
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+    const artist = context.params?.artist as string;
+    const selectedSong = context.params?.song as string;
+    const song = await getSong(artist, selectedSong);
     return { props: { song } }
 }
 
 export default function Musica(props: Props): JSX.Element {
-    const { artista, cifra, info, nome, slug, video } = props.song;
+    const { artista, cifra, nome, video } = props.song;
     const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
 
     return (
@@ -48,11 +51,15 @@ export default function Musica(props: Props): JSX.Element {
                     </section>
                     <AdvertisingSection hasPadding={false} />
                 </div>
+
                 <div className={styles.tools}>
                     <div className={styles.contentTools}>
-                        <section className={styles.section}>
-                            <Video songName={nome} videoId={getVideoId(video)} />
-                        </section>
+
+                        {video &&
+                            <section className={styles.section}>
+                                <Video songName={nome} videoId={getVideoId(video)} />
+                            </section>
+                        }
 
                         <section className={`${styles.actions} ${styles.border}`}>
                             <RadioGroup
@@ -86,6 +93,7 @@ export default function Musica(props: Props): JSX.Element {
                         </section>
                     </div>
                 </div>
+
             </main>
         </>
     )

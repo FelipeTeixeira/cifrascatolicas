@@ -11,26 +11,19 @@ import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
 import { PageTitle } from '@components/page-title/page-title'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { ArtistType, getArtistDetails } from '@services/song.service'
+import { GetServerSideProps } from 'next'
+import { getArtistDetails } from '@services/artist.service'
 import { Avatar } from '@components/avatar/avatar'
+import { ArtistInterface } from '@interfaces/artist.interface'
 
 type Props = {
-    artist: ArtistType;
+    artist: ArtistInterface;
 }
 
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
     const slug = context.params?.artist as string;
     const artist = await getArtistDetails(slug);
-
     return { props: { artist } }
-}
-
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-    return {
-        paths: [],
-        fallback: 'blocking'
-    }
 }
 
 export default function Artista(props: Props): JSX.Element {
@@ -72,7 +65,7 @@ export default function Artista(props: Props): JSX.Element {
                     </Container>
                 </Section>
 
-                {tabSelected === 'Músicas' && <PlaylistSection songs={musicas} />}
+                {tabSelected === 'Músicas' && <PlaylistSection songs={musicas} slugArtist={slug} />}
                 {tabSelected === 'Álbuns' && <AlbumSection />}
             </main >
         </>

@@ -11,7 +11,7 @@ export function Video(props: {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
-                <h3 className={styles.soung}>
+                <h3 className={styles.song}>
                     <strong>
                         {songName}
                     </strong>
