@@ -15,7 +15,7 @@ export function ArtistsSection() {
                     Encontre por artistas
                 </SectionTitle>
 
-                <TagLink style={styles.viewMore}>
+                <TagLink href="/artistas" style={styles.viewMore}>
                     Mais
                 </TagLink>
 
