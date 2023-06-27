@@ -15,7 +15,7 @@ export default function MusicasMaisAcessadas() {
                 <meta name="description" content="Músicas mais acessadas" />
             </Head>
 
-            <SubHeader />
+            <SubHeader previousUrl='/' />
 
             <main>
                 <Section>

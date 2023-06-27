@@ -1,14 +1,16 @@
 import styles from './subheader.module.scss'
 import { ArrowBackIcon } from '@components/icons/arrow-back-icon';
 import { SearchIcon } from '@components/icons/search-icon';
+import Link from 'next/link';
 
-export function SubHeader() {
+export function SubHeader(props: {
+    previousUrl: string;
+}): JSX.Element {
     return (
         <header className={styles.subheader}>
-            {/* TODO - link para voltar */}
-            <a className={styles.iconBack}>
+            <Link href={props.previousUrl || '/'} className={styles.iconBack}>
                 <ArrowBackIcon />
-            </a>
+            </Link>
 
             <strong>Cifras Católicas</strong>
 

@@ -37,7 +37,7 @@ export default function Artista(props: Props): JSX.Element {
                 <meta name="description" content={nome} />
             </Head>
 
-            <SubHeader />
+            <SubHeader previousUrl="/artistas" />
 
             <main>
                 <Section>

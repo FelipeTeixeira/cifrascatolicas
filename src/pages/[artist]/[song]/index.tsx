@@ -16,13 +16,21 @@ import { SongDetailsInterface } from '@interfaces/artist.interface'
 
 type Props = {
     song: SongDetailsInterface;
+    previousUrl: string;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
     const artist = context.params?.artist as string;
     const selectedSong = context.params?.song as string;
     const song = await getSong(artist, selectedSong);
-    return { props: { song } }
+    const previousUrl = context.resolvedUrl.split('/').slice(0, -1).join('/');
+
+    return {
+        props: {
+            song,
+            previousUrl
+        }
+    }
 }
 
 export default function Musica(props: Props): JSX.Element {
@@ -36,7 +44,7 @@ export default function Musica(props: Props): JSX.Element {
                 <meta name="description" content={`${nome} - ${artista.nome}`} />
             </Head>
 
-            <SubHeader />
+            <SubHeader previousUrl={props.previousUrl} />
 
             <main className={styles.main}>
                 <div className={styles.content}>
@@ -93,7 +101,6 @@ export default function Musica(props: Props): JSX.Element {
                         </section>
                     </div>
                 </div>
-
             </main>
         </>
     )

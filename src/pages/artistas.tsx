@@ -8,16 +8,15 @@ import { PageTitle } from '@components/page-title/page-title'
 import { ArtistCard } from '@components/artist-card/artist-card'
 import Link from 'next/link'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { ArtistInterface } from '@interfaces/artist.interface'
 import { getAllArtist } from '@services/artist.service'
-
 
 type Props = {
     artists: ArtistInterface[];
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
     const artists = await getAllArtist();
     return { props: { artists } }
 }
@@ -30,7 +29,7 @@ export default function Artista(props: Props): JSX.Element {
                 <meta name="description" content="Artistas" />
             </Head>
 
-            <SubHeader />
+            <SubHeader previousUrl='/' />
             <main>
                 <Section>
                     <Container hasSidebar={true}>
