@@ -13,6 +13,7 @@ import { GetServerSideProps } from 'next';
 import { getSong } from '@services/artist.service';
 import { getVideoId } from '@utils/get-video-id.util';
 import { SongDetailsInterface } from '@interfaces/artist.interface'
+import { setPreviousUrl } from '@utils/set-previous-url.util'
 
 type Props = {
     song: SongDetailsInterface;
@@ -23,7 +24,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
     const artist = context.params?.artist as string;
     const selectedSong = context.params?.song as string;
     const song = await getSong(artist, selectedSong);
-    const previousUrl = context.resolvedUrl.split('/').slice(0, -1).join('/');
+    const previousUrl = setPreviousUrl(context, context.resolvedUrl.split('/').slice(0, -1).join('/'));
 
     return {
         props: {

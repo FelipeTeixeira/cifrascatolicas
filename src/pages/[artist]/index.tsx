@@ -15,15 +15,19 @@ import { GetServerSideProps } from 'next'
 import { getArtistDetails } from '@services/artist.service'
 import { Avatar } from '@components/avatar/avatar'
 import { ArtistInterface } from '@interfaces/artist.interface'
+import { setPreviousUrl } from '@utils/set-previous-url.util'
 
 type Props = {
     artist: ArtistInterface;
+    previousUrl: string;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
     const slug = context.params?.artist as string;
     const artist = await getArtistDetails(slug);
-    return { props: { artist } }
+    const previousUrl = setPreviousUrl(context, '/artistas');
+
+    return { props: { artist, previousUrl } }
 }
 
 export default function Artista(props: Props): JSX.Element {
@@ -37,7 +41,7 @@ export default function Artista(props: Props): JSX.Element {
                 <meta name="description" content={nome} />
             </Head>
 
-            <SubHeader previousUrl="/artistas" />
+            <SubHeader previousUrl={props.previousUrl} />
 
             <main>
                 <Section>
