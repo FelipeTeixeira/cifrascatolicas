@@ -20,10 +20,6 @@
     }
 }
 
-.section {
-    padding: 0 var(--space-3);
-}
-
 .actions {
     display: flex;
     justify-content: space-between;
@@ -33,11 +29,13 @@
 
 .main {
     flex-direction: column-reverse;
+    padding-top: calc(var(--height-header));
 
     @include mq("desktop") {
         flex-direction: row;
         max-width: var(--width-container);
         margin: 0 auto;
+        padding-bottom: 0;
     }
 }
 
