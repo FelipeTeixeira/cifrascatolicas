@@ -6,6 +6,7 @@ import { SectionTitle } from '@components/section-title/section-title'
 import { ScrollContainer } from '@components/scroll-container/scroll-container'
 import { ArtistCard } from '@components/artist-card/artist-card'
 import { Container } from '@components/container/container'
+import Link from 'next/link'
 
 export function ArtistsSection() {
     return (
@@ -20,12 +21,14 @@ export function ArtistsSection() {
                 </TagLink>
 
                 <ScrollContainer style={styles.scrollContainer}>
-                    <ArtistCard
-                        style={styles.artistImage}
-                        image={Artista2}
-                        legend='Padre Antônio Maria'
-                        alt='Padre Antônio Maria'
-                    />
+                    <Link href={'/action-musica-catolica'}>
+                        <ArtistCard
+                            style={styles.artistImage}
+                            image={Artista2}
+                            legend='Padre Antônio Maria'
+                            alt='Padre Antônio Maria'
+                        />
+                    </Link>
                     <ArtistCard
                         style={styles.artistImage}
                         image={Artista}
