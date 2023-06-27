@@ -3,10 +3,11 @@ import styles from './banner-musicas-para-missa.module.scss'
 import BannerMobile from '@public/banner-celular-musicas-para-missa.png'
 import BannerDesktop from '@public/banner-desktop-musicas-para-missa.jpg'
 import Image from 'next/image'
+import { Section } from '@components/section/section'
 
 export function BannerMusicasParaMissaSection() {
     return (
-        <section className={styles.sectionBanner}>
+        <Section style={styles.section}>
             <Container>
                 <div className={styles.container}>
                     <h3 className={styles.title}>
@@ -29,6 +30,6 @@ export function BannerMusicasParaMissaSection() {
                 />
 
             </Container>
-        </section>
+        </Section>
     )
 }

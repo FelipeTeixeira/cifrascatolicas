@@ -6,6 +6,7 @@ import { DeleteIcon } from '@components/icons/delete-icon';
 import { useState } from 'react';
 import { TagLink } from '@components/tag-link/tag-link';
 import { DownloadIcon } from '@components/icons/download-icon';
+import { Section } from '@components/section/section';
 
 export function RepertoireListSection(props: {
     name: string;
@@ -14,8 +15,7 @@ export function RepertoireListSection(props: {
     const [expand, setExpand] = useState<boolean>();
 
     return (
-        <section className={styles.section}>
-
+        <Section style={styles.section}>
             <div className={styles.accordion}>
                 <button
                     onClick={() => setExpand(!expand)}
@@ -52,7 +52,6 @@ export function RepertoireListSection(props: {
                     </TagLink>
                 </div>
             </div>
-
-        </section>
+        </Section>
     )
 }

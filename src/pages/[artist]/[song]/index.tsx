@@ -14,6 +14,7 @@ import { getSong } from '@services/artist.service';
 import { getVideoId } from '@utils/get-video-id.util';
 import { SongDetailsInterface } from '@interfaces/artist.interface'
 import { setPreviousUrl } from '@utils/set-previous-url.util'
+import { Section } from '@components/section/section'
 
 type Props = {
     song: SongDetailsInterface;
@@ -49,7 +50,7 @@ export default function Musica(props: Props): JSX.Element {
 
             <main className={styles.main}>
                 <div className={styles.content}>
-                    <section className={`${styles.section} ${styles.cipherSection}`}>
+                    <Section style={styles.cipherSection}>
                         <h1 className={styles.title}>
                             {nome}
                             <strong>{artista.nome}</strong>
@@ -57,7 +58,7 @@ export default function Musica(props: Props): JSX.Element {
 
                         {cifra &&
                             <Cipher cipher={cifra} />}
-                    </section>
+                    </Section>
                     <AdvertisingSection hasPadding={false} />
                 </div>
 
@@ -65,9 +66,9 @@ export default function Musica(props: Props): JSX.Element {
                     <div className={styles.contentTools}>
 
                         {video &&
-                            <section className={styles.section}>
+                            <Section>
                                 <Video songName={nome} videoId={getVideoId(video)} />
-                            </section>
+                            </Section>
                         }
 
                         <section className={`${styles.actions} ${styles.border}`}>

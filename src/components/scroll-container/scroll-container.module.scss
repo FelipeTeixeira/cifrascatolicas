@@ -3,9 +3,13 @@
 .scrollContainer {
     display: flex;
     overflow-x: auto;
-    padding: 0 var(--space-3) 0;
+    padding: 0 var(--space-2) 0;
     position: relative;
     z-index: 1;
+
+    @include mq("phone-wide") {
+        padding: 0 var(--space-3) 0;
+    }
 
     &::-webkit-scrollbar {
         display: none;

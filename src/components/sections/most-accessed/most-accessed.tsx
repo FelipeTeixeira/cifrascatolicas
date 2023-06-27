@@ -4,10 +4,11 @@ import Artista from '@public/teste/artista.png'
 import { TagLink } from '@components/tag-link/tag-link'
 import { SectionTitle } from '@components/section-title/section-title'
 import { Container } from '@components/container/container'
+import { Section } from '@components/section/section'
 
 export function MostAccessedSection() {
     return (
-        <section className={styles.mostAccessed}>
+        <Section style={styles.section}>
             <Container>
                 <SectionTitle>
                     Mais acessadas
@@ -38,6 +39,6 @@ export function MostAccessedSection() {
                     </li>
                 </ul>
             </Container>
-        </section>
+        </Section>
     )
 }

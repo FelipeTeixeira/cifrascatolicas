@@ -1,12 +1,9 @@
 @import "@styles/variables";
 
-.mostAccessed {
+.section {
     background-color: #f5f3f0;
-    padding: var(--space-3) var(--space-3) var(--space-2);
-
-    @include mq("desktop") {
-        padding-bottom: var(--space-3);
-    }
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
 }
 
 .viewMore {

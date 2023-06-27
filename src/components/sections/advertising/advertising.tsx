@@ -3,14 +3,15 @@ import styles from './advertising.module.scss'
 import { Tag } from '@components/tag/tag'
 import Anuncio from '@public/teste/anuncio.png'
 import { Container } from '@components/container/container';
+import { Section } from '@components/section/section';
 
 export function AdvertisingSection(props: {
     hasPadding: boolean;
     style: string;
 }) {
     return (
-        <section className={`
-            ${props.hasPadding ? styles.advertising : ''}
+        <Section style={`
+            ${props.hasPadding ? '' : styles.removePadding}
             ${props.style}
         `}>
             <Container>
@@ -19,7 +20,7 @@ export function AdvertisingSection(props: {
                 </Tag>
                 <Image src={Anuncio} alt='' className={styles.image} />
             </Container>
-        </section>
+        </Section>
     )
 }
 

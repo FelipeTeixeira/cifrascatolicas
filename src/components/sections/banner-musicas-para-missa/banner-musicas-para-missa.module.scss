@@ -1,10 +1,10 @@
 @import "@styles/variables";
 
-.sectionBanner {
-    padding: var(--space-3);
+.section {
+    margin: var(--space-3) 0;
 
     @include mq("desktop") {
-        padding: var(--space-4);
+        margin: var(--space-4) 0;
     }
 }
 

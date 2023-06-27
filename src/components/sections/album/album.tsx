@@ -2,10 +2,11 @@ import styles from './album.module.scss'
 import Album from '@public/teste/album.png'
 import { ArtistCard } from '@components/artist-card/artist-card'
 import { Container } from '@components/container/container'
+import { Section } from '@components/section/section'
 
 export function AlbumSection() {
     return (
-        <section className={styles.section}>
+        <Section style={styles.section}>
             <Container hasSidebar={true}>
                 <ul className={styles.grid}>
                     {Array.from(Array(7)).map((song, index) => (
@@ -22,6 +23,6 @@ export function AlbumSection() {
                     ))}
                 </ul>
             </Container>
-        </section>
+        </Section>
     )
 }
