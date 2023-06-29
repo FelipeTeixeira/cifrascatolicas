@@ -1,7 +1,7 @@
 @import "@styles/variables";
 
 .counterButton {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: #52525b;
     min-width: 108px;
@@ -16,7 +16,7 @@
 
     @include mq("desktop") {
         background-color: #fff;
-        min-width: 150px;
+        min-width: 130px;
         justify-content: space-around;
     }
 
