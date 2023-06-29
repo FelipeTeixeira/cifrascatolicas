@@ -2,14 +2,25 @@ import Head from 'next/head'
 import styles from '@styles/album.module.scss'
 import { SubHeader } from '@components/subheader/subheader'
 import AlbumImage from '@public/teste/album.png'
-import { PlaylistSection } from '@components/sections/playlist/playlist'
 import { ArtistCard } from '@components/artist-card/artist-card'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
 import { PageTitle } from '@components/page-title/page-title'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
+import { GetServerSideProps } from 'next'
+import { setPreviousUrl } from '@utils/set-previous-url.util'
 
-export default function Album() {
+type Props = {
+    previousUrl: string;
+}
+
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+    const previousUrl = setPreviousUrl(context, '/');
+
+    return { props: { previousUrl } }
+}
+
+export default function Album(props: Props): JSX.Element {
     return (
         <>
             <Head>
@@ -17,7 +28,7 @@ export default function Album() {
                 <meta name="description" content="Eu Vou Crer em Ti" />
             </Head>
 
-            <SubHeader />
+            <SubHeader previousUrl={props.previousUrl} />
 
             <main>
 
