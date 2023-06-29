@@ -23,6 +23,8 @@ export function RepertoireSection() {
                     <RepertoireCard image={Repertorio2} />
                     <RepertoireCard image={Repertorio1} />
                     <RepertoireCard image={Repertorio2} />
+                    <RepertoireCard image={Repertorio2} />
+                    <RepertoireCard image={Repertorio2} />
                 </ScrollContainer>
             </Container>
         </section>

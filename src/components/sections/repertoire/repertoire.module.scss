@@ -34,12 +34,13 @@
     }
 }
 
-.scrollContainer {
+ul.scrollContainer {
     li {
         max-width: 134px;
 
         @include mq("desktop") {
-            max-width: 240px;
+            max-width: inherit;
+            flex: 1;
         }
     }
 }

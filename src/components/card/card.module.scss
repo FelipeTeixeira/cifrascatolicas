@@ -6,7 +6,13 @@
     display: flex;
     border-bottom: 4px solid #b69548;
     position: relative;
-    max-width: max-content;
+    min-height: 170px;
+    width: 280px;
+
+    @include mq("desktop") {
+        min-height: 220px;
+        width: 100%;
+    }
 
     &::after {
         content: "";

@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from 'next/image'
 import styles from './card.module.scss'
+import { Avatar } from '@components/avatar/avatar'
 
 export function Card(props: {
     image: StaticImageData
@@ -20,7 +21,7 @@ export function Card(props: {
                 </strong>
             </div>
 
-            <Image src={props.image} alt='Logo do Cifras Católicas' />
+            <Avatar image={props.image} alt='Logo do Cifras Católicas' />
         </div>
     )
 }

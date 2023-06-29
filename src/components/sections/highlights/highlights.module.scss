@@ -8,12 +8,13 @@
     gap: var(--space-3);
 }
 
-.scrollContainer {
+ul.scrollContainer {
     li {
         max-width: 280px;
 
         @include mq("desktop") {
-            max-width: 360px;
+            max-width: inherit;
+            flex: 1;
         }
     }
 }

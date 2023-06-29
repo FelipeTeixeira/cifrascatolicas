@@ -13,12 +13,6 @@ export function HighlightsSection() {
                     <Card image={CifraSimplificada} />
                     <Card image={CifraSimplificada} />
                     <Card image={CifraSimplificada} />
-                    <Card image={CifraSimplificada} />
-                    <Card image={CifraSimplificada} />
-                    <Card image={CifraSimplificada} />
-                    <Card image={CifraSimplificada} />
-                    <Card image={CifraSimplificada} />
-                    <Card image={CifraSimplificada} />
                 </ScrollContainer>
             </Container>
 

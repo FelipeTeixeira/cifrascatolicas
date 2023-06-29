@@ -4,17 +4,19 @@
     display: flex;
     align-items: center;
     padding: var(--space-1) 0;
+}
 
-    img {
-        margin-right: var(--space-2);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
+.image {
+    margin-right: var(--space-2);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
 
-        @include mq("desktop") {
-            width: 60px;
-            height: 60px;
-        }
+    @include mq("desktop") {
+        width: 60px;
+        height: 60px;
     }
 }
 

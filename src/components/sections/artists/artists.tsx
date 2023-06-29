@@ -41,6 +41,18 @@ export function ArtistsSection() {
                         legend='Padre Antônio Maria'
                         alt='Padre Antônio Maria'
                     />
+                    <ArtistCard
+                        style={styles.artistImage}
+                        image={Artista}
+                        legend='Eliana Ribeiro'
+                        alt='Eliana Ribeiro'
+                    />
+                    <ArtistCard
+                        style={styles.artistImage}
+                        image={Artista2}
+                        legend='Padre Antônio Maria'
+                        alt='Padre Antônio Maria'
+                    />
                 </ScrollContainer>
             </Container>
         </section>
