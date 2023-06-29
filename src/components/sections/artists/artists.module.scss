@@ -21,7 +21,12 @@
 
 .title {
     padding-top: var(--space-3);
-    padding-left: var(--space-3);
+    padding-left: var(--space-2);
+
+    @include mq("phone-wide") {
+        padding-left: var(--space-3);
+    }
+
 
     @include mq("desktop") {
         padding-left: 0;
@@ -31,7 +36,11 @@
 .viewMore {
     position: absolute;
     top: var(--space-3);
-    right: var(--space-3);
+    right: var(--space-2);
+
+    @include mq("phone-wide") {
+        right: var(--space-3);
+    }
 
     @include mq("desktop") {
         right: 0;
