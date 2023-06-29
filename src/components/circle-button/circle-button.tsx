@@ -6,6 +6,7 @@ export function CircleButton(props: {
     onClick: Function;
     color: 'primary' | 'white';
     hasBorder: boolean;
+    className: string;
 }) {
     return (
         <button
@@ -15,6 +16,7 @@ export function CircleButton(props: {
                 ${styles.button}
                 ${props.color === 'white' ? styles.white : ''}
                 ${props.hasBorder ? '' : styles.borderless}
+                ${props.className}
             `}
             onClick={() => props.onClick()}>
             {props.children}
@@ -25,4 +27,5 @@ export function CircleButton(props: {
 CircleButton.defaultProps = {
     color: 'primary',
     hasBorder: true,
+    className: '',
 };

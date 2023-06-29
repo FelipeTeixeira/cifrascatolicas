@@ -12,16 +12,33 @@ export function Video(props: {
         <div className={styles.card}>
             <div className={styles.header}>
                 <h3 className={styles.song}>
-                    <strong>
-                        {songName}
-                    </strong>
+                    {songName}
                 </h3>
 
-                <CircleButton onClick={() => alert('teste')} color='white' hasBorder={false}>
+                <button className={styles.button}>
+                    <PlaylistIcon />
+                    Adicionar a playlist
+                </button>
+
+                <button className={styles.button}>
+                    <ShareIcon />
+                    Compartilhar
+                </button>
+
+
+                <CircleButton
+                    className={styles.circleButton}
+                    onClick={() => alert('teste')}
+                    color='white'
+                    hasBorder={false}>
                     <PlaylistIcon />
                 </CircleButton>
 
-                <CircleButton onClick={() => alert('teste')} color='white' hasBorder={false}>
+                <CircleButton
+                    className={styles.circleButton}
+                    onClick={() => alert('teste')}
+                    color='white'
+                    hasBorder={false}>
                     <ShareIcon />
                 </CircleButton>
             </div>
