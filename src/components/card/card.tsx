@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image'
+import { StaticImageData } from 'next/image'
 import styles from './card.module.scss'
 import { Avatar } from '@components/avatar/avatar'
 
