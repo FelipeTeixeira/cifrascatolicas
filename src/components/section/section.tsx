@@ -3,7 +3,7 @@ import styles from './section.module.scss'
 
 export function Section(props: {
     children: ReactNode;
-    style?: string;
+    className: string;
 }) {
     return (
         <section className={`${styles.section} ${props.className}`}>

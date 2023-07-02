@@ -4,7 +4,7 @@ import { MouseEventHandler, ReactNode } from 'react';
 export function Button(props: {
     children: ReactNode;
     onClick: MouseEventHandler;
-    style?: string;
+    className: string;
 }) {
     return (
         <button
