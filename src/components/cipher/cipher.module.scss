@@ -1,12 +1,17 @@
 @import "@styles/variables";
 
 .cipher {
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--font-nunito);
     font-weight: normal;
     line-height: 1.8;
     color: #3f3f46;
     margin-bottom: var(--space-3);
+    white-space: pre-wrap;
+
+    @include mq("tablet-small") {
+        font-size: 16px;
+    }
 
     strong {
         font-weight: normal;
