@@ -59,7 +59,7 @@ export default function Musica(props: Props): JSX.Element {
                         {cifra &&
                             <Cipher cipher={cifra} />}
                     </Section>
-                    <AdvertisingSection hasPadding={false} />
+                    <AdvertisingSection style={styles.cipherSection} />
                 </div>
 
                 <div className={styles.tools}>
@@ -71,7 +71,7 @@ export default function Musica(props: Props): JSX.Element {
                             </Section>
                         }
 
-                        <section className={`${styles.actions} ${styles.border}`}>
+                        <Section style={`${styles.actions} ${styles.border}`}>
                             <RadioGroup
                                 selected={'Violão'}
                                 options={['Violão', 'Guitarra', 'Cavaco', 'Teclado']} />
@@ -79,13 +79,13 @@ export default function Musica(props: Props): JSX.Element {
                             <ToggleButton
                                 onClick={(event: string) => console.log(event)}
                                 options={['Original', 'Simplificada']} />
-                        </section>
+                        </Section>
 
                         <section>
                             <Chords options={chords} className={styles.chords} />
                         </section>
 
-                        <section className={styles.counterButtonSection}>
+                        <Section style={styles.counterButtonSection}>
                             <section className={styles.border}>
                                 <span className={styles.label}>Ajuste o tom</span>
                                 <CounterButton name='Tom' />
@@ -95,7 +95,7 @@ export default function Musica(props: Props): JSX.Element {
                                 <span className={styles.label}>Ajuste o tamanho da letra</span>
                                 <CounterButton name='Letra' />
                             </section>
-                        </section>
+                        </Section>
 
                         <section className={styles.border}>
                             <span className={styles.label}>Ative a auto rolagem</span>
