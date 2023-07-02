@@ -37,13 +37,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 
 export default function Musica(props: Props): JSX.Element {
     const { artista, cifra, nome, video } = props.song;
+    const pageTitle = `${nome.trim()} - ${artista.nome}`;
     const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
 
     return (
         <>
             <Head>
-                <title>{`${nome.trim()} - ${artista.nome} | Cifras Católicas`}</title>
-                <meta name="description" content={`${nome} - ${artista.nome}`} />
+                <title>{`${pageTitle} | Cifras Católicas`}</title>
+                <meta name="description" content={pageTitle} />
             </Head>
 
             <SubHeader previousUrl={props.previousUrl} />
@@ -67,7 +68,11 @@ export default function Musica(props: Props): JSX.Element {
 
                         {video &&
                             <Section>
-                                <Video songName={nome} videoId={getVideoId(video)} />
+                                <Video
+                                    pageTitle={pageTitle}
+                                    songName={nome}
+                                    videoId={getVideoId(video)}
+                                />
                             </Section>
                         }
 

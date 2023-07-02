@@ -8,7 +8,6 @@
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    padding: var(--space-2) 0;
     border-bottom: 1px solid #f4f4f5;
 
     p {
@@ -21,6 +20,12 @@
             font-size: 20px;
         }
     }
+}
+
+.link {
+    padding: var(--space-2) 0;
+    margin-right: auto;
+    flex: 1;
 }
 
 .albumImage {

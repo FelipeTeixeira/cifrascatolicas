@@ -22,6 +22,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 }
 
 export default function Artista(props: Props): JSX.Element {
+    const { artists } = props;
     return (
         <>
             <Head>
@@ -38,7 +39,7 @@ export default function Artista(props: Props): JSX.Element {
                         </PageTitle>
 
                         <div className={styles.content}>
-                            {props.artists.map((artist, index) => (
+                            {artists.map((artist, index) => (
                                 <Link
                                     href={artist.slug}
                                     className={styles.link}

@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 }
 
 export default function Artista(props: Props): JSX.Element {
-    const { nome, musicas, slug } = props.artist;
+    const { nome, slug } = props.artist;
     const [tabSelected, setTabSelected] = useState('Músicas');
 
     return (
@@ -69,7 +69,7 @@ export default function Artista(props: Props): JSX.Element {
                     </Container>
                 </Section>
 
-                {tabSelected === 'Músicas' && <PlaylistSection songs={musicas} slugArtist={slug} />}
+                {tabSelected === 'Músicas' && <PlaylistSection artist={props.artist} />}
                 {tabSelected === 'Álbuns' && <AlbumSection />}
             </main >
         </>
