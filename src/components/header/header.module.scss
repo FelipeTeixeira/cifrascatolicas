@@ -11,12 +11,6 @@
     will-change: top;
     transition: top 0.2s ease, background 0.2s ease;
 
-    span {
-        font-weight: bold;
-        font-size: 30px;
-        color: #fff;
-    }
-
     @include mq("desktop") {
         position: fixed;
     }
