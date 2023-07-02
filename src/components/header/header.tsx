@@ -9,6 +9,7 @@ import useScrollDirection from '@hooks/use-scroll-direction'
 
 export function Header(props: {
     hasBackground: boolean;
+    hideMenuMobile: boolean
 }) {
     const { scrollDirection, scrollYPosition } = useScrollDirection();
     return (
@@ -21,7 +22,7 @@ export function Header(props: {
                 <Link href="/">
                     <Image src={Logo} alt='Logo do Cifras Católicas' priority className={styles.logo} />
                 </Link>
-                <MenuMobile />
+                {!props.hideMenuMobile ? <MenuMobile /> : null}
                 <MenuDesktop textColor={(props.hasBackground || scrollYPosition > 20) ? 'black' : 'white'} />
             </Container>
         </header>
@@ -30,4 +31,5 @@ export function Header(props: {
 
 Header.defaultProps = {
     hasBackground: true,
+    hideMenuMobile: false
 };
