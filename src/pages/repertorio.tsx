@@ -45,13 +45,13 @@ export default function Repertorio() {
             </Head>
 
             <main>
-                <Section style={styles.section}>
+                <Section className={styles.section}>
                     <Container>
                         <PageTitle>
                             Crie seu repertório e salve as músicas para tocar no offline
                         </PageTitle>
 
-                        <Button onClick={() => setVisible(true)} style={styles.button}>
+                        <Button onClick={() => setVisible(true)} className={styles.button}>
                             <AddIcon fill='#fff' />
                             Criar repertório
                         </Button>

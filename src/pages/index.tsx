@@ -21,7 +21,7 @@ export default function Home() {
 
             <main className={styles.main}>
                 <section>
-                    <Container style={styles.container}>
+                    <Container className={styles.container}>
                         <h1 className={styles.title}>
                             Todas as músicas católicas reunidas para você tocar!
                         </h1>

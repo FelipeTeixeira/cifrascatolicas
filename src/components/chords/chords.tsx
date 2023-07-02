@@ -8,7 +8,7 @@ export function Chords(props: {
     className: string;
 }) {
     return (
-        <ScrollContainer style={props.className}>
+        <ScrollContainer className={props.className}>
             {props.options.map((option, index) => (
                 <button className={styles.chord} key={index} type='button'>
                     <strong>

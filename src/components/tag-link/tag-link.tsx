@@ -5,16 +5,16 @@ import Link from 'next/link';
 export function TagLink(props: {
     children: ReactNode;
     href: string,
-    style: string;
+    className: string;
 }) {
     return (
-        <Link href={props.href} className={`${styles.tagLink} ${props.style}`}>
+        <Link href={props.href} className={`${styles.tagLink} ${props.className}`}>
             {props.children}
         </Link>
     )
 }
 
 TagLink.defaultProps = {
-    style: '',
+    className: '',
     href: '',
 };

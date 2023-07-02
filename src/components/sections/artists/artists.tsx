@@ -12,43 +12,43 @@ export function ArtistsSection() {
     return (
         <section className={styles.section}>
             <Container>
-                <SectionTitle style={styles.title}>
+                <SectionTitle className={styles.title}>
                     Encontre por artistas
                 </SectionTitle>
 
-                <TagLink href="/artistas" style={styles.viewMore}>
+                <TagLink href="/artistas" className={styles.viewMore}>
                     Mais
                 </TagLink>
 
-                <ScrollContainer style={styles.scrollContainer}>
+                <ScrollContainer className={styles.scrollContainer}>
                     <Link href={'/action-musica-catolica'}>
                         <ArtistCard
-                            style={styles.artistImage}
+                            className={styles.artistImage}
                             image={Artista2}
                             legend='Padre Antônio Maria'
                             alt='Padre Antônio Maria'
                         />
                     </Link>
                     <ArtistCard
-                        style={styles.artistImage}
+                        className={styles.artistImage}
                         image={Artista}
                         legend='Eliana Ribeiro'
                         alt='Eliana Ribeiro'
                     />
                     <ArtistCard
-                        style={styles.artistImage}
+                        className={styles.artistImage}
                         image={Artista2}
                         legend='Padre Antônio Maria'
                         alt='Padre Antônio Maria'
                     />
                     <ArtistCard
-                        style={styles.artistImage}
+                        className={styles.artistImage}
                         image={Artista}
                         legend='Eliana Ribeiro'
                         alt='Eliana Ribeiro'
                     />
                     <ArtistCard
-                        style={styles.artistImage}
+                        className={styles.artistImage}
                         image={Artista2}
                         legend='Padre Antônio Maria'
                         alt='Padre Antônio Maria'

@@ -7,12 +7,12 @@ import { Section } from '@components/section/section';
 
 export function AdvertisingSection(props: {
     hasPadding: boolean;
-    style: string;
+    className: string;
 }) {
     return (
-        <Section style={`
+        <Section className={`
             ${props.hasPadding ? '' : styles.removePadding}
-            ${props.style}
+            ${props.className}
         `}>
             <Container>
                 <Tag>
@@ -26,5 +26,5 @@ export function AdvertisingSection(props: {
 
 AdvertisingSection.defaultProps = {
     hasPadding: true,
-    style: '',
+    className: '',
 };

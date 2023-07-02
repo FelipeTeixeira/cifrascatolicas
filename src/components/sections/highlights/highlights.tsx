@@ -9,7 +9,7 @@ export function HighlightsSection() {
     return (
         <section className={styles.highlights}>
             <Container>
-                <ScrollContainer style={styles.scrollContainer}>
+                <ScrollContainer className={styles.scrollContainer}>
                     <Card image={CifraSimplificada} />
                     <Card image={CifraSimplificada} />
                     <Card image={CifraSimplificada} />

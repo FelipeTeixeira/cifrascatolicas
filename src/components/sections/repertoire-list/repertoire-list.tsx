@@ -15,7 +15,7 @@ export function RepertoireListSection(props: {
     const [expand, setExpand] = useState<boolean>();
 
     return (
-        <Section style={styles.section}>
+        <Section className={styles.section}>
             <div className={styles.accordion}>
                 <button
                     onClick={() => setExpand(!expand)}
@@ -46,7 +46,7 @@ export function RepertoireListSection(props: {
                         ))}
                     </ul>
 
-                    <TagLink style={styles.downloadButton}>
+                    <TagLink className={styles.downloadButton}>
                         <DownloadIcon width={12} height={12} />
                         Baixar
                     </TagLink>

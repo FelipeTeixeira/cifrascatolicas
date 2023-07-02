@@ -8,13 +8,13 @@ import { Section } from '@components/section/section'
 
 export function MostAccessedSection() {
     return (
-        <Section style={styles.section}>
+        <Section className={styles.section}>
             <Container>
                 <SectionTitle>
                     Mais acessadas
                 </SectionTitle>
 
-                <TagLink style={styles.viewMore}>
+                <TagLink className={styles.viewMore}>
                     Mais
                 </TagLink>
 

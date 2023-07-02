@@ -14,7 +14,7 @@ export function PlaylistSection(props: {
     slugArtist: string,
 }) {
     return (
-        <Section style={styles.playlist}>
+        <Section className={styles.playlist}>
             <Container hasSidebar={true}>
                 <ul>
                     {props.songs.map((song, index) => (

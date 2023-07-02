@@ -31,7 +31,7 @@ export function MenuDesktop(props: {
 
                 <SearchInput
                     placeholder='Buscar música ou artista'
-                    style={styles.input}
+                    className={styles.input}
                 />
             </nav>
         </>

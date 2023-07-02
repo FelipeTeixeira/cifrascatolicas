@@ -50,7 +50,7 @@ export default function Musica(props: Props): JSX.Element {
 
             <main className={styles.main}>
                 <div className={styles.content}>
-                    <Section style={styles.cipherSection}>
+                    <Section className={styles.cipherSection}>
                         <h1 className={styles.title}>
                             {nome}
                             <strong>{artista.nome}</strong>
@@ -59,7 +59,7 @@ export default function Musica(props: Props): JSX.Element {
                         {cifra &&
                             <Cipher cipher={cifra} />}
                     </Section>
-                    <AdvertisingSection style={styles.cipherSection} />
+                    <AdvertisingSection className={styles.cipherSection} />
                 </div>
 
                 <div className={styles.tools}>
@@ -71,7 +71,7 @@ export default function Musica(props: Props): JSX.Element {
                             </Section>
                         }
 
-                        <Section style={`${styles.actions} ${styles.border}`}>
+                        <Section className={`${styles.actions} ${styles.border}`}>
                             <RadioGroup
                                 selected={'Violão'}
                                 options={['Violão', 'Guitarra', 'Cavaco', 'Teclado']} />
@@ -85,7 +85,7 @@ export default function Musica(props: Props): JSX.Element {
                             <Chords options={chords} className={styles.chords} />
                         </section>
 
-                        <Section style={styles.counterButtonSection}>
+                        <Section className={styles.counterButtonSection}>
                             <section className={styles.border}>
                                 <span className={styles.label}>Ajuste o tom</span>
                                 <CounterButton name='Tom' />

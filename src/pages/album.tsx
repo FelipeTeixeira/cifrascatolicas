@@ -33,8 +33,8 @@ export default function Album(props: Props): JSX.Element {
             <main>
 
                 <Section>
-                    <Container style={styles.container} hasSidebar={true}>
-                        <ArtistCard image={AlbumImage} alt='Eu Vou Crer em Ti' style={styles.albumImage} />
+                    <Container className={styles.container} hasSidebar={true}>
+                        <ArtistCard image={AlbumImage} alt='Eu Vou Crer em Ti' className={styles.albumImage} />
 
                         <div className={styles.content}>
                             <PageTitle>

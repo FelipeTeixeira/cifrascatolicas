@@ -4,19 +4,19 @@ import Anuncio from '@public/teste/anuncio-2.png'
 import Image from 'next/image';
 
 export function AdvertisingSidebar(props: {
-    style: string;
+    className: string;
 }) {
     return (
         <aside className={styles.aside}>
             <div className={styles.advertising}>
-                <Tag style={styles.tag}>
+                <Tag className={styles.tag}>
                     Publicidade
                 </Tag>
                 <Image src={Anuncio} alt='' className={styles.image} />
             </div>
 
             <div className={styles.advertising}>
-                <Tag style={styles.tag}>
+                <Tag className={styles.tag}>
                     Publicidade
                 </Tag>
                 <Image src={Anuncio} alt='' className={styles.image} />
@@ -26,5 +26,5 @@ export function AdvertisingSidebar(props: {
 }
 
 AdvertisingSidebar.defaultProps = {
-    style: '',
+    className: '',
 };

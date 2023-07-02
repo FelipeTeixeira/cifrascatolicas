@@ -3,15 +3,15 @@ import styles from './page-title.module.scss'
 
 export function PageTitle(props: {
     children: ReactNode;
-    style: string;
+    className: string;
 }) {
     return (
-        <h1 className={`${styles.title} ${props.style}`}>
+        <h1 className={`${styles.title} ${props.className}`}>
             {props.children}
         </h1>
     )
 }
 
 PageTitle.defaultProps = {
-    style: '',
+    className: '',
 };

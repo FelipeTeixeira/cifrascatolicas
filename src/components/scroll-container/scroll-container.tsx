@@ -3,10 +3,10 @@ import { ReactNode } from 'react';
 
 export function ScrollContainer(props: {
     children: ReactNode[];
-    style?: string;
+    className: string;
 }) {
     return (
-        <ul className={`${styles.scrollContainer} ${props.style || ''}`}>
+        <ul className={`${styles.scrollContainer} ${props.className}`}>
             {props?.children.map((children, index) => (
                 <li key={index}>
                     {children}
@@ -15,3 +15,7 @@ export function ScrollContainer(props: {
         </ul>
     )
 }
+
+ScrollContainer.defaultProps = {
+    className: '',
+};

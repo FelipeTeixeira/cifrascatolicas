@@ -5,11 +5,11 @@ export function Container(props: {
     children: ReactNode;
     flexDirection: 'column' | 'row';
     hasSidebar: boolean;
-    style: string;
+    className: string;
 }) {
     return (
         <div className={`
-            ${styles.container} ${props.style}
+            ${styles.container} ${props.className}
             ${props.flexDirection === 'column' ? styles.flexColumn : styles.flexRow}
             ${props.hasSidebar ? styles.hasSidebar : ''}
         `}>
@@ -19,7 +19,7 @@ export function Container(props: {
 }
 
 Container.defaultProps = {
-    style: '',
+    className: '',
     flexDirection: 'column',
     hasSidebar: false,
 };

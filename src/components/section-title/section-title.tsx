@@ -3,11 +3,15 @@ import styles from './section-title.module.scss'
 
 export function SectionTitle(props: {
     children: ReactNode;
-    style?: string;
+    className: string;
 }) {
     return (
-        <h2 className={`${styles.title} ${props.style || ''}`}>
+        <h2 className={`${styles.title} ${props.className}`}>
             {props.children}
         </h2>
     )
 }
+
+SectionTitle.defaultProps = {
+    className: '',
+};

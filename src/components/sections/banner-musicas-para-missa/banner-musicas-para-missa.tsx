@@ -7,7 +7,7 @@ import { Section } from '@components/section/section'
 
 export function BannerMusicasParaMissaSection() {
     return (
-        <Section style={styles.section}>
+        <Section className={styles.section}>
             <Container>
                 <div className={styles.container}>
                     <h3 className={styles.title}>

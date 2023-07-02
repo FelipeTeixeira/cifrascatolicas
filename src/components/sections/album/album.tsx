@@ -6,7 +6,7 @@ import { Section } from '@components/section/section'
 
 export function AlbumSection() {
     return (
-        <Section style={styles.section}>
+        <Section className={styles.section}>
             <Container hasSidebar={true}>
                 <ul className={styles.grid}>
                     {Array.from(Array(7)).map((song, index) => (

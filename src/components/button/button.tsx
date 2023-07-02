@@ -8,7 +8,7 @@ export function Button(props: {
 }) {
     return (
         <button
-            className={`${styles.button} ${props.style}`}
+            className={`${styles.button} ${props.className}`}
             type='button'
             onClick={props.onClick}>
             {props.children}
@@ -17,5 +17,5 @@ export function Button(props: {
 }
 
 Button.defaultProps = {
-    style: '',
+    className: '',
 };

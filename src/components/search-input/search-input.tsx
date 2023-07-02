@@ -3,10 +3,10 @@ import { SearchIcon } from '@components/icons/search-icon'
 
 export function SearchInput(props: {
     placeholder: string;
-    style: string;
+    className: string;
 }) {
     return (
-        <div className={`${styles.formGroup} ${props.style}`}>
+        <div className={`${styles.formGroup} ${props.className}`}>
             <span className={styles.icon}>
                 <SearchIcon width={20} height={20} />
             </span>
@@ -17,5 +17,5 @@ export function SearchInput(props: {
 
 SearchInput.defaultProps = {
     placeholder: '',
-    style: '',
+    className: '',
 };

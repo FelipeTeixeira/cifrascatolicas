@@ -46,7 +46,7 @@ export function SearchModal(props: {
                 </li>
             </ul>
 
-            <TagLink style={styles.accessAll}>
+            <TagLink className={styles.accessAll}>
                 Acessar todos
             </TagLink>
 

@@ -45,7 +45,7 @@ export default function Artista(props: Props): JSX.Element {
 
             <main>
                 <Section>
-                    <Container style={styles.container} hasSidebar={true}>
+                    <Container className={styles.container} hasSidebar={true}>
 
                         <figure className={styles.avatar}>
                             <Avatar

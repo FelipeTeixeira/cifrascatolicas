@@ -6,12 +6,12 @@ export function Section(props: {
     style?: string;
 }) {
     return (
-        <section className={`${styles.section} ${props.style}`}>
+        <section className={`${styles.section} ${props.className}`}>
             {props.children}
         </section>
     )
 }
 
 Section.defaultProps = {
-    style: '',
+    className: '',
 };

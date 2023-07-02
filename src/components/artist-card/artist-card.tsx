@@ -6,11 +6,11 @@ import { Avatar } from '@components/avatar/avatar';
 export function ArtistCard(props: {
     image: StaticImageData | string;
     legend: string;
-    style: string;
+    className: string;
     alt: string;
 }) {
     return (
-        <div className={`${styles.artistCard} ${props.style}`}>
+        <div className={`${styles.artistCard} ${props.className}`}>
             {props.legend ? <strong className={styles.legend}>{props.legend}</strong> : null}
             <Avatar image={props.image} alt={props.alt} />
         </div>
@@ -19,5 +19,5 @@ export function ArtistCard(props: {
 
 ArtistCard.defaultProps = {
     legend: '',
-    style: '',
+    className: '',
 };

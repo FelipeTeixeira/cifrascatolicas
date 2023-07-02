@@ -3,15 +3,15 @@ import styles from './tag.module.scss'
 
 export function Tag(props: {
     children: ReactNode;
-    style: string;
+    className: string;
 }) {
     return (
-        <span className={`${styles.tag} ${props.style}`}>
+        <span className={`${styles.tag} ${props.className}`}>
             {props.children}
         </span>
     )
 }
 
 Tag.defaultProps = {
-    style: '',
+    className: '',
 };

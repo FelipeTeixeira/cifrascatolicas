@@ -11,15 +11,15 @@ export function RepertoireSection() {
     return (
         <section className={styles.repertoire}>
             <Container>
-                <SectionTitle style={styles.title}>
+                <SectionTitle className={styles.title}>
                     Repertórios para você
                 </SectionTitle>
 
-                <TagLink style={styles.viewMore}>
+                <TagLink className={styles.viewMore}>
                     Mais
                 </TagLink>
 
-                <ScrollContainer style={styles.scrollContainer}>
+                <ScrollContainer className={styles.scrollContainer}>
                     <RepertoireCard image={Repertorio2} />
                     <RepertoireCard image={Repertorio1} />
                     <RepertoireCard image={Repertorio2} />
