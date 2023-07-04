@@ -5,10 +5,13 @@
 
     @include mq("desktop") {
         display: block;
-        position: absolute;
-        top: 28px;
-        right: 0;
+        margin-left: auto;
         width: var(--width-sidebar);
+
+        position: absolute;
+        top: 12px;
+        right: 0;
+        bottom: 0;
     }
 }
 
@@ -19,4 +22,13 @@
 
 .advertising {
     margin-bottom: var(--space-4);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.sticky {
+    position: sticky;
+    top: var(--space-2);
 }

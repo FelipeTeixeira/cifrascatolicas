@@ -9,6 +9,7 @@ import { PageTitle } from '@components/page-title/page-title'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 import { GetServerSideProps } from 'next'
 import { setPreviousUrl } from '@utils/set-previous-url.util'
+import { useRef } from 'react'
 
 type Props = {
     previousUrl: string;
@@ -21,6 +22,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 }
 
 export default function Album(props: Props): JSX.Element {
+    const refMain = useRef<HTMLElement>(null);
+
     return (
         <>
             <Head>
@@ -30,8 +33,7 @@ export default function Album(props: Props): JSX.Element {
 
             <SubHeader previousUrl={props.previousUrl} />
 
-            <main>
-
+            <main ref={refMain}>
                 <Section>
                     <Container className={styles.container} hasSidebar={true}>
                         <ArtistCard image={AlbumImage} alt='Eu Vou Crer em Ti' className={styles.albumImage} />
@@ -55,7 +57,7 @@ export default function Album(props: Props): JSX.Element {
                                 </span>
                             </p>
                         </div>
-                        <AdvertisingSidebar />
+                        <AdvertisingSidebar refMain={refMain} />
                     </Container>
                 </Section>
 

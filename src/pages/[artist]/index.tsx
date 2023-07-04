@@ -5,7 +5,7 @@ import { SubHeader } from '@components/subheader/subheader'
 import { ToggleButton } from '@components/toggle-button/toggle-button'
 
 import { PlaylistSection } from '@components/sections/playlist/playlist'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { AlbumSection } from '@components/sections/album/album'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
@@ -33,6 +33,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 export default function Artista(props: Props): JSX.Element {
     const { nome, slug } = props.artist;
     const [tabSelected, setTabSelected] = useState('Músicas');
+    const refMain = useRef<HTMLElement>(null);
 
     return (
         <>
@@ -43,7 +44,7 @@ export default function Artista(props: Props): JSX.Element {
 
             <SubHeader previousUrl={props.previousUrl} />
 
-            <main>
+            <main ref={refMain}>
                 <Section>
                     <Container className={styles.container} hasSidebar={true}>
 
@@ -65,7 +66,8 @@ export default function Artista(props: Props): JSX.Element {
                                 hasButtonSpacing={true}
                             />
                         </div>
-                        <AdvertisingSidebar />
+
+                        <AdvertisingSidebar refMain={refMain} />
                     </Container>
                 </Section>
 

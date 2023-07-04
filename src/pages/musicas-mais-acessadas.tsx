@@ -6,8 +6,11 @@ import { Section } from '@components/section/section'
 import { PageTitle } from '@components/page-title/page-title'
 import { Container } from '@components/container/container'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
+import { useRef } from 'react'
 
 export default function MusicasMaisAcessadas() {
+    const refMain = useRef<HTMLElement>(null);
+
     return (
         <>
             <Head>
@@ -17,7 +20,7 @@ export default function MusicasMaisAcessadas() {
 
             <SubHeader previousUrl='/' />
 
-            <main>
+            <main ref={refMain}>
                 <Section>
                     <Container hasSidebar={true}>
                         <PageTitle>
@@ -45,7 +48,7 @@ export default function MusicasMaisAcessadas() {
                             </li>
                         </ul>
 
-                        <AdvertisingSidebar />
+                        <AdvertisingSidebar refMain={refMain} />
                     </Container>
                 </Section>
             </main >

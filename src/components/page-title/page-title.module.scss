@@ -4,6 +4,7 @@
     font-size: 18px;
     color: #3F3F46;
     margin-bottom: var(--space-2);
+    grid-area: title;
 
     @include mq("desktop") {
         font-size: 32px;

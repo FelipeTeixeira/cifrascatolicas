@@ -11,6 +11,7 @@ import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-
 import { GetServerSideProps } from 'next'
 import { ArtistInterface } from '@interfaces/artist.interface'
 import { getAllArtist } from '@services/artist.service'
+import { useRef } from 'react'
 
 type Props = {
     artists: ArtistInterface[];
@@ -23,6 +24,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 
 export default function Artista(props: Props): JSX.Element {
     const { artists } = props;
+    const refMain = useRef<HTMLElement>(null);
+
     return (
         <>
             <Head>
@@ -31,7 +34,7 @@ export default function Artista(props: Props): JSX.Element {
             </Head>
 
             <SubHeader previousUrl='/' />
-            <main>
+            <main ref={refMain}>
                 <Section>
                     <Container hasSidebar={true}>
                         <PageTitle>
@@ -55,7 +58,8 @@ export default function Artista(props: Props): JSX.Element {
                                 </Link>
                             ))}
                         </div>
-                        <AdvertisingSidebar />
+
+                        <AdvertisingSidebar refMain={refMain} />
                     </Container>
                 </Section>
             </main >
