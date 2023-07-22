@@ -12,9 +12,9 @@ import { RadioGroup } from '@components/radio-group/radio-group';
 import { GetServerSideProps } from 'next';
 import { getSong } from '@services/artist.service';
 import { getVideoId } from '@utils/get-video-id.util';
-import { SongDetailsInterface } from '@interfaces/artist.interface'
 import { setPreviousUrl } from '@utils/set-previous-url.util'
 import { Section } from '@components/section/section'
+import { SongDetailsInterface } from '@interfaces/song.interface'
 
 type Props = {
     song: SongDetailsInterface;
@@ -22,9 +22,9 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-    const artist = context.params?.artist as string;
-    const selectedSong = context.params?.song as string;
-    const song = await getSong(artist, selectedSong);
+    const artistSlug = context.params?.artist as string;
+    const selectedSongSlug = context.params?.song as string;
+    const song = await getSong(artistSlug, selectedSongSlug);
     const previousUrl = setPreviousUrl(context, context.resolvedUrl.split('/').slice(0, -1).join('/'));
 
     return {

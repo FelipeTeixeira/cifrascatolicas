@@ -1,0 +1,32 @@
+@import "@styles/variables";
+
+.pagination {
+    display: flex;
+    align-items: center;
+    margin: 40px 0 0;
+
+    li {
+        color: rgba(0, 0, 0, 0.45);
+        display: flex;
+        align-items: center;
+    }
+}
+
+.link {
+    font-weight: bold;
+    font-size: 14px;
+    color: #b69548;
+    background: #f5f3f0;
+    line-height: 36px;
+    padding: 0 24px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.page {
+    line-height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
