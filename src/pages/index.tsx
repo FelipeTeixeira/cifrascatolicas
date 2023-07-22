@@ -10,8 +10,30 @@ import { ArtistsSection } from '@components/sections/artists/artists'
 import { BannerMusicasParaMissaSection } from '@sections/banner-musicas-para-missa/banner-musicas-para-missa'
 import { AdvertisingSection } from '@components/sections/advertising/advertising'
 import { Container } from '@components/container/container'
+import { GetServerSideProps } from 'next'
+import { MusicResponseInterface } from '@interfaces/song.interface'
+import { getAllMusics } from '@services/music.service'
 
-export default function Home() {
+type Props = {
+    musicsHighlightsResponse: MusicResponseInterface;
+    musicsMostAccessedResponse: MusicResponseInterface;
+}
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+    const musicsHighlightsResponse = await getAllMusics(0, 3);
+    const musicsMostAccessedResponse = await getAllMusics(3, 9);
+
+    return {
+        props: {
+            musicsHighlightsResponse,
+            musicsMostAccessedResponse
+        }
+    }
+}
+
+export default function Home(props: Props): JSX.Element {
+    const { musicsHighlightsResponse, musicsMostAccessedResponse } = props;
+
     return (
         <>
             <Head>
@@ -40,8 +62,8 @@ export default function Home() {
                     />
                 </section>
 
-                <HighlightsSection />
-                <MostAccessedSection />
+                <HighlightsSection musics={musicsHighlightsResponse.data} />
+                <MostAccessedSection musics={musicsMostAccessedResponse.data} />
                 <RepertoireSection />
                 <ArtistsSection />
                 <BannerMusicasParaMissaSection />

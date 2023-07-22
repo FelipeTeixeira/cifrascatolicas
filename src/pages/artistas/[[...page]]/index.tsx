@@ -29,7 +29,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 
 export default function Artista(props: Props): JSX.Element {
     const { artistResponse } = props;
-    const artists = artistResponse.data;
     const refMain = useRef<HTMLElement>(null);
 
     return (
@@ -47,10 +46,10 @@ export default function Artista(props: Props): JSX.Element {
                             Todos os artistas
                         </PageTitle>
 
-                        {artists.length ?
+                        {artistResponse.data.length ?
                             <>
                                 <div className={styles.content}>
-                                    {artists.map((artist, index) => (
+                                    {artistResponse.data.map((artist, index) => (
                                         <Link
                                             href={artist.slug}
                                             className={styles.link}

@@ -1,26 +1,27 @@
-import Image, { StaticImageData } from 'next/image'
+import { MusicDetailsInterface } from '@interfaces/song.interface';
 import styles from './thumbnail.module.scss'
 import { Avatar } from '@components/avatar/avatar';
 
 export function Thumbnail(props: {
-    image: StaticImageData,
-    song: string;
-    artist: string;
+    music: MusicDetailsInterface;
 }) {
+    const { nome, artista } = props.music;
+
     return (
         <div className={styles.thumbnail}>
             <span className={styles.image}>
                 <Avatar
-                    image={props.image}
-                    alt={`${props.song} ${props.artist}`}
+                    image={`https://cifrascatolicas.com.br/imagens/${artista.slug}.png`}
+                    alt={`${nome} ${artista.nome}`}
+                    className={styles.avatarIcon}
                 />
             </span>
 
             <p className={styles.description}>
-                <strong>
-                    {props.song}
+                <strong title={nome.toLowerCase()}>
+                    {nome.toLowerCase()}
                 </strong>
-                {props.artist}
+                {artista.nome.toLowerCase()}
             </p>
         </div>
     )

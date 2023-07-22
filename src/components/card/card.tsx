@@ -1,27 +1,35 @@
 import { StaticImageData } from 'next/image'
 import styles from './card.module.scss'
 import { Avatar } from '@components/avatar/avatar'
+import { ArtistInterface } from '@interfaces/artist.interface';
+import { MusicDetailsInterface } from '@interfaces/song.interface';
 
+// TODO - alterar nome
 export function Card(props: {
-    image: StaticImageData
+    music: MusicDetailsInterface;
 }) {
+    const { slug, nome, artista } = props.music;
+
     return (
         <div className={styles.card}>
 
             <div className={styles.container}>
-                <h4 className={styles.title}>
-                    De Ti Preciso
+                <h4 className={styles.title} title={nome.toLowerCase()}>
+                    {nome.toLowerCase()}
                 </h4>
                 <p className={styles.description}>
                     Cifra simplificada
                 </p>
 
                 <strong className={styles.tag}>
-                    Frei Gilson
+                    {artista.nome}
                 </strong>
             </div>
 
-            <Avatar image={props.image} alt='Logo do Cifras Católicas' />
+            <Avatar
+                image={`https://cifrascatolicas.com.br/imagens/albums/200/${slug}.png`}
+                alt={`${nome.toLowerCase()} - ${artista.nome}`}
+            />
         </div>
     )
 }

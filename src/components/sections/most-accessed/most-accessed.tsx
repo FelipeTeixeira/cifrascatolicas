@@ -1,12 +1,16 @@
 import { Thumbnail } from '@components/thumbnail/thumbnail'
 import styles from './most-accessed.module.scss'
-import Artista from '@public/teste/artista.png'
 import { TagLink } from '@components/tag-link/tag-link'
 import { SectionTitle } from '@components/section-title/section-title'
 import { Container } from '@components/container/container'
 import { Section } from '@components/section/section'
+import { MusicDetailsInterface } from '@interfaces/song.interface'
 
-export function MostAccessedSection() {
+export function MostAccessedSection(props: {
+    musics: MusicDetailsInterface[];
+}) {
+    console.log(props.musics);
+
     return (
         <Section className={styles.section}>
             <Container>
@@ -19,24 +23,11 @@ export function MostAccessedSection() {
                 </TagLink>
 
                 <ul className={styles.grid}>
-                    <li>
-                        <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                    </li>
-                    <li>
-                        <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                    </li>
-                    <li>
-                        <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                    </li>
-                    <li>
-                        <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                    </li>
-                    <li>
-                        <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                    </li>
-                    <li>
-                        <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                    </li>
+                    {props.musics.map((music, index) => (
+                        <li key={index}>
+                            <Thumbnail music={music} />
+                        </li>
+                    ))}
                 </ul>
             </Container>
         </Section>

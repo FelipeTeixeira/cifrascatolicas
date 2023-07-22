@@ -1,4 +1,6 @@
 import { StaticImageData } from 'next/image';
+import { MetaInterface } from './meta.interface';
+import { Links } from './links.interface';
 
 // TODO - excluir depois
 export interface Song {
@@ -13,11 +15,17 @@ export interface SongInterface {
     slug: string;
 }
 
-export interface SongDetailsInterface {
+export interface MusicDetailsInterface {
     artista: SongInterface;
     cifra: string;
     info: string;
     nome: string;
     slug: string;
     video?: string;
+}
+
+export interface MusicResponseInterface {
+    data: MusicDetailsInterface[];
+    meta: MetaInterface;
+    links: Links;
 }

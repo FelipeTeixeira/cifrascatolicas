@@ -13,26 +13,46 @@
     height: 40px;
     position: relative;
     overflow: hidden;
+    border: 1px solid #e4e4e7;
 
     @include mq("desktop") {
         width: 60px;
         height: 60px;
     }
+
+    .avatarIcon {
+        background-size: 24px;
+    }
 }
 
 .description {
     font-size: 12px;
+    text-transform: capitalize;
     color: #52525b;
     display: flex;
     flex-direction: column;
+    flex: 1;
 
     @include mq("desktop") {
         font-size: 16px;
+
+        // TODO - criar mixin para -webkit-line-clamp
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        white-space: pre-wrap;
     }
 
     strong {
         font-size: 14px;
         color: #27272a;
+        line-height: 1;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        white-space: pre-wrap;
 
         @include mq("desktop") {
             font-size: 20px;

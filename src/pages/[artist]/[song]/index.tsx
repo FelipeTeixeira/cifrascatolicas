@@ -14,10 +14,10 @@ import { getSong } from '@services/artist.service';
 import { getVideoId } from '@utils/get-video-id.util';
 import { setPreviousUrl } from '@utils/set-previous-url.util'
 import { Section } from '@components/section/section'
-import { SongDetailsInterface } from '@interfaces/song.interface'
+import { MusicDetailsInterface } from '@interfaces/song.interface'
 
 type Props = {
-    song: SongDetailsInterface;
+    song: MusicDetailsInterface;
     previousUrl: string;
 }
 

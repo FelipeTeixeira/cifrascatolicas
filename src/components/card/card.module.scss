@@ -37,6 +37,13 @@
 
 .title {
     font-size: 14px;
+    text-transform: capitalize;
+    line-height: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    white-space: pre-wrap;
 
     @include mq("desktop") {
         font-size: 20px;

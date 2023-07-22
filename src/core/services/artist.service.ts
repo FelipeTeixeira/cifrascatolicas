@@ -2,7 +2,7 @@ import {
     ArtistInterface,
     ArtistResponseInterface,
 } from '@interfaces/artist.interface';
-import { SongDetailsInterface } from '@interfaces/song.interface';
+import { MusicDetailsInterface } from '@interfaces/song.interface';
 import { setURLParams } from '@utils/url-params.util';
 
 const API = process.env.API;
@@ -10,7 +10,7 @@ const API = process.env.API;
 export async function getSong(
     artist: string,
     song: string
-): Promise<SongDetailsInterface> {
+): Promise<MusicDetailsInterface> {
     const response = await fetch(`${API}/artistas/${artist}/${song}`);
     return await response.json();
 }
