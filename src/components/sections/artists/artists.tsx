@@ -7,8 +7,11 @@ import { ScrollContainer } from '@components/scroll-container/scroll-container'
 import { ArtistCard } from '@components/artist-card/artist-card'
 import { Container } from '@components/container/container'
 import Link from 'next/link'
+import { ArtistInterface } from '@interfaces/artist.interface'
 
-export function ArtistsSection() {
+export function ArtistsSection(props: {
+    artists: ArtistInterface[]
+}) {
     return (
         <section className={styles.section}>
             <Container>
@@ -21,38 +24,16 @@ export function ArtistsSection() {
                 </TagLink>
 
                 <ScrollContainer className={styles.scrollContainer}>
-                    <Link href={'/action-musica-catolica'}>
-                        <ArtistCard
-                            className={styles.artistImage}
-                            image={Artista2}
-                            legend='Padre Antônio Maria'
-                            alt='Padre Antônio Maria'
-                        />
-                    </Link>
-                    <ArtistCard
-                        className={styles.artistImage}
-                        image={Artista}
-                        legend='Eliana Ribeiro'
-                        alt='Eliana Ribeiro'
-                    />
-                    <ArtistCard
-                        className={styles.artistImage}
-                        image={Artista2}
-                        legend='Padre Antônio Maria'
-                        alt='Padre Antônio Maria'
-                    />
-                    <ArtistCard
-                        className={styles.artistImage}
-                        image={Artista}
-                        legend='Eliana Ribeiro'
-                        alt='Eliana Ribeiro'
-                    />
-                    <ArtistCard
-                        className={styles.artistImage}
-                        image={Artista2}
-                        legend='Padre Antônio Maria'
-                        alt='Padre Antônio Maria'
-                    />
+                    {props.artists.map((artist, index) => (
+                        <Link href={`/${artist.slug}`} key={index}>
+                            <ArtistCard
+                                className={styles.artistImage}
+                                image={`https://cifrascatolicas.com.br/imagens/${artist.slug}.png`}
+                                legend={artist.nome}
+                                alt={artist.nome}
+                            />
+                        </Link>
+                    ))}
                 </ScrollContainer>
             </Container>
         </section>

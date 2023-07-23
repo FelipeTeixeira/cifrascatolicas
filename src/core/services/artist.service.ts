@@ -6,12 +6,13 @@ import { MusicDetailsInterface } from '@interfaces/song.interface';
 import { setURLParams } from '@utils/url-params.util';
 
 const API = process.env.API;
+const url = 'artistas';
 
 export async function getSong(
     artist: string,
     song: string
 ): Promise<MusicDetailsInterface> {
-    const response = await fetch(`${API}/artistas/${artist}/${song}`);
+    const response = await fetch(`${API}/${url}/${artist}/${song}`);
     return await response.json();
 }
 
@@ -24,11 +25,11 @@ export async function getAllArtist(
         limit: limit.toString()
     };
 
-    const response = await fetch(`${API}/artistas${setURLParams(params)}`);
+    const response = await fetch(`${API}/${url}${setURLParams(params)}`);
     return await response.json();
 }
 
 export async function getArtistDetails(slug: string): Promise<ArtistInterface> {
-    const response = await fetch(`${API}/artistas/${slug}`);
+    const response = await fetch(`${API}/${url}/${slug}`);
     return await response.json();
 }
