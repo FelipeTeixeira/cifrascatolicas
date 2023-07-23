@@ -4,6 +4,7 @@ import BannerMobile from '@public/banner-celular-musicas-para-missa.png'
 import BannerDesktop from '@public/banner-desktop-musicas-para-missa.jpg'
 import Image from 'next/image'
 import { Section } from '@components/section/section'
+import Link from 'next/link'
 
 export function BannerMusicasParaMissaSection() {
     return (
@@ -18,16 +19,18 @@ export function BannerMusicasParaMissaSection() {
                     </p>
                 </div>
 
-                <Image
-                    src={BannerMobile}
-                    alt='Banner do Músicas para missa'
-                    className={`${styles.banner} showMobile`}
-                />
-                <Image
-                    src={BannerDesktop}
-                    alt='Banner do Músicas para missa'
-                    className={`${styles.banner} showDesktop`}
-                />
+                <Link href="https://musicasparamissa.com.br/" target='_blank'>
+                    <Image
+                        src={BannerMobile}
+                        alt='Banner do Músicas para missa'
+                        className={`${styles.banner} showMobile`}
+                    />
+                    <Image
+                        src={BannerDesktop}
+                        alt='Banner do Músicas para missa'
+                        className={`${styles.banner} showDesktop`}
+                    />
+                </Link>
 
             </Container>
         </Section>
