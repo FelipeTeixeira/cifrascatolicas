@@ -6,12 +6,13 @@ import Artista2 from '@public/teste/artista-2.png'
 import Image from 'next/image'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
-import { ArtistInterface, SongInterface } from '@interfaces/artist.interface'
+import { ArtistInterface } from '@interfaces/artist.interface'
 import Link from 'next/link'
 import { Modal } from '@components/modal/modal'
 import { TEXTS } from 'src/core/constants/texts'
 import { ShareModal } from '@components/share-modal/share-modal'
 import { useState } from 'react'
+import { SongInterface } from '@interfaces/song.interface'
 
 export function PlaylistSection(props: {
     artist: ArtistInterface;

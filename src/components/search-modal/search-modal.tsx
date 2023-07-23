@@ -26,24 +26,24 @@ export function SearchModal(props: {
             <SearchInput placeholder='Buscar música ou artista' />
 
             <ul className={styles.list}>
-                <li>
-                    <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                {/* <li>
+                    <Thumbnail image={Artista} music='A cruz da Salvação' artist='Anjos de resgate' />
                 </li>
                 <li>
-                    <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                    <Thumbnail image={Artista} music='A cruz da Salvação' artist='Anjos de resgate' />
                 </li>
                 <li>
-                    <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                    <Thumbnail image={Artista} music='A cruz da Salvação' artist='Anjos de resgate' />
                 </li>
                 <li>
-                    <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                    <Thumbnail image={Artista} music='A cruz da Salvação' artist='Anjos de resgate' />
                 </li>
                 <li>
-                    <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
+                    <Thumbnail image={Artista} music='A cruz da Salvação' artist='Anjos de resgate' />
                 </li>
                 <li>
-                    <Thumbnail image={Artista} song='A cruz da Salvação' artist='Anjos de resgate' />
-                </li>
+                    <Thumbnail image={Artista} music='A cruz da Salvação' artist='Anjos de resgate' />
+                </li> */}
             </ul>
 
             <TagLink className={styles.accessAll}>

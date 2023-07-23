@@ -29,7 +29,7 @@ export function MenuMobile() {
                 </Link>
 
             </nav>
-            <SearchModal isVisible={visible} onClose={() => setVisible(false)} />
+            {/* <SearchModal isVisible={visible} onClose={() => setVisible(false)} /> */}
         </>
     )
 }
