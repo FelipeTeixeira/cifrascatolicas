@@ -9,8 +9,6 @@ import { MusicDetailsInterface } from '@interfaces/song.interface'
 export function MostAccessedSection(props: {
     musics: MusicDetailsInterface[];
 }) {
-    console.log(props.musics);
-
     return (
         <Section className={styles.section}>
             <Container>
@@ -18,7 +16,7 @@ export function MostAccessedSection(props: {
                     Mais acessadas
                 </SectionTitle>
 
-                <TagLink className={styles.viewMore}>
+                <TagLink className={styles.viewMore} href="/musicas-mais-acessadas">
                     Mais
                 </TagLink>
 

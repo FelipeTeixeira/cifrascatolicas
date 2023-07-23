@@ -20,8 +20,8 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-    const musicsHighlightsResponse = await getAllMusics(0, 3);
-    const musicsMostAccessedResponse = await getAllMusics(3, 9);
+    const musicsHighlightsResponse = await getAllMusics(1, 0, 3);
+    const musicsMostAccessedResponse = await getAllMusics(1, 3, 9);
 
     return {
         props: {
