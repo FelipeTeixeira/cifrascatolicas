@@ -40,6 +40,8 @@ export default function Musica(props: Props): JSX.Element {
     const pageTitle = `${nome.trim()} - ${artista.nome}`;
     const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
 
+    console.log(props.song);
+
     return (
         <>
             <Head>
