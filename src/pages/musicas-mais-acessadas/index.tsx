@@ -10,13 +10,14 @@ import { MusicResponseInterface } from '@interfaces/song.interface'
 import { GetServerSideProps } from 'next'
 import { getAllMusics } from '@services/music.service'
 import { Pagination } from '@components/pagination/pagination'
+import { useRouter } from 'next/router'
 
 type Props = {
     musicResponse: MusicResponseInterface;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-    const pageSelected = context.params?.page ? Number(context.params.page[1] || 0) : 0;
+    const pageSelected = context.query.pagina ? Number(context.query.pagina) : 0;
     const musics = await getAllMusics(pageSelected);
 
     return {
@@ -29,6 +30,11 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 export default function MusicasMaisAcessadas(props: Props): JSX.Element {
     const { musicResponse } = props;
     const refMain = useRef<HTMLElement>(null);
+    const { push } = useRouter();
+
+    if (!musicResponse.data.length) {
+        push('/');
+    }
 
     return (
         <>

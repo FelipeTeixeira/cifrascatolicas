@@ -13,6 +13,7 @@ import { ArtistResponseInterface } from '@interfaces/artist.interface'
 import { getAllArtist } from '@services/artist.service'
 import { useRef } from 'react'
 import { Pagination } from '@components/pagination/pagination'
+import { useRouter } from 'next/router'
 
 type Props = {
     artistResponse: ArtistResponseInterface;
@@ -27,9 +28,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
     }
 }
 
-export default function Artista(props: Props): JSX.Element {
+export default function Artistas(props: Props): JSX.Element {
     const { artistResponse } = props;
     const refMain = useRef<HTMLElement>(null);
+    const { push } = useRouter();
+
+    if (!artistResponse.data.length) {
+        push('/');
+    }
 
     return (
         <>
@@ -65,7 +71,6 @@ export default function Artista(props: Props): JSX.Element {
                                         </Link>
                                     ))}
                                 </div>
-
                                 <Pagination meta={artistResponse.meta} />
                             </>
                             : null}

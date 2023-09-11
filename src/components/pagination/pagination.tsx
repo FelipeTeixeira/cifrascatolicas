@@ -8,7 +8,7 @@ export function Pagination(props: {
     meta: MetaInterface;
 }) {
     const { meta } = props;
-    const router = useRouter()
+    const router = useRouter();
     const nextPage = meta.currentPage + 1;
     const previousPage = meta.currentPage - 1;
     const urlPage = router.asPath.split('?')[0];
