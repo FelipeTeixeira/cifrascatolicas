@@ -34,9 +34,7 @@ export function Avatar(props: {
                     alt={props.alt}
                     fill
                     loading="lazy"
-                    onError={() => {
-                        setHideImage(true);
-                    }}
+                    onError={() => setHideImage(true) }
                 />
 
                 : <span role="img" className={`${styles.avatar} ${props.className}`}>{props.alt}</span>
