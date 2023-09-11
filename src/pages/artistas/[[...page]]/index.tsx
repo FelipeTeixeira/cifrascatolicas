@@ -51,7 +51,7 @@ export default function Artista(props: Props): JSX.Element {
                                 <div className={styles.content}>
                                     {artistResponse.data.map((artist, index) => (
                                         <Link
-                                            href={artist.slug}
+                                            href={"/" + artist.slug}
                                             className={styles.link}
                                             title={artist.nome}
                                             key={index}>
