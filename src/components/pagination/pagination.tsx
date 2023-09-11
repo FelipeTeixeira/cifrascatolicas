@@ -11,10 +11,10 @@ export function Pagination(props: {
     const router = useRouter()
     const nextPage = meta.currentPage + 1;
     const previousPage = meta.currentPage - 1;
-    const urlPage = router.asPath.split('/')[1];
+    const urlPage = router.asPath.split('?')[0];
 
     function setUrlPage(page: number): string {
-        return `/${urlPage}/pagina/${page}`;
+        return `${urlPage}?pagina=${page}`;
     }
 
     return (
