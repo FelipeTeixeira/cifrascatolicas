@@ -38,6 +38,8 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 
 export default function Home(props: Props): JSX.Element {
     const { musicsHighlightsResponse, musicsMostAccessedResponse, artistResponse } = props;
+    // https://bright-sfogliatella-b3ce83.netlify.app/adriana-arydes/a-chave-do-coracao
+    // TODO - entender pq retorna video em prod e local nao
 
     return (
         <>

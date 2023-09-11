@@ -8,11 +8,12 @@ import { setURLParams } from '@utils/url-params.util';
 const API = process.env.API;
 const url = 'artistas';
 
+// TODO - pensar se fica aqui mesmo esse cara kk, mudou tudo a url
 export async function getSong(
     artist: string,
     song: string
 ): Promise<MusicDetailsInterface> {
-    const response = await fetch(`${API}/${url}/${artist}/${song}`);
+    const response = await fetch(`${API}/${url}/${artist}/musicas/${song}`);
     return await response.json();
 }
 
