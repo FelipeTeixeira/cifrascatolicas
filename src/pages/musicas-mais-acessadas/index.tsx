@@ -11,6 +11,7 @@ import { GetServerSideProps } from 'next'
 import { getAllMusics } from '@services/music.service'
 import { Pagination } from '@components/pagination/pagination'
 import { useRouter } from 'next/router'
+import { ErrorBoundary } from 'react-error-boundary'
 
 type Props = {
     musicResponse: MusicResponseInterface;
@@ -45,31 +46,33 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
 
             <SubHeader previousUrl='/' />
 
-            <main ref={refMain}>
-                <Section>
-                    <Container hasSidebar={true}>
-                        <PageTitle>
-                            Músicas mais acessadas
-                        </PageTitle>
+            <ErrorBoundary fallback={<div>Something went wrong</div>}>
+                <main ref={refMain}>
+                    <Section>
+                        <Container hasSidebar={true}>
+                            <PageTitle>
+                                Músicas mais acessadas
+                            </PageTitle>
 
-                        {musicResponse.data.length ?
-                            <>
-                                <ul>
-                                    {musicResponse.data.map((music, index) => (
-                                        <li key={index}>
-                                            <Thumbnail music={music} />
-                                        </li>
-                                    ))}
-                                </ul>
+                            {musicResponse.data.length ?
+                                <>
+                                    <ul>
+                                        {musicResponse.data.map((music, index) => (
+                                            <li key={index}>
+                                                <Thumbnail music={music} />
+                                            </li>
+                                        ))}
+                                    </ul>
 
-                                <Pagination meta={musicResponse.meta} />
-                            </>
-                            : null}
+                                    <Pagination meta={musicResponse.meta} />
+                                </>
+                                : null}
 
-                        <AdvertisingSidebar refMain={refMain} />
-                    </Container>
-                </Section>
-            </main >
+                            <AdvertisingSidebar refMain={refMain} />
+                        </Container>
+                    </Section>
+                </main >
+            </ErrorBoundary>
         </>
     )
 }
