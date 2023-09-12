@@ -11,7 +11,7 @@ import { getAllMusics } from '@services/music.service'
 import { Pagination } from '@components/pagination/pagination'
 import { useRouter } from 'next/router'
 import { ErrorBoundary } from 'react-error-boundary'
-import AdvertisingSidebar from '@components/advertising-sidebar/advertising-sidebar'
+import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 
 type Props = {
     musicResponse: MusicResponseInterface;

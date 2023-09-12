@@ -9,7 +9,7 @@ import { PageTitle } from '@components/page-title/page-title'
 import { GetServerSideProps } from 'next'
 import { setPreviousUrl } from '@utils/set-previous-url.util'
 import { useRef } from 'react'
-import AdvertisingSidebar from '@components/advertising-sidebar/advertising-sidebar'
+import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 
 type Props = {
     previousUrl: string;

@@ -13,7 +13,7 @@ import { getAllArtist } from '@services/artist.service'
 import { useRef } from 'react'
 import { Pagination } from '@components/pagination/pagination'
 import { useRouter } from 'next/router'
-import AdvertisingSidebar from '@components/advertising-sidebar/advertising-sidebar'
+import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 
 type Props = {
     artistResponse: ArtistResponseInterface;

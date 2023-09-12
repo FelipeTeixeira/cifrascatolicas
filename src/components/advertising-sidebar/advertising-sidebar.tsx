@@ -5,7 +5,7 @@ import { getElementHeight } from '@utils/get-element-height';
 import Image from 'next/image';
 import { useEffect, useRef, forwardRef } from 'react';
 
-const AdvertisingSidebar = forwardRef((props: { className?: string }, ref: any) => {
+export const AdvertisingSidebar = forwardRef((props: { className?: string }, ref: any) => {
     const refAside = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -41,8 +41,7 @@ const AdvertisingSidebar = forwardRef((props: { className?: string }, ref: any) 
     )
 });
 
-export default AdvertisingSidebar;
-
 AdvertisingSidebar.defaultProps = {
     className: '',
 };
+AdvertisingSidebar.displayName = 'AdvertisingSidebar';
