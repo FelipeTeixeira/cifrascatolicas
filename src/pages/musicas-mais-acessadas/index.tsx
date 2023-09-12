@@ -17,25 +17,25 @@ type Props = {
     musicResponse: MusicResponseInterface;
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-    const pageSelected = context.query.pagina ? Number(context.query.pagina) : 0;
-    const musics = await getAllMusics(pageSelected);
+// export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+//     const pageSelected = context.query.pagina ? Number(context.query.pagina) : 0;
+//     const musics = await getAllMusics(pageSelected);
 
-    return {
-        props: {
-            musicResponse: musics,
-        }
-    }
-}
+//     return {
+//         props: {
+//             musicResponse: musics,
+//         }
+//     }
+// }
 
 export default function MusicasMaisAcessadas(props: Props): JSX.Element {
     const { musicResponse } = props;
     const refMain = useRef<HTMLElement>(null);
     const { push } = useRouter();
 
-    if (!musicResponse.data.length) {
-        push('/');
-    }
+    // if (!musicResponse?.data.length) {
+    //     push('/');
+    // }
 
     return (
         <>
@@ -51,10 +51,10 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                     <Section>
                         <Container hasSidebar={true}>
                             <PageTitle>
-                                Músicas mais acessadas
+                                Músicas mais acessadas ======
                             </PageTitle>
 
-                            {musicResponse.data.length ?
+                            {musicResponse?.data.length ?
                                 <>
                                     <ul>
                                         {musicResponse.data.map((music, index) => (
