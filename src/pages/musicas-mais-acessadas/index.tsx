@@ -60,12 +60,12 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                                     <ul>
                                         {musicResponse.data.map((music, index) => (
                                             <li key={index}>
-                                                <Thumbnail music={music} />
+                                                <h2>{index}</h2>
                                             </li>
                                         ))}
                                     </ul>
 
-                                    <Pagination meta={musicResponse.meta} />
+                                    {/* <Pagination meta={musicResponse.meta} /> */}
                                 </>
                                 : null}
 
