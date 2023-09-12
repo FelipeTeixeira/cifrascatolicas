@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 }
 
 export default function MusicasMaisAcessadas(props: Props): JSX.Element {
-    const { musicResponse } = props;
+    // const { musicResponse } = props;
     const refMain = useRef<HTMLElement>(null);
     const { push } = useRouter();
 
