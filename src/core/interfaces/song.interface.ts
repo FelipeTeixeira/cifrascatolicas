@@ -13,6 +13,7 @@ export interface SongInterface {
     info: string;
     nome: string;
     slug: string;
+    imagem: string;
 }
 
 export interface MusicDetailsInterface {

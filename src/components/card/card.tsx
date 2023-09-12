@@ -1,7 +1,5 @@
-import { StaticImageData } from 'next/image'
 import styles from './card.module.scss'
 import { Avatar } from '@components/avatar/avatar'
-import { ArtistInterface } from '@interfaces/artist.interface';
 import { MusicDetailsInterface } from '@interfaces/song.interface';
 
 // TODO - alterar nome
@@ -27,7 +25,7 @@ export function Card(props: {
             </div>
 
             <Avatar
-                image={`https://cifrascatolicas.com.br/imagens/albums/200/${slug}.png`}
+                image={artista.imagem}
                 alt={`${nome.toLowerCase()} - ${artista.nome}`}
             />
         </div>

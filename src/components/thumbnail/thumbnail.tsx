@@ -11,7 +11,7 @@ export function Thumbnail(props: {
         <div className={styles.thumbnail}>
             <span className={styles.image}>
                 <Avatar
-                    image={`https://cifrascatolicas.com.br/imagens/${artista.slug}.png`}
+                    image={artista.imagem}
                     alt={`${nome} ${artista.nome}`}
                     className={styles.avatarIcon}
                 />

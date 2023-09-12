@@ -3,8 +3,6 @@ import styles from './avatar.module.scss'
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-// TODO - deixar path da imagem fixa na string
-// https://cifrascatolicas.com.br/imagens/albums/200/${slug}.png
 export function Avatar(props: {
     image: StaticImageData | string;
     alt: string;

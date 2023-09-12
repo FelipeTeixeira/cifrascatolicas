@@ -5,16 +5,8 @@ ALINHAR GUSTAVO
 - API/musicas, nao precisa retornar letra e cifra
 
 
-
-SEO = https://andrade-daniel.com.br/paginacao-google-seo/#:~:text=A%20pagina%C3%A7%C3%A3o%20%C3%A9%20uma%20p%C3%A9ssima%20ideia%20para%20o%20SEO&text=Se%20houver%20muitas%20URLS%20de,de%20se%20posicionarem%20no%20Google.
-
-
-https://cifrascatolicas.com.br/imagens/albums/200/casa-dos-espelhos.png
-
 https://g1k8r5gt46.execute-api.us-east-1.amazonaws.com/prod/cc/musicas?sortBy=visits:DESC
-
 https://g1k8r5gt46.execute-api.us-east-1.amazonaws.com/prod/cc/swagger/
-
 
 
 ARTISTAS
@@ -25,13 +17,6 @@ ARTISTAS
 TELA DA MUSICA
     - Fazer POST
 */
-
-
-
-
-
-
-
 
 
 

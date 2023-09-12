@@ -28,7 +28,7 @@ export function ArtistsSection(props: {
                         <Link href={`/${artist.slug}`} key={index}>
                             <ArtistCard
                                 className={styles.artistImage}
-                                image={`https://cifrascatolicas.com.br/imagens/${artist.slug}.png`}
+                                image={artist.imagem}
                                 legend={artist.nome}
                                 alt={artist.nome}
                             />
