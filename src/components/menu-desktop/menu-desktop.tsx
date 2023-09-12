@@ -8,7 +8,7 @@ export function MenuDesktop(props: {
 }) {
     const router = useRouter();
     const menus = [
-        { name: 'Repertório 9999', url: '/repertorio' },
+        { name: 'Repertório', url: '/repertorio' },
         { name: 'Artistas', url: '/artistas' },
         { name: 'Mais acessadas', url: '/musicas-mais-acessadas' }
     ];
