@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 }
 
 export default function MusicasMaisAcessadas(props: Props): JSX.Element {
-    // const { musicResponse } = props;
+    const { musicResponse } = props;
     const refMain = useRef<HTMLElement>(null);
     const { push } = useRouter();
 
@@ -44,16 +44,17 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                 <meta name="description" content="Músicas mais acessadas" />
             </Head>
 
-            {/* <SubHeader previousUrl='/' />
+            <SubHeader previousUrl='/' />
 
             <ErrorBoundary fallback={<div>Something went wrong</div>}>
-                <main ref={refMain}>
+                {/* <main ref={refMain}> */}
+                <main>
                     <Section>
                         <Container hasSidebar={true}>
                             <PageTitle>
                                 Músicas mais acessadas **
                             </PageTitle>
-
+                            {/*
                             {musicResponse?.data.length ?
                                 <>
                                     <ul>
@@ -68,11 +69,11 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                                 </>
                                 : null}
 
-                            <AdvertisingSidebar refMain={refMain} />
+                            <AdvertisingSidebar refMain={refMain} /> */}
                         </Container>
                     </Section>
                 </main >
-            </ErrorBoundary> */}
+            </ErrorBoundary>
         </>
     )
 }
