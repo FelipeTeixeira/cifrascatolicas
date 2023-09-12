@@ -18,8 +18,8 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-    const pageSelected = context.query.pagina ? Number(context.query.pagina) : 0;
-    const musics = await getAllMusics(pageSelected);
+    // const pageSelected = context.query?.pagina ? Number(context.query.pagina) : 0;
+    const musics = await getAllMusics();
 
     return {
         props: {
