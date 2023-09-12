@@ -22,7 +22,8 @@ export interface MusicDetailsInterface {
     info: string;
     nome: string;
     slug: string;
-    video?: string;
+    code_video?: string;
+    link_video?: string;
 }
 
 export interface MusicResponseInterface {

@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 }
 
 export default function Musica(props: Props): JSX.Element {
-    const { artista, cifra, nome, video } = props.song;
+    const { artista, cifra, nome, code_video } = props.song;
     const pageTitle = `${nome.trim()} - ${artista.nome}`;
     const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
 
@@ -68,12 +68,12 @@ export default function Musica(props: Props): JSX.Element {
                 <div className={styles.tools}>
                     <div className={styles.contentTools}>
 
-                        {video &&
+                        {code_video &&
                             <Section>
                                 <Video
                                     pageTitle={pageTitle}
                                     songName={nome}
-                                    videoId={getVideoId(video)}
+                                    videoId={code_video}
                                 />
                             </Section>
                         }
