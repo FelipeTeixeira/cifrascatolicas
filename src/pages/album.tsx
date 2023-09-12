@@ -6,10 +6,10 @@ import { ArtistCard } from '@components/artist-card/artist-card'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
 import { PageTitle } from '@components/page-title/page-title'
-import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 import { GetServerSideProps } from 'next'
 import { setPreviousUrl } from '@utils/set-previous-url.util'
 import { useRef } from 'react'
+import AdvertisingSidebar from '@components/advertising-sidebar/advertising-sidebar'
 
 type Props = {
     previousUrl: string;
@@ -57,7 +57,7 @@ export default function Album(props: Props): JSX.Element {
                                 </span>
                             </p>
                         </div>
-                        <AdvertisingSidebar refMain={refMain} />
+                        <AdvertisingSidebar ref={refMain} />
                     </Container>
                 </Section>
 

@@ -4,7 +4,6 @@ import { Thumbnail } from '@components/thumbnail/thumbnail'
 import { Section } from '@components/section/section'
 import { PageTitle } from '@components/page-title/page-title'
 import { Container } from '@components/container/container'
-import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 import { useRef } from 'react'
 import { MusicResponseInterface } from '@interfaces/song.interface'
 import { GetServerSideProps } from 'next'
@@ -12,6 +11,7 @@ import { getAllMusics } from '@services/music.service'
 import { Pagination } from '@components/pagination/pagination'
 import { useRouter } from 'next/router'
 import { ErrorBoundary } from 'react-error-boundary'
+import AdvertisingSidebar from '@components/advertising-sidebar/advertising-sidebar'
 
 type Props = {
     musicResponse: MusicResponseInterface;
@@ -68,7 +68,7 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                                 </>
                                 : null}
 
-                            <AdvertisingSidebar refMain={refMain} />
+                            <AdvertisingSidebar ref={refMain} />
                         </Container>
                     </Section>
                 </main >

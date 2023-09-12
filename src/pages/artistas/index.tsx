@@ -7,13 +7,13 @@ import { Section } from '@components/section/section'
 import { PageTitle } from '@components/page-title/page-title'
 import { ArtistCard } from '@components/artist-card/artist-card'
 import Link from 'next/link'
-import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
 import { GetServerSideProps } from 'next'
 import { ArtistResponseInterface } from '@interfaces/artist.interface'
 import { getAllArtist } from '@services/artist.service'
 import { useRef } from 'react'
 import { Pagination } from '@components/pagination/pagination'
 import { useRouter } from 'next/router'
+import AdvertisingSidebar from '@components/advertising-sidebar/advertising-sidebar'
 
 type Props = {
     artistResponse: ArtistResponseInterface;
@@ -75,7 +75,7 @@ export default function Artistas(props: Props): JSX.Element {
                             </>
                             : null}
 
-                        <AdvertisingSidebar refMain={refMain} />
+                        <AdvertisingSidebar ref={refMain} />
                     </Container>
                 </Section>
             </main >

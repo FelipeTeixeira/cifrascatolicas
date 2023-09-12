@@ -10,7 +10,7 @@ import { AlbumSection } from '@components/sections/album/album'
 import { Section } from '@components/section/section'
 import { Container } from '@components/container/container'
 import { PageTitle } from '@components/page-title/page-title'
-import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
+import AdvertisingSidebar from '@components/advertising-sidebar/advertising-sidebar'
 import { GetServerSideProps } from 'next'
 import { getArtistDetails } from '@services/artist.service'
 import { Avatar } from '@components/avatar/avatar'
@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 }
 
 export default function Artista(props: Props): JSX.Element {
-    const { nome, slug } = props.artist;
+    const { nome, imagem } = props.artist;
     const [tabSelected, setTabSelected] = useState('Músicas');
     const refMain = useRef<HTMLElement>(null);
 
@@ -50,7 +50,7 @@ export default function Artista(props: Props): JSX.Element {
 
                         <figure className={styles.avatar}>
                             <Avatar
-                                image={`https://cifrascatolicas.com.br/imagens/${slug}.png`}
+                                image={imagem}
                                 alt={nome}
                             />
                         </figure>
@@ -67,7 +67,7 @@ export default function Artista(props: Props): JSX.Element {
                             />
                         </div>
 
-                        <AdvertisingSidebar refMain={refMain} />
+                        <AdvertisingSidebar ref={refMain} />
                     </Container>
                 </Section>
 
