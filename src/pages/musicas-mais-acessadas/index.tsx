@@ -18,8 +18,8 @@ type Props = {
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-    // const pageSelected = context.query?.pagina ? Number(context.query.pagina) : 0;
-    const musics = await getAllMusics();
+    const pageSelected = context.query.pagina ? Number(context.query.pagina) : 0;
+    const musics = await getAllMusics(pageSelected);
 
     return {
         props: {
@@ -33,9 +33,9 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
     const refMain = useRef<HTMLElement>(null);
     const { push } = useRouter();
 
-    // if (!musicResponse?.data.length) {
-    //     push('/');
-    // }
+    if (!musicResponse.data.length) {
+        push('/');
+    }
 
     return (
         <>
@@ -47,29 +47,28 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
             <SubHeader previousUrl='/' />
 
             <ErrorBoundary fallback={<div>Something went wrong</div>}>
-                {/* <main ref={refMain}> */}
-                <main>
+                <main ref={refMain}>
                     <Section>
                         <Container hasSidebar={true}>
                             <PageTitle>
-                                Músicas mais acessadas **
+                                Músicas mais acessadas
                             </PageTitle>
 
-                            {musicResponse?.data.length ?
+                            {musicResponse.data.length ?
                                 <>
                                     <ul>
                                         {musicResponse.data.map((music, index) => (
                                             <li key={index}>
-                                                <h2>{index}</h2>
+                                                <Thumbnail music={music} />
                                             </li>
                                         ))}
                                     </ul>
 
-                                    {/* <Pagination meta={musicResponse.meta} /> */}
+                                    <Pagination meta={musicResponse.meta} />
                                 </>
                                 : null}
 
-                            {/* <AdvertisingSidebar refMain={refMain} /> */}
+                            <AdvertisingSidebar refMain={refMain} />
                         </Container>
                     </Section>
                 </main >
