@@ -44,7 +44,7 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                 <meta name="description" content="Músicas mais acessadas" />
             </Head>
 
-            <SubHeader previousUrl='/' />
+            {/* <SubHeader previousUrl='/' />
 
             <ErrorBoundary fallback={<div>Something went wrong</div>}>
                 <main ref={refMain}>
@@ -72,7 +72,7 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                         </Container>
                     </Section>
                 </main >
-            </ErrorBoundary>
+            </ErrorBoundary> */}
         </>
     )
 }
