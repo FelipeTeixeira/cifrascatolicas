@@ -54,7 +54,7 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                             <PageTitle>
                                 Músicas mais acessadas **
                             </PageTitle>
-                            {/*
+
                             {musicResponse?.data.length ?
                                 <>
                                     <ul>
@@ -69,7 +69,7 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
                                 </>
                                 : null}
 
-                            <AdvertisingSidebar refMain={refMain} /> */}
+                            {/* <AdvertisingSidebar refMain={refMain} /> */}
                         </Container>
                     </Section>
                 </main >
