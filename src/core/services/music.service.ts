@@ -1,9 +1,7 @@
 import { MusicResponseInterface } from '@interfaces/song.interface';
 import { setURLParams } from '@utils/url-params.util';
 
-// TODO
-// const API = process.env.API;
-const API = 'https://g1k8r5gt46.execute-api.us-east-1.amazonaws.com/prod/cc';
+const API = process.env.API;
 
 export async function getAllMusics(
     page = 1,

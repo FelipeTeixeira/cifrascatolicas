@@ -22,6 +22,7 @@ export interface MusicDetailsInterface {
     info: string;
     nome: string;
     slug: string;
+    visits: string;
     code_video?: string;
     link_video?: string;
 }

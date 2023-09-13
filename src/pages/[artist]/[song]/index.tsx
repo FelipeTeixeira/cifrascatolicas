@@ -10,8 +10,7 @@ import { Cipher } from '@components/cipher/cipher';
 import { Chords } from '@components/chords/chords';
 import { RadioGroup } from '@components/radio-group/radio-group';
 import { GetServerSideProps } from 'next';
-import { getSong } from '@services/artist.service';
-import { getVideoId } from '@utils/get-video-id.util';
+import { getSong, addVisits } from '@services/artist.service';
 import { setPreviousUrl } from '@utils/set-previous-url.util'
 import { Section } from '@components/section/section'
 import { MusicDetailsInterface } from '@interfaces/song.interface'
@@ -25,6 +24,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
     const artistSlug = context.params?.artist as string;
     const selectedSongSlug = context.params?.song as string;
     const song = await getSong(artistSlug, selectedSongSlug);
+    addVisits(artistSlug, selectedSongSlug);
     const previousUrl = setPreviousUrl(context, context.resolvedUrl.split('/').slice(0, -1).join('/'));
 
     return {
@@ -39,8 +39,6 @@ export default function Musica(props: Props): JSX.Element {
     const { artista, cifra, nome, code_video } = props.song;
     const pageTitle = `${nome.trim()} - ${artista.nome}`;
     const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
-
-    console.log(props.song);
 
     return (
         <>

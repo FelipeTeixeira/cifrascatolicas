@@ -17,6 +17,13 @@ export async function getSong(
     return await response.json();
 }
 
+export async function addVisits(artist: string, song: string): Promise<any> {
+    const response = await fetch(`${API}/${url}/${artist}/musicas/${song}`, {
+        method: 'POST',
+    });
+    return await response;
+}
+
 export async function getAllArtist(
     page = 1,
     limit = 20
