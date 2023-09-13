@@ -6,21 +6,21 @@ import Image from 'next/image'
 import { Section } from '@components/section/section'
 import Link from 'next/link'
 
-// TODO - link para navegar
 export function BannerMusicasParaMissaSection() {
     return (
         <Section className={styles.section}>
             <Container>
-                <div className={styles.container}>
-                    <h3 className={styles.title}>
-                        Músicas para missa
-                    </h3>
-                    <p className={styles.description}>
-                        Encontre as músicas litúrgicas usadas na Santa Missa.
-                    </p>
-                </div>
+                <Link href="https://musicasparamissa.com.br/" target='_blank' className={styles.link}>
+                    <div className={styles.container}>
+                        <h3 className={styles.title}>
+                            Músicas para missa
+                        </h3>
+                        <p className={styles.description}>
+                            Encontre as músicas litúrgicas usadas na Santa Missa.
+                        </p>
+                    </div>
 
-                <Link href="https://musicasparamissa.com.br/" target='_blank'>
+
                     <Image
                         src={BannerMobile}
                         alt='Banner do Músicas para missa'
@@ -32,7 +32,6 @@ export function BannerMusicasParaMissaSection() {
                         className={`${styles.banner} showDesktop`}
                     />
                 </Link>
-
             </Container>
         </Section>
     )
