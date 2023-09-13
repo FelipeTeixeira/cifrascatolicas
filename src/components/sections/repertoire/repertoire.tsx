@@ -15,7 +15,7 @@ export function RepertoireSection() {
                     Repertórios para você
                 </SectionTitle>
 
-                <TagLink className={styles.viewMore}>
+                <TagLink href='/repertorio' className={styles.viewMore}>
                     Mais
                 </TagLink>
 
