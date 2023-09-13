@@ -1,14 +1,15 @@
 import { MusicDetailsInterface } from '@interfaces/song.interface';
 import styles from './thumbnail.module.scss'
 import { Avatar } from '@components/avatar/avatar';
+import Link from 'next/link';
 
 export function Thumbnail(props: {
     music: MusicDetailsInterface;
 }) {
-    const { nome, artista } = props.music;
+    const { nome, artista, slug } = props.music;
 
     return (
-        <div className={styles.thumbnail}>
+        <Link href={`${artista.slug}/${slug}`} className={styles.thumbnail}>
             <span className={styles.image}>
                 <Avatar
                     image={artista.imagem}
@@ -23,6 +24,6 @@ export function Thumbnail(props: {
                 </strong>
                 {artista.nome.toLowerCase()}
             </p>
-        </div>
+        </Link>
     )
 }

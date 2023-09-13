@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Section } from '@components/section/section'
 import Link from 'next/link'
 
+// TODO - link para navegar
 export function BannerMusicasParaMissaSection() {
     return (
         <Section className={styles.section}>
