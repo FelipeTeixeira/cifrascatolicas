@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { SubHeader } from '@components/subheader/subheader'
 import { Thumbnail } from '@components/thumbnail/thumbnail'
 import { Section } from '@components/section/section'
@@ -12,6 +11,7 @@ import { Pagination } from '@components/pagination/pagination'
 import { useRouter } from 'next/router'
 import { ErrorBoundary } from 'react-error-boundary'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
+import { MetaTags } from '@components/meta-tags/meta-tags'
 
 type Props = {
     musicResponse: MusicResponseInterface;
@@ -39,10 +39,7 @@ export default function MusicasMaisAcessadas(props: Props): JSX.Element {
 
     return (
         <>
-            <Head>
-                <title>Cifras Católicas - Músicas mais acessadas</title>
-                <meta name="description" content="Músicas mais acessadas" />
-            </Head>
+            <MetaTags title='Músicas mais acessadas - Cifras Católicas' description='Músicas mais acessadas' />
 
             <SubHeader previousUrl='/' />
 

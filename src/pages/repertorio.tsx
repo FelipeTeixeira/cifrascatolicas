@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styles from '@styles/repertorio.module.scss'
 import { Button } from '@components/button/button'
 import { RepertoireSection } from '@sections/repertoire/repertoire'
@@ -15,6 +14,7 @@ import Artista2 from '@public/teste/artista-2.png'
 import { Container } from '@components/container/container'
 import { Section } from '@components/section/section'
 import { PageTitle } from '@components/page-title/page-title'
+import { MetaTags } from '@components/meta-tags/meta-tags'
 
 export default function Repertorio() {
     const [visible, setVisible] = useState(false);
@@ -39,10 +39,7 @@ export default function Repertorio() {
 
     return (
         <>
-            <Head>
-                <title>Cifras Católicas - Criar repertório</title>
-                <meta name="description" content="Crie seu repertório e salve as músicas para tocar no offline" />
-            </Head>
+            <MetaTags title="Criar repertório - Cifras Católicas" description="Crie seu repertório e salve as músicas para tocar no offline"  />
 
             <main>
                 <Section className={styles.section}>

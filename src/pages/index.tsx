@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@styles/index.module.scss'
 import BannerDesktop from '@public/banner-desktop.jpg'
@@ -15,6 +14,7 @@ import { MusicResponseInterface } from '@interfaces/song.interface'
 import { getAllMusics } from '@services/music.service'
 import { ArtistResponseInterface } from '@interfaces/artist.interface'
 import { getAllArtist } from '@services/artist.service'
+import { MetaTags } from '@components/meta-tags/meta-tags'
 
 type Props = {
     musicsHighlightsResponse: MusicResponseInterface;
@@ -43,10 +43,7 @@ export default function Home(props: Props): JSX.Element {
 
     return (
         <>
-            <Head>
-                <title>Cifras Católicas</title>
-                <meta name="description" content="Todas as músicas católicas reunidas para você tocar!" />
-            </Head>
+            <MetaTags />
 
             <main className={styles.main}>
                 <section>

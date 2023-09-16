@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styles from '@styles/album.module.scss'
 import { SubHeader } from '@components/subheader/subheader'
 import AlbumImage from '@public/teste/album.png'
@@ -10,6 +9,7 @@ import { GetServerSideProps } from 'next'
 import { setPreviousUrl } from '@utils/set-previous-url.util'
 import { useRef } from 'react'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
+import { MetaTags } from '@components/meta-tags/meta-tags'
 
 type Props = {
     previousUrl: string;
@@ -26,10 +26,7 @@ export default function Album(props: Props): JSX.Element {
 
     return (
         <>
-            <Head>
-                <title>Cifras Católicas - Eu Vou Crer em Ti</title>
-                <meta name="description" content="Eu Vou Crer em Ti" />
-            </Head>
+            <MetaTags title="Eu Vou Crer em Ti - Cifras Católicas" />
 
             <SubHeader previousUrl={props.previousUrl} />
 

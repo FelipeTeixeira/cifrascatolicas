@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styles from '@styles/artistas.module.scss'
 import { SubHeader } from '@components/subheader/subheader'
 
@@ -14,6 +13,7 @@ import { useRef } from 'react'
 import { Pagination } from '@components/pagination/pagination'
 import { useRouter } from 'next/router'
 import { AdvertisingSidebar } from '@components/advertising-sidebar/advertising-sidebar'
+import { MetaTags } from '@components/meta-tags/meta-tags'
 
 type Props = {
     artistResponse: ArtistResponseInterface;
@@ -39,10 +39,7 @@ export default function Artistas(props: Props): JSX.Element {
 
     return (
         <>
-            <Head>
-                <title>Artistas | Cifras Católicas</title>
-                <meta name="description" content="Artistas" />
-            </Head>
+            <MetaTags title='Artistas - Cifras Católicas' description='Artistas' />
 
             <SubHeader previousUrl='/' />
             <main ref={refMain}>

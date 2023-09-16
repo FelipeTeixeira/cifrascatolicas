@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import styles from '@styles/musica.module.scss'
 import { SubHeader } from '@components/subheader/subheader'
 import { Video } from '@components/video/video'
@@ -14,6 +13,7 @@ import { getSong, addVisits } from '@services/artist.service';
 import { setPreviousUrl } from '@utils/set-previous-url.util'
 import { Section } from '@components/section/section'
 import { MusicDetailsInterface } from '@interfaces/song.interface'
+import { MetaTags } from '@components/meta-tags/meta-tags'
 
 type Props = {
     song: MusicDetailsInterface;
@@ -42,10 +42,7 @@ export default function Musica(props: Props): JSX.Element {
 
     return (
         <>
-            <Head>
-                <title>{`${pageTitle} | Cifras Católicas`}</title>
-                <meta name="description" content={pageTitle} />
-            </Head>
+            <MetaTags title={`${pageTitle} - Cifras Católicas`}  />
 
             <SubHeader previousUrl={props.previousUrl} />
 
