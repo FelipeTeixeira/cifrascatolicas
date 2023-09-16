@@ -3,9 +3,7 @@
     - quando mexer na paginação, exibir um loading de alguma forma.
     - criar modal frella do Txai, add no final da pagina
     - cadastrar repertorio no storage
-    - colocar as meta tags de facebook e tals
 
-    - colocar face id do facebook na pagina
     - fazer acoes da tela da musica.
     - fazer modal de busca funcionar com google
     - sujerir pra Clara botoes do lado
