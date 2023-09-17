@@ -42,7 +42,7 @@ export default function Musica(props: Props): JSX.Element {
 
     return (
         <>
-            <MetaTags title={`${pageTitle} - Cifras Católicas`}  />
+            <MetaTags title={`${pageTitle} - Cifras Católicas`} />
 
             <SubHeader previousUrl={props.previousUrl} />
 
@@ -73,6 +73,9 @@ export default function Musica(props: Props): JSX.Element {
                             </Section>
                         }
 
+                        {/*
+                        TODO - para ativar essas ações precisa realizar mudanças no back-end e na geração de dados para cada ação
+
                         <Section className={`${styles.actions} ${styles.border}`}>
                             <RadioGroup
                                 selected={'Violão'}
@@ -98,9 +101,11 @@ export default function Musica(props: Props): JSX.Element {
                                 <CounterButton name='Letra' />
                             </section>
                         </Section>
+                        */}
 
                         <section className={styles.border}>
-                            <span className={styles.label}>Ative a auto rolagem</span>
+                            <CounterButton name='Letra' />
+
                             <Toolbar />
                         </section>
                     </div>

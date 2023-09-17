@@ -11,12 +11,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: max-content;
     gap: var(--space-1);
+    flex: 1;
 
     @include mq("desktop") {
         background-color: #fff;
-        min-width: 130px;
         justify-content: space-around;
     }
 

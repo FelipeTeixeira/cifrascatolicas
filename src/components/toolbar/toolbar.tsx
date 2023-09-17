@@ -1,4 +1,3 @@
-import { CircleButton } from '@components/circle-button/circle-button'
 import styles from './toolbar.module.scss'
 import { PlayIcon } from '@components/icons/play-icon'
 
@@ -9,13 +8,13 @@ export function Toolbar() {
                 Auto rolagem
             </p>
 
-            <CircleButton onClick={() => alert('teste')} hasBorder={false}>
+            <button className={styles.button} onClick={() => alert('teste')} type="button">
                 <PlayIcon />
-            </CircleButton>
+            </button>
 
-            <CircleButton onClick={() => alert('teste')} color='white' hasBorder={false}>
+            <button className={`${styles.button} ${styles.secondary}`} onClick={() => alert('teste')} color='white' type="button">
                 1x
-            </CircleButton>
+            </button>
 
             {/* BOTAO DE SUBIR A TELA */}
         </div>
