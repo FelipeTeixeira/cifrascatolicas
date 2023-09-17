@@ -28,11 +28,13 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
     const song = await getSong(artistSlug, selectedSongSlug);
     addVisits(artistSlug, selectedSongSlug);
     const previousUrl = setPreviousUrl(context, context.resolvedUrl.split('/').slice(0, -1).join('/'));
+    const hideMenuMobile = true;
 
     return {
         props: {
             song,
-            previousUrl
+            previousUrl,
+            hideMenuMobile
         }
     }
 }
