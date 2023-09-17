@@ -14,6 +14,8 @@ import { setPreviousUrl } from '@utils/set-previous-url.util'
 import { Section } from '@components/section/section'
 import { MusicDetailsInterface } from '@interfaces/song.interface'
 import { MetaTags } from '@components/meta-tags/meta-tags'
+import { ChangeFont } from '@components/change-font/change-font'
+import { useState } from 'react'
 
 type Props = {
     song: MusicDetailsInterface;
@@ -38,7 +40,12 @@ export const getServerSideProps: GetServerSideProps<Props> = async (context) => 
 export default function Musica(props: Props): JSX.Element {
     const { artista, cifra, nome, code_video } = props.song;
     const pageTitle = `${nome.trim()} - ${artista.nome}`;
-    const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
+    // const chords = ['Am', 'Bb2 ', 'C ', 'Dm ', 'F9 ', 'Bb2 ', 'C '];
+    const [fontSize, setFontSize] = useState<number>(16);
+
+    const updateFontSize = (newSize: number) => {
+        setFontSize(newSize);
+    }
 
     return (
         <>
@@ -55,7 +62,7 @@ export default function Musica(props: Props): JSX.Element {
                         </h1>
 
                         {cifra &&
-                            <Cipher cipher={cifra} />}
+                            <Cipher cipher={cifra} fontSize={fontSize} />}
                     </Section>
                     <AdvertisingSection className={styles.cipherSection} />
                 </div>
@@ -72,6 +79,11 @@ export default function Musica(props: Props): JSX.Element {
                                 />
                             </Section>
                         }
+
+                        <section className={styles.border}>
+                            <ChangeFont fontSize={fontSize} updateFontSize={updateFontSize} />
+                            <Toolbar />
+                        </section>
 
                         {/*
                         TODO - para ativar essas ações precisa realizar mudanças no back-end e na geração de dados para cada ação
@@ -102,12 +114,6 @@ export default function Musica(props: Props): JSX.Element {
                             </section>
                         </Section>
                         */}
-
-                        <section className={styles.border}>
-                            <CounterButton name='Letra' />
-
-                            <Toolbar />
-                        </section>
                     </div>
                 </div>
             </main>
