@@ -13,6 +13,14 @@ export function Toolbar() {
         let scrollInterval: NodeJS.Timer;
 
         if (isScrolling) {
+
+            if (window.innerWidth > 1200) {
+                window.scroll({
+                    top: 80,
+                    behavior: "smooth",
+                });
+            }
+
             scrollInterval = setInterval(() => {
                 window.scrollBy(0, 1);
 

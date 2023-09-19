@@ -15,7 +15,7 @@ export function Header(props: {
     return (
         <header className={`
             ${styles.header}
-            ${(props.hasBackground || scrollYPosition > 20) ? '' : styles.hasBackground}
+            ${(props.hasBackground || scrollYPosition > 80) ? '' : styles.hasBackground}
             ${scrollDirection === 'down' ? styles.hide : ''}
         `}>
             <Container flexDirection='row'>
