@@ -6,9 +6,9 @@ import { Container } from '@components/container/container'
 
 export function Footer() {
     const menus = [
-        { name: 'Repertório', url: 'repertorio' },
-        { name: 'Artistas', url: 'artistas' },
-        { name: 'Mais acessadas', url: 'musicas-mais-acessadas' }
+        { name: 'Repertório', url: '/repertorio' },
+        { name: 'Artistas', url: '/artistas' },
+        { name: 'Mais acessadas', url: '/musicas-mais-acessadas' }
     ];
 
     return (
