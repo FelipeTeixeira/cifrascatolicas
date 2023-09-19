@@ -1,5 +1,6 @@
 import styles from './toolbar.module.scss'
 import { PlayIcon } from '@components/icons/play-icon'
+import { StopIcon } from '@components/icons/stop-icon';
 import { useEffect, useState } from 'react';
 
 export function Toolbar() {
@@ -44,7 +45,7 @@ export function Toolbar() {
             </p>
 
             <button className={styles.button} onClick={toggleScroll} type="button">
-                <PlayIcon />
+                {isScrolling ? <StopIcon /> : <PlayIcon />}
             </button>
 
             <button
