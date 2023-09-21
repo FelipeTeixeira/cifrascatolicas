@@ -1,17 +1,26 @@
+@import "@styles/variables";
+
 .title {
     font-size: 18px;
     color: #3f3f46;
+
+    @include mq("desktop") {
+        font-size: 20px;
+    }
 }
 
 .description {
     font-size: 14px;
     color: #71717a;
     margin: var(--space-1) 0 var(--space-2);
+
+    @include mq("desktop") {
+        font-size: 16px;
+    }
 }
 
 .stepperContainer {
     display: flex;
-    overflow: hidden;
 }
 
 .stepperItem {
@@ -21,9 +30,16 @@
     transition: opacity 1.2s ease;
     opacity: 1;
     transform: translate(0);
+    width: 100%;
 
     &.second {
         min-height: 74vh;
+
+        @include mq("desktop") {
+            min-height: auto;
+            max-height: 600px;
+            height: 100vh;
+        }
     }
 
     &.hide {

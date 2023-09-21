@@ -9,13 +9,16 @@ export function BottomSheet(props: {
 }) {
     return (
         <>
-            {props.isVisible && <div className={styles.overlay}></div>}
-            <div className={`${styles.bottomSheet} ${props.isVisible ? styles.isActive : ''}`}>
-                <button type='button' className={styles.closeButton} onClick={props.onClose}>
-                    <CloseIcon />
-                </button>
+            {props.isVisible && <div className={styles.overlay} aria-hidden="true"></div>}
 
-                {props.children}
+            <div className={`${styles.bottomSheet} ${props.isVisible ? styles.isActive : ''}`}>
+                <div className={styles.container}>
+                    <button type='button' className={styles.closeButton} onClick={props.onClose}>
+                        <CloseIcon />
+                    </button>
+
+                    {props.children}
+                </div>
             </div>
         </>
     )
