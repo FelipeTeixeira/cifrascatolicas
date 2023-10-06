@@ -10,6 +10,11 @@
     gap: var(--space-2);
     border-bottom: 1px solid #f4f4f5;
 
+    @include mq("desktop") {
+        margin-bottom: var(--space-2);
+        padding-bottom: var(--space-2);
+    }
+
     p {
         font-size: 14px;
         color: #52525b;
