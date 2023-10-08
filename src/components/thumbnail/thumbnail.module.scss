@@ -21,7 +21,11 @@
     }
 
     .avatarIcon {
-        background-size: 24px;
+        background-size: 16px;
+
+        @include mq("desktop") {
+            background-size: 24px;
+        }
     }
 }
 
