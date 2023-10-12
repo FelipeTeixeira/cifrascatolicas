@@ -1,16 +1,17 @@
 import Image from 'next/image';
 import styles from './repertoire-list.module.scss'
-import { Song } from '@interfaces/song.interface';
+import { MusicDetailsInterface } from '@interfaces/song.interface';
 import { ArrowExpandIcon } from '@components/icons/arrow-expand-icon';
 import { DeleteIcon } from '@components/icons/delete-icon';
 import { useState } from 'react';
 import { TagLink } from '@components/tag-link/tag-link';
 import { DownloadIcon } from '@components/icons/download-icon';
 import { Section } from '@components/section/section';
+import { Avatar } from '@components/avatar/avatar';
 
 export function RepertoireListSection(props: {
     name: string;
-    songs: Song[];
+    songs: MusicDetailsInterface[];
 }) {
     const [expand, setExpand] = useState<boolean>();
 
@@ -30,13 +31,18 @@ export function RepertoireListSection(props: {
 
                         {props.songs.map((item, index) => (
                             <li key={index} className={styles.songItem}>
-                                {item.image && <Image src={item.image} alt={item.artist} />}
+                                <span className={styles.image}>
+                                    <Avatar
+                                        image={item.imagem}
+                                        alt={item.artista.nome}
+                                    />
+                                </span>
 
                                 <p className={styles.text}>
                                     <strong>
-                                        {item.song}
+                                        {item.nome}
                                     </strong>
-                                    {item.artist}
+                                    {item.artista.nome}
                                 </p>
 
                                 <button className={styles.deleteButton} >

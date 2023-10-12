@@ -7,7 +7,7 @@ import { BottomSheet } from '@components/bottom-sheet/bottom-sheet'
 import { useState } from 'react'
 import { RepertoireRegisterSection } from '@sections/repertoire-register/repertoire-register'
 import { SongDetailsModal } from '@components/song-details-modal/song-details-modal'
-import { Song } from '@interfaces/song.interface'
+import { MusicDetailsInterface } from '@interfaces/song.interface'
 import { RepertoireListSection } from '@sections/repertoire-list/repertoire-list'
 import Artista from '@public/teste/artista.png'
 import Artista2 from '@public/teste/artista-2.png'
@@ -18,24 +18,7 @@ import { MetaTags } from '@components/meta-tags/meta-tags'
 
 export default function Repertorio() {
     const [visible, setVisible] = useState(false);
-    const [selectedSong, setSelectedSong] = useState<Song>();
-    const MOCK: Song[] = [
-        {
-            song: '1- Fogo abrasador',
-            artist: '1- Comunidade Católica Colo de Deus',
-            image: Artista,
-        },
-        {
-            song: '2- Fogo abrasador',
-            artist: '2- Comunidade Católica Colo de Deus',
-            image: Artista2,
-        },
-        {
-            song: '3- Fogo abrasador',
-            artist: 'Comunidade Católica Colo de Deus',
-            image: Artista,
-        }
-    ];
+    const [selectedSong, setSelectedSong] = useState<MusicDetailsInterface>();
 
     return (
         <>
@@ -55,8 +38,10 @@ export default function Repertorio() {
                     </Container>
                 </Section>
 
+                {/*
+                VOLTAR ISSO
                 <RepertoireListSection name='Missa de domingo' songs={MOCK} />
-                <RepertoireListSection name='Missa de sábado' songs={MOCK} />
+                <RepertoireListSection name='Missa de sábado' songs={MOCK} /> */}
 
                 <RepertoireSection />
 
@@ -65,8 +50,7 @@ export default function Repertorio() {
                 <BottomSheet isVisible={visible} onClose={() => setVisible(false)} >
                     {visible &&
                         <RepertoireRegisterSection
-                            songs={MOCK}
-                            onSelectSong={(event: Song) => setSelectedSong(event)}
+                            onSelectSong={(event: MusicDetailsInterface) => setSelectedSong(event)}
                             onCreateRepertoire={() => setVisible(false)} />
                     }
                 </BottomSheet>

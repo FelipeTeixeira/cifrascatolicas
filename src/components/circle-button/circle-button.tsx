@@ -3,10 +3,11 @@ import { ReactNode } from 'react';
 
 export function CircleButton(props: {
     children: ReactNode;
-    onClick: Function;
+    onClick: () => void;
     color: 'primary' | 'white';
     hasBorder: boolean;
     className: string;
+    isDisabled: boolean;
 }) {
     return (
         <button
@@ -18,6 +19,7 @@ export function CircleButton(props: {
                 ${props.hasBorder ? '' : styles.borderless}
                 ${props.className}
             `}
+            disabled={props.isDisabled}
             onClick={() => props.onClick()}>
             {props.children}
         </button>
@@ -28,4 +30,5 @@ CircleButton.defaultProps = {
     color: 'primary',
     hasBorder: true,
     className: '',
+    isDisabled: false
 };

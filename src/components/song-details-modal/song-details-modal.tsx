@@ -1,13 +1,35 @@
 import { CloseIcon } from '@components/icons/close-icon';
 import styles from './song-details-modal.module.scss'
-import { MouseEventHandler } from 'react'
-import { Song } from '@interfaces/song.interface';
+import { MouseEventHandler, useEffect, useState } from 'react'
+import { MusicDetailsInterface } from '@interfaces/song.interface';
+import { bffGetArtistSong } from '@services/bff.service';
+import { Cipher } from '@components/cipher/cipher';
+import { Loading } from '@components/loading/loading';
 
 export function SongDetailsModal(props: {
-    song: Song;
+    song: MusicDetailsInterface;
     isVisible: boolean;
     onClose: MouseEventHandler;
 }) {
+    const [isLoading, setIsLoading] = useState(false);
+    const [songDetails, setSongDetails] = useState<MusicDetailsInterface>();
+    const { slug, artista } = props.song;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                setIsLoading(true);
+                const response = await bffGetArtistSong(artista.slug, slug);
+                setSongDetails(response);
+                setIsLoading(false);
+            } catch (error) {
+                setIsLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <>
             <div className={styles.overlay}></div>
@@ -18,28 +40,24 @@ export function SongDetailsModal(props: {
                 </button>
 
                 <h2 className={styles.title}>
-                    {props.song.song}
+                    {props.song.nome}
                 </h2>
 
-                <p className={styles.description}>
-                    {props.song.artist}
+                <span className={styles.artist}>
+                    {props.song.artista.nome}
+                </span>
 
-                    <br />
-
-                    Alma sedenta necessita do amor de deus
-                    Inunda-me então com teu espírito
-                    senhor
-                    Quero da tua água
-                    Renascer no teu caminho de amor
-                    Até transbordar
-                    Remover anúncio
-                    Água viva senhor, faz chover sobre nós
-                    Uma vida de amor, só encontro em vós
-                    Água viva senhor, faz chover sobre nós
-                    Uma vida de amor, só encontro em vós
-                    de todo pecado quero me lavar
-                    de todo pecado quero me lavar
-                </p>
+                {isLoading ?
+                    <Loading className={styles.loading} />
+                    :
+                    <>
+                        {songDetails ?
+                            <div className={styles.containerCipher}>
+                                <Cipher cipher={songDetails.letra || songDetails.cifra || ''} fontSize={12} />
+                            </div>
+                            : null}
+                    </>
+                }
             </div>
         </>
     )

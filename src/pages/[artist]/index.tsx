@@ -38,7 +38,7 @@ export default function Artista(props: Props): JSX.Element {
     return (
         <>
             <Head>
-                <title>{`${nome.trim()} - Cifras Católicas`}</title>
+                <title>{`${nome?.trim()} - Cifras Católicas`}</title>
                 <meta name="description" content={nome} />
             </Head>
 

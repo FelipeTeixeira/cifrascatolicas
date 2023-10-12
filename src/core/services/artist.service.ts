@@ -5,7 +5,7 @@ import {
 import { MusicDetailsInterface } from '@interfaces/song.interface';
 import { setURLParams } from '@utils/url-params.util';
 
-const API = process.env.API;
+const API = process.env.NEXT_PUBLIC_API;
 const url = 'artistas';
 
 // TODO - pensar se fica aqui mesmo esse cara kk, mudou tudo a url

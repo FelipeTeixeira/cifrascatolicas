@@ -27,7 +27,7 @@ export function PlaylistSection(props: {
             <Section className={styles.playlist}>
                 <Container hasSidebar={true}>
                     <ul>
-                        {musicas.map((song, index) => (
+                        {musicas?.map((song, index) => (
                             <li key={index} className={styles.song}>
                                 <Image src={Artista2} alt={song.nome} className={styles.albumImage} />
 

@@ -15,3 +15,7 @@ export function Cipher(props: {
             dangerouslySetInnerHTML={{__html: props.cipher}} />
     )
 }
+
+Cipher.defaultProps = {
+    fontSize: '16px',
+};
