@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 export function SubHeader(props: {
     previousUrl: string;
+    showSearch: boolean;
 }): JSX.Element {
     return (
         <header className={styles.subheader}>
@@ -14,10 +15,15 @@ export function SubHeader(props: {
 
             <strong>Cifras Católicas</strong>
 
-            {/* TODO - abrir busca */}
-            <button className={styles.search}>
-                <SearchIcon width={18} height={18} />
-            </button>
+            {props.showSearch &&
+                <Link href="/busca" className={styles.search}>
+                    <SearchIcon width={18} height={18} />
+                </Link>
+            }
         </header>
     )
 }
+
+SubHeader.defaultProps = {
+    showSearch: true,
+};

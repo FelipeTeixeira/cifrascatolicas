@@ -79,7 +79,7 @@ export function RepertoireRegisterSection(props: {
                     Busque pelas músicas que você deseja adicionar no seu repertório
                 </p>
 
-                <SearchInput placeholder='Buscar música' onChange={setSearchValue} />
+                <SearchInput placeholder='Buscar música' onChange={setSearchValue} value={searchValue} />
 
 
                 {/* preciso esconder da lista as musicas que ja foram adicioandas */}

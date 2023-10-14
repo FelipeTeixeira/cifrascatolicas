@@ -20,6 +20,7 @@ import { useState } from 'react'
 type Props = {
     song: MusicDetailsInterface;
     previousUrl: string;
+    hideMenuMobile: boolean;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {

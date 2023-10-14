@@ -2,7 +2,6 @@ import styles from './menu-mobile.module.scss'
 import { HomeIcon } from '@components/icons/home-icon'
 import { RepertoireIcon } from '@components/icons/repertoire-icon'
 import { SearchIcon } from '@components/icons/search-icon'
-import { SearchModal } from '@components/search-modal/search-modal'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -19,9 +18,9 @@ export function MenuMobile() {
                     Início
                 </Link>
 
-                <button type='button' className={styles.searchButton} onClick={() => setVisible(true)}>
+                <Link href="/busca" className={styles.searchButton}>
                     <SearchIcon fill='#fff' />
-                </button>
+                </Link>
 
                 <Link href="/repertorio" className={`${styles.link} ${router.pathname === '/repertorio' ? styles.isActive : ''}`}>
                     <RepertoireIcon />
@@ -29,7 +28,6 @@ export function MenuMobile() {
                 </Link>
 
             </nav>
-            {/* <SearchModal isVisible={visible} onClose={() => setVisible(false)} /> */}
         </>
     )
 }

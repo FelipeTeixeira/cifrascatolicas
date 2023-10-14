@@ -1,0 +1,61 @@
+@import "@styles/variables";
+
+.search-google {
+    width: 100%;
+    margin: auto;
+
+    @include mq("desktop") {
+        margin-top: var(--space-4);
+    }
+
+    .gsc-search-box,
+    .gsc-above-wrapper-area {
+        @include mq("desktop") {
+            display: none;
+        }
+    }
+
+    .gsc-control-cse {
+        padding: 0;
+    }
+
+    .gsc-input-box {
+        border-radius: 30px;
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+        border-color: transparent;
+    }
+
+    .gsib_a {
+        padding: 14px 24px;
+    }
+
+    .gsst_a {
+        margin-right: 12px;
+
+        .gscb_a {
+            color: var(--color-primary);
+        }
+    }
+
+    input.gsc-input,
+    .gsst_a .gscb_a {
+        font-family: var(--font-nunito);
+        background: none !important;
+    }
+
+    .gsc-search-button-v2 {
+        background-color: var(--color-primary);
+        border: none;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+
+        &:hover {
+            background-color: #7c6531;
+        }
+    }
+}

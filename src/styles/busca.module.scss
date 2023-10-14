@@ -1,0 +1,16 @@
+@import "@styles/variables";
+
+.iconSearch {
+    margin: var(--space-4) auto;
+    display: flex;
+    justify-content: center;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #71717a;
+    max-width: 250px;
+    margin: 0 auto;
+}
